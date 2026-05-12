@@ -1,0 +1,814 @@
+[
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 224,
+    "faithfulness": 3,
+    "clarity": 5,
+    "completeness": 4,
+    "reasoning": {
+      "faithfulness": "Zwei der Top-3-Treiber (hr und yr) sind korrekt mit richtiger Wirkungsrichtung enthalten, der dritte genannte Treiber ist jedoch 'Monat Juli' statt 'temp' (Halluzination, -1), obwohl Temperatur ebenfalls positiv erwähnt wird; der Vorhersagewert 287 ist korrekt angegeben.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z.B. '~33 °C', '20 Uhr') und ist für Laien klar verständlich ohne Fachjargon.",
+      "completeness": "Alle drei Pflichtabschnitte (Vorhersage inkl. Vergleich mit tatsächlichem Wert, Treiber, Betriebsempfehlung) sind vorhanden und substanziell ausgeführt, wobei der Treiber-Abschnitt leicht von der Modellrealität abweicht."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 5,\n  \"completeness\": 4,\n  \"reasoning\": {\n    \"faithfulness\": \"Zwei der Top-3-Treiber (hr und yr) sind korrekt mit richtiger Wirkungsrichtung enthalten, der dritte genannte Treiber ist jedoch 'Monat Juli' statt 'temp' (Halluzination, -1), obwohl Temperatur ebenfalls positiv erwähnt wird; der Vorhersagewert 287 ist korrekt angegeben.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z.B. '~33 °C', '20 Uhr') und ist für Laien klar verständlich ohne Fachjargon.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte (Vorhersage inkl. Vergleich mit tatsächlichem Wert, Treiber, Betriebsempfehlung) sind vorhanden und substanziell ausgeführt, wobei der Treiber-Abschnitt leicht von der Modellrealität abweicht.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 580,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, mnth, temp) korrekt benannt mit richtiger negativer Wirkungsrichtung, Vorhersagewert (~12) sowie tatsächlicher Wert (5) explizit angegeben und kein halluzinierter Treiber eingeführt.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z.B. temp=0.22 → '~9 °C', hr=0.0 → 'Mitternacht') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der drei Haupttreiber und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, mnth, temp) korrekt benannt mit richtiger negativer Wirkungsrichtung, Vorhersagewert (~12) sowie tatsächlicher Wert (5) explizit angegeben und kein halluzinierter Treiber eingeführt.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z.B. temp=0.22 → '~9 °C', hr=0.0 → 'Mitternacht') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der drei Haupttreiber und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 1041,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (weekday negativ, temp positiv, yr positiv) sind korrekt benannt mit richtiger Wirkungsrichtung, und der Vorhersagewert von ~208 sowie der tatsächliche Wert von 229 sind explizit genannt.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Größen (27 °C, 65 % Luftfeuchtigkeit) und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der Treiber mit Wirkungsrichtung und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (weekday negativ, temp positiv, yr positiv) sind korrekt benannt mit richtiger Wirkungsrichtung, und der Vorhersagewert von ~208 sowie der tatsächliche Wert von 229 sind explizit genannt.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Größen (27 °C, 65 % Luftfeuchtigkeit) und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der Treiber mit Wirkungsrichtung und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 1481,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr negativ, yr positiv, weekday positiv) werden korrekt mit richtiger Wirkungsrichtung benannt, und der Vorhersagewert von ~108 sowie der tatsächliche Wert von 113 sind explizit angegeben.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in lesbare Größen (z.B. '17 °C', '23 Uhr', 'Freitag') und vermeidet jeden Fachjargon.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Istwert, Beschreibung der Haupttreiber und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr negativ, yr positiv, weekday positiv) werden korrekt mit richtiger Wirkungsrichtung benannt, und der Vorhersagewert von ~108 sowie der tatsächliche Wert von 113 sind explizit angegeben.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in lesbare Größen (z.B. '17 °C', '23 Uhr', 'Freitag') und vermeidet jeden Fachjargon.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Istwert, Beschreibung der Haupttreiber und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 1677,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (yr negativ, temp positiv, weekday negativ) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert (180) ist angegeben, jedoch werden Wetter und Luftfeuchtigkeit als zusätzliche Treiber erwähnt, die nicht unter den Top-3 sind (leichte Halluzination, -1).",
+      "clarity": "Die Erklärung ist weitgehend in klarer Alltagssprache verfasst und übersetzt normalisierte Werte (z.B. '~29 °C'), jedoch ist die Erwähnung von 'R² von 0,95' ein Fachbegriff, der für Laien nicht verständlich ist (-1).",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der Treiber und eine konkrete praktische Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (yr negativ, temp positiv, weekday negativ) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert (180) ist angegeben, jedoch werden Wetter und Luftfeuchtigkeit als zusätzliche Treiber erwähnt, die nicht unter den Top-3 sind (leichte Halluzination, -1).\",\n    \"clarity\": \"Die Erklärung ist weitgehend in klarer Alltagssprache verfasst und übersetzt normalisierte Werte (z.B. '~29 °C'), jedoch ist die Erwähnung von 'R² von 0,95' ein Fachbegriff, der für Laien nicht verständlich ist (-1).\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der Treiber und eine konkrete praktische Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 2058,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (yr, hr, hum) werden korrekt genannt mit richtiger Wirkungsrichtung (yr negativ, hr positiv, hum negativ), und der Vorhersagewert 179 stimmt; ein leichter Abzug, da der Wochentag (Dienstag) als zusätzlicher Treiber erwähnt wird, obwohl er nicht unter den Top 3 ist.",
+      "clarity": "Die Erklärung ist durchgehend in verständlicher Alltagssprache verfasst, vermeidet Fachjargon komplett und übersetzt normalisierte Werte (z. B. 82 % Luftfeuchtigkeit, 20 Uhr) klar in nachvollziehbare Alltagsbegriffe.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage (179) wird explizit dem tatsächlichen Wert (238) gegenübergestellt, die Treiber werden erklärt, und eine konkrete Betriebsempfehlung (Wartungsfenster, Verfügbarkeitsplanung) wird gegeben."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (yr, hr, hum) werden korrekt genannt mit richtiger Wirkungsrichtung (yr negativ, hr positiv, hum negativ), und der Vorhersagewert 179 stimmt; ein leichter Abzug, da der Wochentag (Dienstag) als zusätzlicher Treiber erwähnt wird, obwohl er nicht unter den Top 3 ist.\",\n    \"clarity\": \"Die Erklärung ist durchgehend in verständlicher Alltagssprache verfasst, vermeidet Fachjargon komplett und übersetzt normalisierte Werte (z. B. 82 % Luftfeuchtigkeit, 20 Uhr) klar in nachvollziehbare Alltagsbegriffe.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage (179) wird explizit dem tatsächlichen Wert (238) gegenübergestellt, die Treiber werden erklärt, und eine konkrete Betriebsempfehlung (Wartungsfenster, Verfügbarkeitsplanung) wird gegeben.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 2510,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=19, yr=0→negativ, mnth=7→positiv) sind korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert 369 stimmt; kleiner Abzug, weil Temperatur als zusätzlicher Treiber erwähnt wird, obwohl sie nicht unter den Top-3 ist.",
+      "clarity": "Die Erklärung ist weitgehend in verständlicher Alltagssprache verfasst und übersetzt normalisierte Werte (z. B. '34 °C', '19 Uhr', '2011') korrekt; ein kleiner Abzug, weil der Begriff 'Saisonauslastung' leicht fachlich klingt.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erklärung der Treiber und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=19, yr=0→negativ, mnth=7→positiv) sind korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert 369 stimmt; kleiner Abzug, weil Temperatur als zusätzlicher Treiber erwähnt wird, obwohl sie nicht unter den Top-3 ist.\",\n    \"clarity\": \"Die Erklärung ist weitgehend in verständlicher Alltagssprache verfasst und übersetzt normalisierte Werte (z. B. '34 °C', '19 Uhr', '2011') korrekt; ein kleiner Abzug, weil der Begriff 'Saisonauslastung' leicht fachlich klingt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erklärung der Treiber und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 3543,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Vorhersage (660) und tatsächlicher Wert (691) korrekt genannt; die Top-3-Treiber hr, temp und yr sind alle erkannt und in korrekter Wirkungsrichtung beschrieben, jedoch wird der R²-Wert als Zusatzinformation erwähnt, was keinen Abzug ergibt – lediglich der Wochentag (Sonntag) wird als dämpfender Faktor hervorgehoben, obwohl er kein Top-3-Treiber ist (-1 Halluzination).",
+      "clarity": "Die Erklärung ist weitgehend in Alltagssprache verfasst und übersetzt normalisierte Werte (z. B. 'knapp 25 Grad Celsius', '33 Prozent Luftfeuchtigkeit') verständlich, allerdings wird 'R²-Wert' als Fachbegriff ohne Erklärung verwendet (-1).",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der wichtigsten Treiber und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Vorhersage (660) und tatsächlicher Wert (691) korrekt genannt; die Top-3-Treiber hr, temp und yr sind alle erkannt und in korrekter Wirkungsrichtung beschrieben, jedoch wird der R²-Wert als Zusatzinformation erwähnt, was keinen Abzug ergibt – lediglich der Wochentag (Sonntag) wird als dämpfender Faktor hervorgehoben, obwohl er kein Top-3-Treiber ist (-1 Halluzination).\",\n    \"clarity\": \"Die Erklärung ist weitgehend in Alltagssprache verfasst und übersetzt normalisierte Werte (z. B. 'knapp 25 Grad Celsius', '33 Prozent Luftfeuchtigkeit') verständlich, allerdings wird 'R²-Wert' als Fachbegriff ohne Erklärung verwendet (-1).\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der wichtigsten Treiber und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 3847,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, yr, weekday) werden korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert (141) ist angegeben; ein kleiner Abzug, weil Temperatur als zusätzlicher Einflussfaktor erwähnt wird, obwohl sie nicht unter den Top-3-Treibern ist (leichte Halluzination).",
+      "clarity": "Die Erklärung ist größtenteils in verständlicher Alltagssprache verfasst und übersetzt normalisierte Werte korrekt (z.B. '~30 °C', '6:00 Uhr'); ein minimaler Abzug, da Begriffe wie 'Nachtslot' oder 'Bremseffekt' für Laien leicht gewöhnungsbedürftig sein könnten.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (141 vs. 122), klare Benennung der Treiber mit Erklärung und eine konkrete, praktische Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, yr, weekday) werden korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert (141) ist angegeben; ein kleiner Abzug, weil Temperatur als zusätzlicher Einflussfaktor erwähnt wird, obwohl sie nicht unter den Top-3-Treibern ist (leichte Halluzination).\",\n    \"clarity\": \"Die Erklärung ist größtenteils in verständlicher Alltagssprache verfasst und übersetzt normalisierte Werte korrekt (z.B. '~30 °C', '6:00 Uhr'); ein minimaler Abzug, da Begriffe wie 'Nachtslot' oder 'Bremseffekt' für Laien leicht gewöhnungsbedürftig sein könnten.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (141 vs. 122), klare Benennung der Treiber mit Erklärung und eine konkrete, praktische Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "XGB",
+    "instance_id": 4454,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=9 Uhr, yr=2012, temp≈27°C) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert 382 sowie der tatsächliche Wert 311 sind explizit angegeben.",
+      "clarity": "Die Erklärung ist durchgehend in verständlicher Alltagssprache verfasst, normalisierte Werte werden in lesbare Größen übersetzt (z.B. '~27 °C', '17 km/h'), und kein Fachjargon wie SHAP oder Log-Raum taucht auf.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage inkl. Vergleich mit dem tatsächlichen Wert, Erläuterung der Treiber und eine konkrete praktische Betriebsempfehlung für Stationsplanung und Wartungsfenster."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=9 Uhr, yr=2012, temp≈27°C) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert 382 sowie der tatsächliche Wert 311 sind explizit angegeben.\",\n    \"clarity\": \"Die Erklärung ist durchgehend in verständlicher Alltagssprache verfasst, normalisierte Werte werden in lesbare Größen übersetzt (z.B. '~27 °C', '17 km/h'), und kein Fachjargon wie SHAP oder Log-Raum taucht auf.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage inkl. Vergleich mit dem tatsächlichen Wert, Erläuterung der Treiber und eine konkrete praktische Betriebsempfehlung für Stationsplanung und Wartungsfenster.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 224,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=20 Uhr → positiv, temp=~33°C → positiv, yr=2011 → negativ) korrekt benannt mit richtiger Wirkungsrichtung, und der Vorhersagewert 290 ist angegeben.",
+      "clarity": "Durchgehend klare Alltagssprache ohne Fachjargon, normalisierte Werte (Temperatur, Uhrzeit, Jahr) werden verständlich übersetzt.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Istwert, Erläuterung der Treiber und konkrete Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=20 Uhr → positiv, temp=~33°C → positiv, yr=2011 → negativ) korrekt benannt mit richtiger Wirkungsrichtung, und der Vorhersagewert 290 ist angegeben.\",\n    \"clarity\": \"Durchgehend klare Alltagssprache ohne Fachjargon, normalisierte Werte (Temperatur, Uhrzeit, Jahr) werden verständlich übersetzt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Istwert, Erläuterung der Treiber und konkrete Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 580,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, temp, mnth) werden korrekt mit negativer Wirkungsrichtung genannt und der Vorhersagewert (~10, tatsächlich 9.7278) ist angegeben; ein kleiner Abzug, weil 'jahr' (kein Top-3-Treiber) als zusätzlicher Einflussfaktor halluziniert wird.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Größen (z.B. '~9 °C', 'Mitternacht') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Erläuterung und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, temp, mnth) werden korrekt mit negativer Wirkungsrichtung genannt und der Vorhersagewert (~10, tatsächlich 9.7278) ist angegeben; ein kleiner Abzug, weil 'jahr' (kein Top-3-Treiber) als zusätzlicher Einflussfaktor halluziniert wird.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Größen (z.B. '~9 °C', 'Mitternacht') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Erläuterung und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 1041,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=11, temp≈27°C, yr=2012) korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert 221 sowie der tatsächliche Wert 229 sind beide angegeben.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte verständlich (z.B. '27 °C', '11 Uhr', '65 % Luftfeuchtigkeit') und enthält keinen technischen Fachjargon.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der drei Treiber mit Wirkungsrichtung, sowie eine konkrete praktische Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=11, temp≈27°C, yr=2012) korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert 221 sowie der tatsächliche Wert 229 sind beide angegeben.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte verständlich (z.B. '27 °C', '11 Uhr', '65 % Luftfeuchtigkeit') und enthält keinen technischen Fachjargon.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der drei Treiber mit Wirkungsrichtung, sowie eine konkrete praktische Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 1481,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr negativ, yr positiv, hum positiv) korrekt mit richtiger Wirkungsrichtung genannt, Vorhersagewert 125 und tatsächlicher Wert 113 explizit angegeben.",
+      "clarity": "Durchgehend alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte werden in lesbare Größen (23 Uhr, 30 % Luftfeuchtigkeit, 2012) übersetzt.",
+      "completeness": "Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der drei Treiber und eine konkrete operative Empfehlung zur Stationsbestückung und Wartungsfenster."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr negativ, yr positiv, hum positiv) korrekt mit richtiger Wirkungsrichtung genannt, Vorhersagewert 125 und tatsächlicher Wert 113 explizit angegeben.\",\n    \"clarity\": \"Durchgehend alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte werden in lesbare Größen (23 Uhr, 30 % Luftfeuchtigkeit, 2012) übersetzt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der drei Treiber und eine konkrete operative Empfehlung zur Stationsbestückung und Wartungsfenster.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 1677,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=12 → stark positiv, temp=0.7 ≈ 29°C → positiv, yr=0 → leicht negativ) sind korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert (179) stimmt mit 178.547 überein.",
+      "clarity": "Die Erklärung verwendet ausschließlich Alltagssprache, übersetzt normalisierte Werte (z.B. '~29 °C', '12 Uhr', '2011') und enthält keinerlei Fachjargon wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (179 vs. 145, ~23 % Abweichung), Treiberbeschreibung und eine konkrete praktische Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=12 → stark positiv, temp=0.7 ≈ 29°C → positiv, yr=0 → leicht negativ) sind korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert (179) stimmt mit 178.547 überein.\",\n    \"clarity\": \"Die Erklärung verwendet ausschließlich Alltagssprache, übersetzt normalisierte Werte (z.B. '~29 °C', '12 Uhr', '2011') und enthält keinerlei Fachjargon wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (179 vs. 145, ~23 % Abweichung), Treiberbeschreibung und eine konkrete praktische Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 2058,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=20, yr=0/2011, mnth=11) korrekt benannt mit richtiger Wirkungsrichtung (hr positiv, yr negativ, mnth leicht negativ), und der Vorhersagewert 164,7 wird korrekt als 'rund 165' angegeben.",
+      "clarity": "Die Erklärung verwendet ausschließlich Alltagssprache, übersetzt normalisierte Werte verständlich (z.B. '20 Uhr', 'knapp 20 °C', '2011 vs. 2012') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (165 vs. 238, ~31% Fehler), klare Treiber-Erklärung und eine konkrete Betriebsempfehlung (Sicherheitspuffer an milden Novemberabenden, Wartung in frühe Morgenstunden)."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=20, yr=0/2011, mnth=11) korrekt benannt mit richtiger Wirkungsrichtung (hr positiv, yr negativ, mnth leicht negativ), und der Vorhersagewert 164,7 wird korrekt als 'rund 165' angegeben.\",\n    \"clarity\": \"Die Erklärung verwendet ausschließlich Alltagssprache, übersetzt normalisierte Werte verständlich (z.B. '20 Uhr', 'knapp 20 °C', '2011 vs. 2012') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (165 vs. 238, ~31% Fehler), klare Treiber-Erklärung und eine konkrete Betriebsempfehlung (Sicherheitspuffer an milden Novemberabenden, Wartung in frühe Morgenstunden).\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 2510,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=19, yr=0, temp=0.84) korrekt genannt mit richtiger Wirkungsrichtung (positiv, negativ, positiv), Vorhersagewert 373 korrekt angegeben und tatsächlicher Wert 337 erwähnt.",
+      "clarity": "Durchgehend alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte (temp=0.84) werden als ~34°C übersetzt und alle Faktoren mit anschaulichen Alltagsbezügen erklärt.",
+      "completeness": "Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (373 vs. 337), Treiber mit Erklärung und praktische Betriebsempfehlung mit konkreten Handlungshinweisen."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=19, yr=0, temp=0.84) korrekt genannt mit richtiger Wirkungsrichtung (positiv, negativ, positiv), Vorhersagewert 373 korrekt angegeben und tatsächlicher Wert 337 erwähnt.\",\n    \"clarity\": \"Durchgehend alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte (temp=0.84) werden als ~34°C übersetzt und alle Faktoren mit anschaulichen Alltagsbezügen erklärt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (373 vs. 337), Treiber mit Erklärung und praktische Betriebsempfehlung mit konkreten Handlungshinweisen.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 3543,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=16, yr=1, temp≈0.6) werden korrekt und mit richtiger Wirkungsrichtung genannt; der vorhergesagte Wert (654) und der tatsächliche Wert (691) sind korrekt angegeben, jedoch wird 'Sonntag' als zusätzlicher Treiber mit dämpfender Wirkung eingeführt, der nicht unter den Top-3 liegt (Halluzination, -1).",
+      "clarity": "Die Erklärung verwendet durchgängig Alltagssprache, übersetzt normalisierte Werte korrekt (z. B. '~25 °C', '16 Uhr') und ist ohne Fachbegriffe wie SHAP oder exp() verfasst.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der Treiber und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=16, yr=1, temp≈0.6) werden korrekt und mit richtiger Wirkungsrichtung genannt; der vorhergesagte Wert (654) und der tatsächliche Wert (691) sind korrekt angegeben, jedoch wird 'Sonntag' als zusätzlicher Treiber mit dämpfender Wirkung eingeführt, der nicht unter den Top-3 liegt (Halluzination, -1).\",\n    \"clarity\": \"Die Erklärung verwendet durchgängig Alltagssprache, übersetzt normalisierte Werte korrekt (z. B. '~25 °C', '16 Uhr') und ist ohne Fachbegriffe wie SHAP oder exp() verfasst.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erläuterung der Treiber und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 3847,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr negativ, temp positiv, yr positiv) korrekt genannt mit richtiger Wirkungsrichtung und der Vorhersagewert 137 ist korrekt angegeben.",
+      "clarity": "Kein Fachjargon, normalisierte Werte werden in Alltagsgrößen übersetzt (z. B. '30 °C', '6 Uhr morgens'), und der Text ist logisch strukturiert und für Laien verständlich.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erklärung der Treiber und eine konkrete operative Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr negativ, temp positiv, yr positiv) korrekt genannt mit richtiger Wirkungsrichtung und der Vorhersagewert 137 ist korrekt angegeben.\",\n    \"clarity\": \"Kein Fachjargon, normalisierte Werte werden in Alltagsgrößen übersetzt (z. B. '30 °C', '6 Uhr morgens'), und der Text ist logisch strukturiert und für Laien verständlich.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erklärung der Treiber und eine konkrete operative Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "EBM",
+    "instance_id": 4454,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit/hr, Temperatur/temp, Jahr/yr) korrekt genannt mit richtiger Wirkungsrichtung, Vorhersagewert (~340) und tatsächlicher Wert (311) explizit angegeben – keine Halluzinationen, keine Richtungsfehler.",
+      "clarity": "Durchgängig alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte werden in lesbare Einheiten übersetzt (z.B. 27 °C, 9 Uhr morgens, 47 % Luftfeuchtigkeit), logischer und nachvollziehbarer Aufbau.",
+      "completeness": "Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erklärung der Treiber mit Rangfolge und Kontext, sowie konkrete praktische Betriebsempfehlung mit Zeitfenstern."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit/hr, Temperatur/temp, Jahr/yr) korrekt genannt mit richtiger Wirkungsrichtung, Vorhersagewert (~340) und tatsächlicher Wert (311) explizit angegeben – keine Halluzinationen, keine Richtungsfehler.\",\n    \"clarity\": \"Durchgängig alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte werden in lesbare Einheiten übersetzt (z.B. 27 °C, 9 Uhr morgens, 47 % Luftfeuchtigkeit), logischer und nachvollziehbarer Aufbau.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Erklärung der Treiber mit Rangfolge und Kontext, sowie konkrete praktische Betriebsempfehlung mit Zeitfenstern.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 224,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, yr, temp) korrekt identifiziert mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (286,9), jedoch wird 'Monat Juli' als zusätzlicher Treiber erwähnt, der nicht unter den Top-3 ist (-1 für Halluzination).",
+      "clarity": "Die Erklärung ist überwiegend in verständlicher Alltagssprache verfasst und übersetzt normalisierte Werte gut (z.B. '33 °C', '20:00 Uhr'), lediglich die Formulierung 'yr = 0' enthält einen kleinen technischen Rohwert, der leicht irritieren könnte.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (286,9 vs. 270), klare Benennung der Treiber mit Erklärung und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, yr, temp) korrekt identifiziert mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (286,9), jedoch wird 'Monat Juli' als zusätzlicher Treiber erwähnt, der nicht unter den Top-3 ist (-1 für Halluzination).\",\n    \"clarity\": \"Die Erklärung ist überwiegend in verständlicher Alltagssprache verfasst und übersetzt normalisierte Werte gut (z.B. '33 °C', '20:00 Uhr'), lediglich die Formulierung 'yr = 0' enthält einen kleinen technischen Rohwert, der leicht irritieren könnte.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (286,9 vs. 270), klare Benennung der Treiber mit Erklärung und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 580,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit/hr, Monat/mnth, Temperatur/temp) werden korrekt mit negativer Wirkungsrichtung genannt und der Vorhersagewert (~12) ist angegeben; leichter Abzug, weil zusätzlich 'Jahr 2011' und 'Montag' als Treiber erwähnt werden, die nicht zu den Top-3 gehören (Halluzination).",
+      "clarity": "Die Erklärung ist durchgehend in klarer Alltagssprache verfasst, normalisierte Werte werden sinnvoll übersetzt (z. B. '9 °C', 'Mitternacht'), kein Fachjargon verwendet.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (12 vs. 5), Erläuterung der Treiber sowie konkrete Betriebsempfehlung (wenige Räder bereitstellen, Wartungsfenster nutzen)."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit/hr, Monat/mnth, Temperatur/temp) werden korrekt mit negativer Wirkungsrichtung genannt und der Vorhersagewert (~12) ist angegeben; leichter Abzug, weil zusätzlich 'Jahr 2011' und 'Montag' als Treiber erwähnt werden, die nicht zu den Top-3 gehören (Halluzination).\",\n    \"clarity\": \"Die Erklärung ist durchgehend in klarer Alltagssprache verfasst, normalisierte Werte werden sinnvoll übersetzt (z. B. '9 °C', 'Mitternacht'), kein Fachjargon verwendet.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (12 vs. 5), Erläuterung der Treiber sowie konkrete Betriebsempfehlung (wenige Räder bereitstellen, Wartungsfenster nutzen).\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 1041,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (weekday negativ, temp positiv, yr positiv) sind korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert 208 (gerundet aus 208,226) ist angegeben.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z. B. '~27 °C', 'Dienstag', '2012') und verzichtet vollständig auf Fachjargon wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (208 vs. 229), Erläuterung der drei Haupttreiber sowie eine konkrete praktische Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (weekday negativ, temp positiv, yr positiv) sind korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert 208 (gerundet aus 208,226) ist angegeben.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z. B. '~27 °C', 'Dienstag', '2012') und verzichtet vollständig auf Fachjargon wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (208 vs. 229), Erläuterung der drei Haupttreiber sowie eine konkrete praktische Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 1481,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr negativ, yr positiv, weekday positiv) sind korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert von 108 stimmt mit dem Ground Truth (108.33) überein.",
+      "clarity": "Die Erklärung verwendet durchgängig Alltagssprache, übersetzt normalisierte Werte in verständliche Begriffe (23 Uhr, Freitagabend, ~17 °C) und vermeidet jeglichen Fachbegriff wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (108 vs. 113), klare Treiberbeschreibung und eine konkrete betriebliche Empfehlung zur Flottenplanung und Wartungszeitfenster."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr negativ, yr positiv, weekday positiv) sind korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert von 108 stimmt mit dem Ground Truth (108.33) überein.\",\n    \"clarity\": \"Die Erklärung verwendet durchgängig Alltagssprache, übersetzt normalisierte Werte in verständliche Begriffe (23 Uhr, Freitagabend, ~17 °C) und vermeidet jeglichen Fachbegriff wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (108 vs. 113), klare Treiberbeschreibung und eine konkrete betriebliche Empfehlung zur Flottenplanung und Wartungszeitfenster.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 1677,
+    "faithfulness": 3,
+    "clarity": 4,
+    "completeness": 4,
+    "reasoning": {
+      "faithfulness": "Zwei der drei Top-Treiber (yr, temp) sind korrekt mit richtiger Wirkungsrichtung genannt; der dritte Top-Treiber (weekday, dämpfend) ist zwar erwähnt, aber statt weekday wird 'Mittagsstunde/hr' als positiver Treiber halluziniert, was einen Abzug ergibt (-1 Halluzination), und der Zahlenwert der Vorhersage (180) ist angegeben.",
+      "clarity": "Die Sprache ist weitgehend alltagstauglich, normalisierte Werte werden übersetzt (z. B. '~29 °C'), und auf Fachjargon wie SHAP wird verzichtet; lediglich 'yr = 0' und 'weekday = 3' bleiben kurz ungeklärt.",
+      "completeness": "Alle drei Pflichtabschnitte (Vorhersage inkl. Vergleich mit Realwert, Treiber, Betriebsempfehlung) sind vorhanden und substanziell ausgeführt, weshalb kein Abzug nötig ist."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 4,\n  \"reasoning\": {\n    \"faithfulness\": \"Zwei der drei Top-Treiber (yr, temp) sind korrekt mit richtiger Wirkungsrichtung genannt; der dritte Top-Treiber (weekday, dämpfend) ist zwar erwähnt, aber statt weekday wird 'Mittagsstunde/hr' als positiver Treiber halluziniert, was einen Abzug ergibt (-1 Halluzination), und der Zahlenwert der Vorhersage (180) ist angegeben.\",\n    \"clarity\": \"Die Sprache ist weitgehend alltagstauglich, normalisierte Werte werden übersetzt (z. B. '~29 °C'), und auf Fachjargon wie SHAP wird verzichtet; lediglich 'yr = 0' und 'weekday = 3' bleiben kurz ungeklärt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte (Vorhersage inkl. Vergleich mit Realwert, Treiber, Betriebsempfehlung) sind vorhanden und substanziell ausgeführt, weshalb kein Abzug nötig ist.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 2058,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (yr negativ, hr positiv, hum negativ) korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert 179,5 explizit angegeben.",
+      "clarity": "Kein Fachjargon, alle Werte in Alltagssprache übersetzt (z.B. '82 % Luftfeuchtigkeit', '20 Uhr', 'Jahr 2011'), logischer und gut verständlicher Aufbau.",
+      "completeness": "Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treibererklärung und konkrete Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (yr negativ, hr positiv, hum negativ) korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert 179,5 explizit angegeben.\",\n    \"clarity\": \"Kein Fachjargon, alle Werte in Alltagssprache übersetzt (z.B. '82 % Luftfeuchtigkeit', '20 Uhr', 'Jahr 2011'), logischer und gut verständlicher Aufbau.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treibererklärung und konkrete Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 2510,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=19, yr=0/2011, mnth=7) sind korrekt benannt mit richtiger Wirkungsrichtung (hr und mnth positiv, yr negativ), und der Vorhersagewert von 369 sowie der tatsächliche Wert von 337 werden explizit genannt.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in lesbare Angaben (19 Uhr, Juli, 2011, ~34 °C) und vermeidet Fachbegriffe wie SHAP oder Log-Raum vollständig.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, klare Treiberbeschreibung und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=19, yr=0/2011, mnth=7) sind korrekt benannt mit richtiger Wirkungsrichtung (hr und mnth positiv, yr negativ), und der Vorhersagewert von 369 sowie der tatsächliche Wert von 337 werden explizit genannt.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in lesbare Angaben (19 Uhr, Juli, 2011, ~34 °C) und vermeidet Fachbegriffe wie SHAP oder Log-Raum vollständig.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, klare Treiberbeschreibung und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 3543,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit 16 Uhr, Temperatur ~25 °C, Jahr 2012) korrekt mit richtiger positiver Wirkungsrichtung genannt, Vorhersagewert 660 explizit angegeben und mit y_true 691 verglichen.",
+      "clarity": "Die Erklärung verwendet ausschließlich Alltagssprache, übersetzt normalisierte Werte (z. B. temp=0.6 → ~25 °C) und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Wirkungsrichtung und konkrete Betriebsempfehlung zur Stationsbestückung und Wartungsplanung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit 16 Uhr, Temperatur ~25 °C, Jahr 2012) korrekt mit richtiger positiver Wirkungsrichtung genannt, Vorhersagewert 660 explizit angegeben und mit y_true 691 verglichen.\",\n    \"clarity\": \"Die Erklärung verwendet ausschließlich Alltagssprache, übersetzt normalisierte Werte (z. B. temp=0.6 → ~25 °C) und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Wirkungsrichtung und konkrete Betriebsempfehlung zur Stationsbestückung und Wartungsplanung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 3847,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, yr, weekday) korrekt genannt mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (141), jedoch wird die negative Wirkung der Uhrzeit (hr) korrekt erklärt, während die positiven Beiträge von Jahr und Wochentag ebenfalls stimmen – kleiner Abzug, weil Temperatur/Monat als 'ergänzend' erwähnt werden, obwohl diese nicht zu den Top-3-Treibern gehören (leichte Halluzination/Überbetonung).",
+      "clarity": "Die Erklärung ist vollständig in verständlicher Alltagssprache verfasst, ohne Fachjargon wie SHAP oder normalisierte Rohwerte, und übersetzt alle Merkmalswerte (z.B. '6 Uhr', 'Freitag', '30 °C') in nachvollziehbare Begriffe.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (141 vs. 122, ~16 % Überschätzung), Treiber mit Erklärung und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, yr, weekday) korrekt genannt mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (141), jedoch wird die negative Wirkung der Uhrzeit (hr) korrekt erklärt, während die positiven Beiträge von Jahr und Wochentag ebenfalls stimmen – kleiner Abzug, weil Temperatur/Monat als 'ergänzend' erwähnt werden, obwohl diese nicht zu den Top-3-Treibern gehören (leichte Halluzination/Überbetonung).\",\n    \"clarity\": \"Die Erklärung ist vollständig in verständlicher Alltagssprache verfasst, ohne Fachjargon wie SHAP oder normalisierte Rohwerte, und übersetzt alle Merkmalswerte (z.B. '6 Uhr', 'Freitag', '30 °C') in nachvollziehbare Begriffe.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (141 vs. 122, ~16 % Überschätzung), Treiber mit Erklärung und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "XGB",
+    "instance_id": 4454,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit 9 Uhr, Jahr 2012, Temperatur ~27 °C) korrekt genannt mit richtiger Wirkungsrichtung (jeweils positiv), und der vorhergesagte Zahlenwert (382) ist angegeben.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Größen (z. B. '27 °C', '9 Uhr', '2012') und verzichtet vollständig auf Fachjargon wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage (382) wird mit dem tatsächlichen Wert (311) verglichen, die drei Treiber werden erklärt, und eine konkrete Betriebsempfehlung (Räder an Pendler-Knotenpunkten, Wartung außerhalb der Spitze) wird gegeben."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit 9 Uhr, Jahr 2012, Temperatur ~27 °C) korrekt genannt mit richtiger Wirkungsrichtung (jeweils positiv), und der vorhergesagte Zahlenwert (382) ist angegeben.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Größen (z. B. '27 °C', '9 Uhr', '2012') und verzichtet vollständig auf Fachjargon wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage (382) wird mit dem tatsächlichen Wert (311) verglichen, die drei Treiber werden erklärt, und eine konkrete Betriebsempfehlung (Räder an Pendler-Knotenpunkten, Wartung außerhalb der Spitze) wird gegeben.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 224,
+    "faithfulness": 3,
+    "clarity": 4,
+    "completeness": 4,
+    "reasoning": {
+      "faithfulness": "Top-3-Treiber 'hr' (Uhrzeit) und 'temp' korrekt mit richtiger Richtung genannt, 'yr' mit korrekter negativer Richtung ebenfalls erkannt, jedoch wird eine nicht existierende Interaktion 'Uhrzeit × Wochentag' als eigener Treiber halluziniert (-1), und der Zahlenwert 290 ist vorhanden.",
+      "clarity": "Die Erklärung ist weitgehend in Alltagssprache gehalten, die Temperatur wird verständlich als '~33 °C' angegeben, und es gibt keinen technischen Fachjargon — lediglich der Verweis auf 'breite rote Balken' setzt ein grafisches Interface voraus, das nicht allen Lesern bekannt ist.",
+      "completeness": "Alle drei Pflichtabschnitte (Vorhersage inkl. Vergleich mit tatsächlichem Wert, Treiber, Betriebsempfehlung) sind vorhanden und substanziell ausgeführt, jedoch ist die Betriebsempfehlung etwas generisch und könnte konkreter auf Stationsmanagement eingehen."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 4,\n  \"reasoning\": {\n    \"faithfulness\": \"Top-3-Treiber 'hr' (Uhrzeit) und 'temp' korrekt mit richtiger Richtung genannt, 'yr' mit korrekter negativer Richtung ebenfalls erkannt, jedoch wird eine nicht existierende Interaktion 'Uhrzeit × Wochentag' als eigener Treiber halluziniert (-1), und der Zahlenwert 290 ist vorhanden.\",\n    \"clarity\": \"Die Erklärung ist weitgehend in Alltagssprache gehalten, die Temperatur wird verständlich als '~33 °C' angegeben, und es gibt keinen technischen Fachjargon — lediglich der Verweis auf 'breite rote Balken' setzt ein grafisches Interface voraus, das nicht allen Lesern bekannt ist.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte (Vorhersage inkl. Vergleich mit tatsächlichem Wert, Treiber, Betriebsempfehlung) sind vorhanden und substanziell ausgeführt, jedoch ist die Betriebsempfehlung etwas generisch und könnte konkreter auf Stationsmanagement eingehen.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 580,
+    "faithfulness": null,
+    "clarity": null,
+    "completeness": null,
+    "reasoning": "",
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 3,\n  \"completeness\": 4,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-3-Treiber (hr, temp, mnth) werden korrekt mit negativer Wirkungsrichtung genannt, und der Vorhersagewert (~10) ist annähernd korrekt (9.73); jedoch wird 'Wochentag' als stark bremsender Faktor präsentiert, obwohl er kein Top-3-Treiber ist (Halluzination, -1), und der Fachjargon-Begriff 'hr-Balken' sowie die Erwähnung eines 'Plots' deuten auf SHAP-spezifische Begriffe hin (kein direkter Abzug nach Rubrik, aber grenzwertig), was den Score auf 3 hält.\",\n    \"clarity\": \"Die Erklärung ist weitgehend alltagssprachlich und übersetzt die Temperatur korrekt (~9 °C), aber der Begriff 'hr-Balken' und der Verweis auf einen 'Plot' setzen implizit technisches Vorwissen voraus (-1), was die Verständlichkeit für Laien einschränkt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind vorhanden und substanziell – Vorhersage (inkl. Vergleich mit tatsächlichem Wert), Treiber und eine konkrete Betriebsempfehlung – lediglich der Treiberabschnitt vermischt echte Top"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 1041,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, temp, yr) werden korrekt identifiziert mit richtiger Wirkungsrichtung und der Vorhersagewert 221 ist genannt; ein kleiner Abzug, weil ein 'Wechselwirkungsterm Uhrzeit/Wochentag' als dämpfender Faktor erwähnt wird, der nicht unter den Top-3 gelistet ist.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte korrekt (z.B. '~27 °C', '11 Uhr', '2012'), und ist ohne Fachjargon klar strukturiert.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage mit Vergleich zum tatsächlichen Wert, die wichtigsten Treiber mit Erklärung und eine konkrete, praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, temp, yr) werden korrekt identifiziert mit richtiger Wirkungsrichtung und der Vorhersagewert 221 ist genannt; ein kleiner Abzug, weil ein 'Wechselwirkungsterm Uhrzeit/Wochentag' als dämpfender Faktor erwähnt wird, der nicht unter den Top-3 gelistet ist.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte korrekt (z.B. '~27 °C', '11 Uhr', '2012'), und ist ohne Fachjargon klar strukturiert.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage mit Vergleich zum tatsächlichen Wert, die wichtigsten Treiber mit Erklärung und eine konkrete, praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 1481,
+    "faithfulness": null,
+    "clarity": null,
+    "completeness": null,
+    "reasoning": "",
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 4,\n  \"reasoning\": {\n    \"faithfulness\": \"Der Vorhersagewert (124,9) ist korrekt genannt und der Top-3-Treiber 'hr' (23 Uhr, negativ) sowie 'yr' (2012, positiv) sind korrekt mit richtiger Wirkungsrichtung identifiziert; jedoch wird 'hum' (Luftfeuchtigkeit, positiver Beitrag laut Ground Truth) fälschlicherweise als dämpfend/negativ beschrieben (Wirkungsrichtung falsch, -1), und die Erklärung halluziniert einen kombinierten 'Uhrzeit+Wochentag'-Treiber als starken positiven Faktor, der so nicht unter den Top-3 existiert (-1).\",\n    \"clarity\": \"Die Erklärung ist weitgehend in verständlicher Alltagssprache verfasst, übersetzt Werte wie '23 Uhr', '30 % Luftfeuchtigkeit' und '2012' angemessen, enthält jedoch keine erklärende Alltagsübersetzung des normalisierten Luftfeuchtigkeitswerts im technischen Sinne und ist insgesamt für Laien gut zugänglich.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind vorhanden — Vorhersage mit Vergleich zum tatsächlichen Wert, Treiberbeschreibung und eine konkrete Betriebsempf"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 1677,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, temp, yr) werden korrekt genannt mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (178,5), jedoch wird ein nicht unter Top-3 befindlicher Faktor (Wochentag/Uhrzeit-Kombination) als zusätzlicher Treiber eingeführt, was einen leichten Abzug rechtfertigt.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte verständlich (z. B. '~29 °C', '12 Uhr', '2011') und vermeidet technischen Jargon vollständig.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (178,5 vs. 145), ausführliche Treibererklärung und eine konkrete praktische Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, temp, yr) werden korrekt genannt mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (178,5), jedoch wird ein nicht unter Top-3 befindlicher Faktor (Wochentag/Uhrzeit-Kombination) als zusätzlicher Treiber eingeführt, was einen leichten Abzug rechtfertigt.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte verständlich (z. B. '~29 °C', '12 Uhr', '2011') und vermeidet technischen Jargon vollständig.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (178,5 vs. 145), ausführliche Treibererklärung und eine konkrete praktische Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 2058,
+    "faithfulness": null,
+    "clarity": null,
+    "completeness": null,
+    "reasoning": "",
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 4,\n  \"reasoning\": {\n    \"faithfulness\": \"Der Vorhersagewert (164,7) und der tatsächliche Wert (238) werden korrekt genannt, der stärkste Treiber 'hr' (20 Uhr, positiv) und der zweitstärkste 'yr' (2011, negativ) sind korrekt; jedoch wird 'mnth' (November) nicht klar als dritter Treiber identifiziert, stattdessen wird eine nicht belegte 'Kombination aus Uhrzeit und Wochentag' als dritter Faktor eingeführt, was eine Halluzination darstellt (-1), und die Luftfeuchtigkeit wird als dämpfender Faktor genannt, obwohl sie kein Top-3-Treiber ist (-1).\",\n    \"clarity\": \"Die Erklärung ist weitgehend in verständlicher Alltagssprache verfasst und vermeidet Fachjargon wie SHAP; ein kleiner Abzug entfällt, da normalisierte Werte größtenteils übersetzt wurden, jedoch bleibt die Struktur insgesamt gut zugänglich.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte (Vorhersage inkl. Vergleich mit tatsächlichem Wert, Treiber, Betriebsempfehlung) sind vorhanden und substanziell, wobei der Treiber-Abschnitt durch"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 2510,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, yr, temp) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert (373) ist korrekt angegeben; kleiner Abzug, weil Wochentag (nicht in Top-3) als eigener Treiber impliziert wird.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z. B. '~34 °C', '19 Uhr', '44 % Luftfeuchtigkeit') und vermeidet Fachjargon vollständig.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (373 vs. 337), Treibererläuterung und eine konkrete Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, yr, temp) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert (373) ist korrekt angegeben; kleiner Abzug, weil Wochentag (nicht in Top-3) als eigener Treiber impliziert wird.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z. B. '~34 °C', '19 Uhr', '44 % Luftfeuchtigkeit') und vermeidet Fachjargon vollständig.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (373 vs. 337), Treibererläuterung und eine konkrete Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 3543,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=16, yr=1, temp=0.6) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert 653,9 ist korrekt angegeben; ein leichter Abzug erfolgt, weil 'Wochentag Sonntag' als eigenständiger dämpfender Treiber hervorgehoben wird, obwohl er nicht unter den Top-3 ist (leichte Halluzination).",
+      "clarity": "Die Erklärung ist überwiegend in klarer Alltagssprache verfasst und übersetzt normalisierte Werte (z.B. '~24,6 °C', '16 Uhr') gut; ein kleiner Abzug, weil die Unterscheidung zwischen 'Uhrzeit+Wochentag kombiniert' und 'Wochentag als eigenständiges Merkmal' für Laien etwas verwirrend ist.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage inkl. Vergleich zum tatsächlichen Wert, die Erklärung der wichtigsten Treiber sowie eine konkrete und praxisnahe Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=16, yr=1, temp=0.6) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert 653,9 ist korrekt angegeben; ein leichter Abzug erfolgt, weil 'Wochentag Sonntag' als eigenständiger dämpfender Treiber hervorgehoben wird, obwohl er nicht unter den Top-3 ist (leichte Halluzination).\",\n    \"clarity\": \"Die Erklärung ist überwiegend in klarer Alltagssprache verfasst und übersetzt normalisierte Werte (z.B. '~24,6 °C', '16 Uhr') gut; ein kleiner Abzug, weil die Unterscheidung zwischen 'Uhrzeit+Wochentag kombiniert' und 'Wochentag als eigenständiges Merkmal' für Laien etwas verwirrend ist.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage inkl. Vergleich zum tatsächlichen Wert, die Erklärung der wichtigsten Treiber sowie eine konkrete und praxisnahe Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 3847,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr negativ, temp positiv, yr positiv) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert 137 ist präzise angegeben; ein kleiner Abzug, da der Wochentag (Freitag) als zusätzlicher Treiber erwähnt wird, obwohl er nicht unter den Top-3 ist.",
+      "clarity": "Die Erklärung ist durchgehend in verständlicher Alltagssprache verfasst, normalisierte Werte werden in lesbare Größen übersetzt (z. B. '~30 °C', '6 Uhr morgens'), und es wird kein technischer Fachjargon verwendet.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage mit Vergleich zum tatsächlichen Wert, die wichtigsten Treiber mit Wirkungsrichtung und eine konkrete Betriebsempfehlung für die Stationsplanung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr negativ, temp positiv, yr positiv) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert 137 ist präzise angegeben; ein kleiner Abzug, da der Wochentag (Freitag) als zusätzlicher Treiber erwähnt wird, obwohl er nicht unter den Top-3 ist.\",\n    \"clarity\": \"Die Erklärung ist durchgehend in verständlicher Alltagssprache verfasst, normalisierte Werte werden in lesbare Größen übersetzt (z. B. '~30 °C', '6 Uhr morgens'), und es wird kein technischer Fachjargon verwendet.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage mit Vergleich zum tatsächlichen Wert, die wichtigsten Treiber mit Wirkungsrichtung und eine konkrete Betriebsempfehlung für die Stationsplanung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "EBM",
+    "instance_id": 4454,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, temp, yr) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert (340) ist angegeben; kleiner Abzug, weil ein nicht existenter 'kombinierter Faktor Uhrzeit×Temperatur' als dämpfend halluziniert wird.",
+      "clarity": "Die Erklärung ist vollständig in Alltagssprache verfasst, normalisierte Werte werden als lesbare Größen (9 Uhr, ~27 °C, 2012) präsentiert, kein technischer Jargon.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Richtung und Kontext sowie eine konkrete Betriebsempfehlung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, temp, yr) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert (340) ist angegeben; kleiner Abzug, weil ein nicht existenter 'kombinierter Faktor Uhrzeit×Temperatur' als dämpfend halluziniert wird.\",\n    \"clarity\": \"Die Erklärung ist vollständig in Alltagssprache verfasst, normalisierte Werte werden als lesbare Größen (9 Uhr, ~27 °C, 2012) präsentiert, kein technischer Jargon.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Richtung und Kontext sowie eine konkrete Betriebsempfehlung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 224,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr positiv, yr negativ, temp positiv) korrekt identifiziert mit richtiger Wirkungsrichtung, der Vorhersagewert 287 (≈286,87) und der tatsächliche Wert 270 sind angegeben, und Tool-basierte kontrafaktische Zahlen (17 Uhr → 510, 2012 → 413) stützen die Erklärung ohne Halluzinationen.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z.B. 'Jahr 0 = 2011', '~32,8 °C') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Istwert, Treiber mit quantitativer Begründung, und eine konkrete operative Empfehlung zur Flottensteuerung und Kapazitätsplanung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr positiv, yr negativ, temp positiv) korrekt identifiziert mit richtiger Wirkungsrichtung, der Vorhersagewert 287 (≈286,87) und der tatsächliche Wert 270 sind angegeben, und Tool-basierte kontrafaktische Zahlen (17 Uhr → 510, 2012 → 413) stützen die Erklärung ohne Halluzinationen.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte (z.B. 'Jahr 0 = 2011', '~32,8 °C') und verzichtet vollständig auf Fachbegriffe wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Istwert, Treiber mit quantitativer Begründung, und eine konkrete operative Empfehlung zur Flottensteuerung und Kapazitätsplanung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 580,
+    "faithfulness": null,
+    "clarity": null,
+    "completeness": null,
+    "reasoning": "",
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 3,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, mnth, temp) werden korrekt mit richtiger Wirkungsrichtung (negativ/bremsend) genannt, der Vorhersagewert (12 Fahrräder ≈ 12.1144) und der tatsächliche Wert (5) sind angegeben; ein Abzug, weil der normalisierte Wert 'temp=0.22' direkt erwähnt wird, ohne dass dies als Halluzination zählt, jedoch ist die Erwähnung des Perzentils (8,7) ein aus dem Tool-Context belegbarer Zusatzfakt – damit solide 4 Punkte.\",\n    \"clarity\": \"Die Erklärung ist größtenteils in Alltagssprache verfasst und übersetzt normalisierte Werte (z. B. 0,22 → ~9 °C, 0,50 → ~20 °C), enthält jedoch den normalisierten Rohwert '0,22' explizit im Text sowie 'Perzentil 8,7', was für Laien unverständlich ist und je einen Abzug rechtfertigt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage (12) wird mit dem tatsächlichen Wert (5) verglichen, die Top-Treiber werden ausführlich erklärt, und konk"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 1041,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (weekday bremsend, temp fördernd, yr fördernd) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersagewert 208 korrekt angegeben und tatsächlicher Wert 229 explizit verglichen.",
+      "clarity": "Kein Fachjargon (kein SHAP, kein Log-Raum), normalisierte Werte wurden konsequent in Alltagssprache übersetzt (z.B. '~27 °C', 'Dienstag', '2012'), logischer und gut lesbarer Aufbau.",
+      "completeness": "Alle drei Pflichtabschnitte (Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Erklärung, konkrete Betriebsempfehlung) sind substanziell vorhanden."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (weekday bremsend, temp fördernd, yr fördernd) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersagewert 208 korrekt angegeben und tatsächlicher Wert 229 explizit verglichen.\",\n    \"clarity\": \"Kein Fachjargon (kein SHAP, kein Log-Raum), normalisierte Werte wurden konsequent in Alltagssprache übersetzt (z.B. '~27 °C', 'Dienstag', '2012'), logischer und gut lesbarer Aufbau.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte (Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Erklärung, konkrete Betriebsempfehlung) sind substanziell vorhanden.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 1481,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit 23 Uhr negativ, Jahr 2012 positiv, Freitag positiv) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert (108) und der tatsächliche Wert (113) sind explizit angegeben, und die kontrafaktischen Tool-Werte (18-Uhr-Szenario: 506 Räder) stützen die Argumentation zusätzlich.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache ohne Fachjargon (kein SHAP, kein Log-Raum), übersetzt normalisierte Werte in lesbare Formate (z. B. '23:00 Uhr', 'Freitag', '2012') und ist logisch strukturiert.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage inkl. Vergleich mit dem tatsächlichen Wert, Treiber mit detaillierter Begründung, und eine konkrete Betriebsempfehlung zu Kapazitätsplanung und Skalierung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit 23 Uhr negativ, Jahr 2012 positiv, Freitag positiv) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert (108) und der tatsächliche Wert (113) sind explizit angegeben, und die kontrafaktischen Tool-Werte (18-Uhr-Szenario: 506 Räder) stützen die Argumentation zusätzlich.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache ohne Fachjargon (kein SHAP, kein Log-Raum), übersetzt normalisierte Werte in lesbare Formate (z. B. '23:00 Uhr', 'Freitag', '2012') und ist logisch strukturiert.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage inkl. Vergleich mit dem tatsächlichen Wert, Treiber mit detaillierter Begründung, und eine konkrete Betriebsempfehlung zu Kapazitätsplanung und Skalierung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 1677,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (yr, temp, weekday) werden korrekt genannt mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (180), jedoch wird 'Mittagsstunde (12 Uhr)' als positiver Treiber erwähnt, was nicht unter den Top-3 liegt und als leichte Halluzination zu werten ist (-1).",
+      "clarity": "Die Erklärung ist weitgehend in Alltagssprache gehalten, übersetzt normalisierte Werte korrekt (z.B. '~28,7 °C', '84. Perzentil'), enthält aber mit 'yr = 0' und 'normierter Wert von 0,70' leichte technische Reste, die den Lesefluss für absolute Laien minimal stören (-1).",
+      "completeness": "Alle drei Pflichtabschnitte sind vollständig und substanziell vorhanden: Vorhersage inkl. Vergleich mit tatsächlichem Wert (180 vs. 145), detaillierte Treiberbeschreibung und zwei konkrete Betriebsempfehlungen."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (yr, temp, weekday) werden korrekt genannt mit richtiger Wirkungsrichtung und korrektem Vorhersagewert (180), jedoch wird 'Mittagsstunde (12 Uhr)' als positiver Treiber erwähnt, was nicht unter den Top-3 liegt und als leichte Halluzination zu werten ist (-1).\",\n    \"clarity\": \"Die Erklärung ist weitgehend in Alltagssprache gehalten, übersetzt normalisierte Werte korrekt (z.B. '~28,7 °C', '84. Perzentil'), enthält aber mit 'yr = 0' und 'normierter Wert von 0,70' leichte technische Reste, die den Lesefluss für absolute Laien minimal stören (-1).\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind vollständig und substanziell vorhanden: Vorhersage inkl. Vergleich mit tatsächlichem Wert (180 vs. 145), detaillierte Treiberbeschreibung und zwei konkrete Betriebsempfehlungen.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 2058,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (yr negativ, hr positiv, hum negativ) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersage (179) und tatsächlicher Wert (238) explizit genannt, und das kontrafaktische Beispiel (2012 → 282 Fahrräder) ist ein valider Tool-gestützter Beleg.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt Rohdaten in verständliche Begriffe (z. B. '82 % Luftfeuchtigkeit', '20:00 Uhr'), vermeidet SHAP/Fachjargon vollständig und ist logisch strukturiert.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, detaillierte Treiber-Erklärung und konkrete, praxisnahe Betriebsempfehlungen."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (yr negativ, hr positiv, hum negativ) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersage (179) und tatsächlicher Wert (238) explizit genannt, und das kontrafaktische Beispiel (2012 → 282 Fahrräder) ist ein valider Tool-gestützter Beleg.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt Rohdaten in verständliche Begriffe (z. B. '82 % Luftfeuchtigkeit', '20:00 Uhr'), vermeidet SHAP/Fachjargon vollständig und ist logisch strukturiert.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert, detaillierte Treiber-Erklärung und konkrete, praxisnahe Betriebsempfehlungen.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 2510,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, yr, mnth) werden korrekt genannt und ihre Wirkungsrichtungen stimmen; der Vorhersagewert (369) ist korrekt angegeben, jedoch wird 'mnth' (Juli) nur indirekt über die Temperatur angedeutet statt explizit als dritter Treiber benannt, was eine leichte Ungenauigkeit darstellt.",
+      "clarity": "Die Erklärung ist weitgehend in Alltagssprache gehalten, nennt den Vorhersagewert und tatsächlichen Wert verständlich, und übersetzt normalisierte Werte (z.B. Temperatur ~34°C, 19 Uhr); ein minimaler Abzug, da 'Perzentil' als leicht technischer Begriff für Laien erscheinen könnte.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage inkl. Vergleich mit tatsächlichem Wert, klare Beschreibung der Treiber mit Wirkungsrichtung, und eine konkrete praktische Betriebsempfehlung zur Flottenplanung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, yr, mnth) werden korrekt genannt und ihre Wirkungsrichtungen stimmen; der Vorhersagewert (369) ist korrekt angegeben, jedoch wird 'mnth' (Juli) nur indirekt über die Temperatur angedeutet statt explizit als dritter Treiber benannt, was eine leichte Ungenauigkeit darstellt.\",\n    \"clarity\": \"Die Erklärung ist weitgehend in Alltagssprache gehalten, nennt den Vorhersagewert und tatsächlichen Wert verständlich, und übersetzt normalisierte Werte (z.B. Temperatur ~34°C, 19 Uhr); ein minimaler Abzug, da 'Perzentil' als leicht technischer Begriff für Laien erscheinen könnte.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage inkl. Vergleich mit tatsächlichem Wert, klare Beschreibung der Treiber mit Wirkungsrichtung, und eine konkrete praktische Betriebsempfehlung zur Flottenplanung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 3543,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit 16 Uhr, Temperatur ~24,6 °C, Jahr 2012) werden korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert 660 ist korrekt angegeben; ein kleiner Abzug wegen der verwirrenden und faktisch inkonsistenten Passage zum 12-Uhr-Vergleich ('692 → 660 gegenüber 691'), die die Logik kurz trübt.",
+      "clarity": "Die Erklärung ist größtenteils in Alltagssprache gehalten, Temperaturwerte werden in °C übersetzt und Percentile verständlich erklärt; der normierte Wert '0,60' wird zwar erwähnt, aber sofort kontextualisiert, was einen kleinen Abzug für den nicht vollständig vermiedenen Rohwert rechtfertigt.",
+      "completeness": "Alle drei Pflichtabschnitte – Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Begründung und eine konkrete Betriebsempfehlung – sind substanziell vorhanden."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit 16 Uhr, Temperatur ~24,6 °C, Jahr 2012) werden korrekt mit richtiger Wirkungsrichtung genannt, und der Vorhersagewert 660 ist korrekt angegeben; ein kleiner Abzug wegen der verwirrenden und faktisch inkonsistenten Passage zum 12-Uhr-Vergleich ('692 → 660 gegenüber 691'), die die Logik kurz trübt.\",\n    \"clarity\": \"Die Erklärung ist größtenteils in Alltagssprache gehalten, Temperaturwerte werden in °C übersetzt und Percentile verständlich erklärt; der normierte Wert '0,60' wird zwar erwähnt, aber sofort kontextualisiert, was einen kleinen Abzug für den nicht vollständig vermiedenen Rohwert rechtfertigt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte – Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Begründung und eine konkrete Betriebsempfehlung – sind substanziell vorhanden.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 3847,
+    "faithfulness": null,
+    "clarity": null,
+    "completeness": null,
+    "reasoning": "",
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Der stärkste Top-3-Treiber 'hr' (negativ, 06:00 Uhr) wird korrekt genannt und richtig als abwärtsziehend beschrieben; 'yr' (2012, positiv) ist ebenfalls korrekt, aber der dritte Top-3-Treiber 'weekday' (Freitag) fehlt völlig und wird stattdessen durch 'Temperatur' ersetzt, die nicht unter den Top-3 liegt (Halluzination, -1), was zusammen mit dem fehlenden Weekday-Treiber die Basis auf Score 3 drückt.\",\n    \"clarity\": \"Die Erklärung ist vollständig in verständlicher Alltagssprache gehalten, nutzt anschauliche Vergleiche (Gedankenexperiment 8 Uhr = 589 Räder), übersetzt normalisierte Werte (30 °C, Perzentile) sauber und vermeidet Fachjargon wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage (141) wird explizit mit dem tatsächlichen Wert (122) verglichen, die Treiber werden ausführlich erklärt, und eine konkrete Betriebsempfehlung (Flottenbereitstellung bis 7:30 Uhr"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "XGB",
+    "instance_id": 4454,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-3-Treiber (hr, yr, temp) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersagewert 382 korrekt angegeben, und kontrafaktische Zahlenwerte aus Tool-Calls stützen die Erklärung zusätzlich.",
+      "clarity": "Durchgängig alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte (temp=0.66) wurden korrekt in '~27 °C' übersetzt, logischer und gut nachvollziehbarer Aufbau.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (382 vs. 311), detaillierte Treiberbeschreibung und konkrete praktische Betriebsempfehlungen zur Flottenplanung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-3-Treiber (hr, yr, temp) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersagewert 382 korrekt angegeben, und kontrafaktische Zahlenwerte aus Tool-Calls stützen die Erklärung zusätzlich.\",\n    \"clarity\": \"Durchgängig alltagsverständliche Sprache ohne Fachjargon, normalisierte Werte (temp=0.66) wurden korrekt in '~27 °C' übersetzt, logischer und gut nachvollziehbarer Aufbau.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (382 vs. 311), detaillierte Treiberbeschreibung und konkrete praktische Betriebsempfehlungen zur Flottenplanung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 224,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-3-Treiber (hr=20, temp=0.8, yr=0.0) werden korrekt benannt mit richtiger Wirkungsrichtung (hr und temp positiv, yr negativ), der Vorhersagewert 290 stimmt, und kontrafaktische Tool-Werte (163 Räder bei 14:00 Uhr, 96. Perzentil der Temperatur) stützen die Erklärung zusätzlich.",
+      "clarity": "Die Erklärung ist weitgehend in Alltagssprache gehalten und übersetzt normierte Werte (z.B. 0.8 → ~32,8 °C), jedoch erscheint der Begriff 'normierter Wert von 0,80' und '96. Perzentil' als leichter Fachjargon, der einen kleinen Abzug rechtfertigt.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (290 vs. 270), detaillierte Treiberanalyse und eine konkrete, praxisnahe Betriebsempfehlung für Abendstunden und Hitzetage."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-3-Treiber (hr=20, temp=0.8, yr=0.0) werden korrekt benannt mit richtiger Wirkungsrichtung (hr und temp positiv, yr negativ), der Vorhersagewert 290 stimmt, und kontrafaktische Tool-Werte (163 Räder bei 14:00 Uhr, 96. Perzentil der Temperatur) stützen die Erklärung zusätzlich.\",\n    \"clarity\": \"Die Erklärung ist weitgehend in Alltagssprache gehalten und übersetzt normierte Werte (z.B. 0.8 → ~32,8 °C), jedoch erscheint der Begriff 'normierter Wert von 0,80' und '96. Perzentil' als leichter Fachjargon, der einen kleinen Abzug rechtfertigt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (290 vs. 270), detaillierte Treiberanalyse und eine konkrete, praxisnahe Betriebsempfehlung für Abendstunden und Hitzetage.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 580,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit 00:00, Temperatur ~9°C, Monat Januar) korrekt genannt mit korrekter dämpfender Wirkungsrichtung, Vorhersagewert 9,73 stimmt, und Tool-gestützte kontrafaktische Zahl (186 Räder um 8 Uhr) stärkt die Belege zusätzlich.",
+      "clarity": "Die Erklärung ist weitgehend in Alltagssprache verfasst und übersetzt normalisierte Werte korrekt (z.B. '~9°C', '00:00 Uhr'), jedoch enthält der Begriff 'Percentile-Wert von 8,7%' leichten Fachjargon, der für Laien nicht unmittelbar verständlich ist.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Realwert (9,73 vs. 5), klare Treiber-Erläuterung und konkrete Betriebsempfehlungen (reduzierte Bereitstellung in Winternächten, tageszeit-gesteuerte Flottenplanung)."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit 00:00, Temperatur ~9°C, Monat Januar) korrekt genannt mit korrekter dämpfender Wirkungsrichtung, Vorhersagewert 9,73 stimmt, und Tool-gestützte kontrafaktische Zahl (186 Räder um 8 Uhr) stärkt die Belege zusätzlich.\",\n    \"clarity\": \"Die Erklärung ist weitgehend in Alltagssprache verfasst und übersetzt normalisierte Werte korrekt (z.B. '~9°C', '00:00 Uhr'), jedoch enthält der Begriff 'Percentile-Wert von 8,7%' leichten Fachjargon, der für Laien nicht unmittelbar verständlich ist.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum Realwert (9,73 vs. 5), klare Treiber-Erläuterung und konkrete Betriebsempfehlungen (reduzierte Bereitstellung in Winternächten, tageszeit-gesteuerte Flottenplanung).\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 1041,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit/hr, Temperatur, Jahr) werden korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert (221) ist korrekt angegeben; ein kleiner Abzug, da der normierte Temperaturwert '0,66' im Text erwähnt wird, was leicht technisch ist, aber kein schwerwiegender Fehler darstellt.",
+      "clarity": "Die Erklärung ist weitgehend in Alltagssprache gehalten und übersetzt normierte Werte in verständliche Größen (~27,1 °C, Perzentile), jedoch wird der normierte Wert '0,66' direkt genannt, was einen kleinen Abzug rechtfertigt.",
+      "completeness": "Alle drei Pflichtabschnitte (Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Erläuterungen, praktische Betriebsempfehlung) sind substanziell vorhanden und ausführlich ausgearbeitet."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit/hr, Temperatur, Jahr) werden korrekt genannt mit richtiger Wirkungsrichtung, und der Vorhersagewert (221) ist korrekt angegeben; ein kleiner Abzug, da der normierte Temperaturwert '0,66' im Text erwähnt wird, was leicht technisch ist, aber kein schwerwiegender Fehler darstellt.\",\n    \"clarity\": \"Die Erklärung ist weitgehend in Alltagssprache gehalten und übersetzt normierte Werte in verständliche Größen (~27,1 °C, Perzentile), jedoch wird der normierte Wert '0,66' direkt genannt, was einen kleinen Abzug rechtfertigt.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte (Vorhersage mit Vergleich zum tatsächlichen Wert, Treiber mit Erläuterungen, praktische Betriebsempfehlung) sind substanziell vorhanden und ausführlich ausgearbeitet.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 1481,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr negativ, yr positiv, hum positiv) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersagewert 124,9 exakt angegeben, und kontrafaktische Tool-Werte stützen die Erklärung zusätzlich.",
+      "clarity": "Die Sprache ist größtenteils alltagstauglich und anschaulich (z.B. Vergleich mit 18-Uhr-Szenario), jedoch tauchen technische Begriffe wie 'Wichtigkeitswert 0,91', 'Percentile-Rang' und 'kodiert als Wert 1' auf, die einen Laien verwirren könnten.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (124,9 vs. 113), klare Treiberbeschreibung und konkrete Betriebsempfehlungen zur Fahrzeugverteilung und Jahresplanung."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr negativ, yr positiv, hum positiv) korrekt benannt mit richtiger Wirkungsrichtung, Vorhersagewert 124,9 exakt angegeben, und kontrafaktische Tool-Werte stützen die Erklärung zusätzlich.\",\n    \"clarity\": \"Die Sprache ist größtenteils alltagstauglich und anschaulich (z.B. Vergleich mit 18-Uhr-Szenario), jedoch tauchen technische Begriffe wie 'Wichtigkeitswert 0,91', 'Percentile-Rang' und 'kodiert als Wert 1' auf, die einen Laien verwirren könnten.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (124,9 vs. 113), klare Treiberbeschreibung und konkrete Betriebsempfehlungen zur Fahrzeugverteilung und Jahresplanung.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 1677,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (Uhrzeit 12 Uhr, Temperatur ~28,7 °C, Jahr 2011) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert (179 ≈ 178,547) ist angegeben; ein kleiner Abzug, weil das kontrafaktische Beispiel (8 Uhr → 427 Fahrräder) sachlich unplausibel erscheint und potenziell eine Halluzination darstellt.",
+      "clarity": "Die Erklärung ist überwiegend in gut verständlicher Alltagssprache verfasst und übersetzt normierte Werte korrekt (z. B. 0,70 → ~28,7 °C); ein leichter Abzug, weil der Begriff 'Perzentil' ohne weitere Erläuterung für Laien nicht selbstverständlich ist.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (179 vs. 145), klare Benennung der Haupttreiber und eine konkrete betriebliche Empfehlung zur Flottenplanung an warmen Mittagsstunden."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (Uhrzeit 12 Uhr, Temperatur ~28,7 °C, Jahr 2011) werden korrekt mit richtiger Wirkungsrichtung genannt und der Vorhersagewert (179 ≈ 178,547) ist angegeben; ein kleiner Abzug, weil das kontrafaktische Beispiel (8 Uhr → 427 Fahrräder) sachlich unplausibel erscheint und potenziell eine Halluzination darstellt.\",\n    \"clarity\": \"Die Erklärung ist überwiegend in gut verständlicher Alltagssprache verfasst und übersetzt normierte Werte korrekt (z. B. 0,70 → ~28,7 °C); ein leichter Abzug, weil der Begriff 'Perzentil' ohne weitere Erläuterung für Laien nicht selbstverständlich ist.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (179 vs. 145), klare Benennung der Haupttreiber und eine konkrete betriebliche Empfehlung zur Flottenplanung an warmen Mittagsstunden.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 2058,
+    "faithfulness": null,
+    "clarity": null,
+    "completeness": null,
+    "reasoning": "",
+    "raw_response": "```json\n{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Die Top-3-Treiber hr (+), yr (-) und mnth sind alle korrekt identifiziert mit richtiger Wirkungsrichtung, und der Vorhersagewert (165) ist korrekt — jedoch wird 'Luftfeuchtigkeit/Wetter' als dämpfender Faktor genannt, obwohl dies kein Top-3-Treiber ist (Halluzination, -1), und der dritte echte Treiber 'Monat November' wird nicht substanziell herausgestellt (-1).\",\n    \"clarity\": \"Die Erklärung ist überwiegend in alltagsverständlicher Sprache verfasst, Zahlenwerte werden kontextualisiert (z.B. '82 % Luftfeuchtigkeit', '20:00 Uhr'), und es wird kein Fachjargon wie SHAP verwendet — lediglich die technische Kodierung 'kodiert als 0/1' für das Jahr ist ein leicht erklärungsbedürftiger Begriff.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind klar strukturiert und substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (165 vs. 238), detaillierte Treiber-Erläuterung inklusive kontrafaktischem Szenario, und eine konkrete praktische Betriebsempfehlung.\""
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 2510,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-3-Treiber (hr=19, yr=0, temp=0.84) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert 373 ist korrekt angegeben, und Tool-basierte Belege (Perzentil, kontrafaktische Vorhersage 177) stützen die Treue zusätzlich.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache (z.B. '34,4 °C', '19 Uhr', 'Feierabendzeit'), übersetzt normierte Werte verständlich und vermeidet technischen Jargon wie SHAP oder Log-Raum vollständig.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (373 vs. 337), klar erläuterte Treiber mit Rangfolge, sowie eine konkrete operative Empfehlung zur Flottenplanung an Hitze-Feierabendstunden."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-3-Treiber (hr=19, yr=0, temp=0.84) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert 373 ist korrekt angegeben, und Tool-basierte Belege (Perzentil, kontrafaktische Vorhersage 177) stützen die Treue zusätzlich.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache (z.B. '34,4 °C', '19 Uhr', 'Feierabendzeit'), übersetzt normierte Werte verständlich und vermeidet technischen Jargon wie SHAP oder Log-Raum vollständig.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (373 vs. 337), klar erläuterte Treiber mit Rangfolge, sowie eine konkrete operative Empfehlung zur Flottenplanung an Hitze-Feierabendstunden.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 3543,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr=16, yr=1, temp≈24,6°C) korrekt identifiziert mit richtiger Wirkungsrichtung, Vorhersagewert 654 korrekt angegeben und durch kontrafaktische Tool-Werte (z.B. 482 Räder um 10 Uhr) substanziell belegt.",
+      "clarity": "Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Einheiten (°C, Uhrzeit, Prozentangaben) und verzichtet vollständig auf Fachjargon wie SHAP oder Log-Raum.",
+      "completeness": "Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (654 vs. 691), detaillierte Treiberbeschreibung sowie konkrete Betriebsempfehlungen zu Kapazitätsplanung und Hochlastzeiten."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr=16, yr=1, temp≈24,6°C) korrekt identifiziert mit richtiger Wirkungsrichtung, Vorhersagewert 654 korrekt angegeben und durch kontrafaktische Tool-Werte (z.B. 482 Räder um 10 Uhr) substanziell belegt.\",\n    \"clarity\": \"Die Erklärung verwendet durchgehend Alltagssprache, übersetzt normalisierte Werte in verständliche Einheiten (°C, Uhrzeit, Prozentangaben) und verzichtet vollständig auf Fachjargon wie SHAP oder Log-Raum.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: Vorhersage mit Vergleich zum tatsächlichen Wert (654 vs. 691), detaillierte Treiberbeschreibung sowie konkrete Betriebsempfehlungen zu Kapazitätsplanung und Hochlastzeiten.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 3847,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": {
+      "faithfulness": "Alle drei Top-Treiber (hr, temp, yr) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert (137) und der tatsächliche Wert (122) sind angegeben; ein kleiner Abzug, weil der normierte Temperaturwert '0,74' ohne expliziten Fachjargon-Kontext erwähnt wird, aber die Celsius-Übersetzung ~30,3 °C direkt folgt.",
+      "clarity": "Die Erklärung ist weitgehend in verständlicher Alltagssprache gehalten und enthält hilfreiche Vergleiche (Pendlerzeit, Gedankenexperiment); ein leichter Abzug für den technischen Begriff 'normierter Wert' und '90. Perzentil', die für Laien nicht sofort eingängig sind.",
+      "completeness": "Alle drei Pflichtabschnitte — Vorhersage mit Vergleich zum tatsächlichen Wert, detaillierte Treiberbeschreibung und konkrete Betriebsempfehlung — sind substanziell und klar strukturiert vorhanden."
+    },
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-Treiber (hr, temp, yr) werden korrekt mit richtiger Wirkungsrichtung genannt, der Vorhersagewert (137) und der tatsächliche Wert (122) sind angegeben; ein kleiner Abzug, weil der normierte Temperaturwert '0,74' ohne expliziten Fachjargon-Kontext erwähnt wird, aber die Celsius-Übersetzung ~30,3 °C direkt folgt.\",\n    \"clarity\": \"Die Erklärung ist weitgehend in verständlicher Alltagssprache gehalten und enthält hilfreiche Vergleiche (Pendlerzeit, Gedankenexperiment); ein leichter Abzug für den technischen Begriff 'normierter Wert' und '90. Perzentil', die für Laien nicht sofort eingängig sind.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte — Vorhersage mit Vergleich zum tatsächlichen Wert, detaillierte Treiberbeschreibung und konkrete Betriebsempfehlung — sind substanziell und klar strukturiert vorhanden.\"\n  }\n}\n```"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "EBM",
+    "instance_id": 4454,
+    "faithfulness": null,
+    "clarity": null,
+    "completeness": null,
+    "reasoning": "",
+    "raw_response": "```json\n{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": {\n    \"faithfulness\": \"Alle drei Top-3-Treiber (hr, temp, yr) werden korrekt mit positiver Wirkungsrichtung genannt, der Vorhersagewert (340) ist korrekt angegeben, und die Temperaturnormierung (0,66) wird erwähnt – jedoch ohne expliziten Abzug, da der normierte Wert in Alltagssprache (~27 °C) übersetzt wurde; kleiner Abzug wegen Erwähnung der normierten Zahl '0,66' direkt im Text.\",\n    \"clarity\": \"Die Erklärung ist überwiegend in Alltagssprache gehalten und übersetzt normierte Werte verständlich (z. B. '~27 °C', 'Pendler-Fenster'), jedoch enthält die direkte Nennung von 'normiert 0,66' sowie 'Wichtigkeit 0,91' leichte Fachterminologie, die für Laien nicht unmittelbar zugänglich ist.\",\n    \"completeness\": \"Alle drei Pflichtabschnitte sind substanziell vorhanden: die Vorhersage (340) wird mit dem tatsächlichen Wert (311) verglichen, die Top-3-Treiber werden ausführlich erklärt, und konkrete Betriebsempfehlungen (Priorisierung 8-Uhr-Slot, Kapazitätsplanung bei warmem Wetter"
+  }
+]

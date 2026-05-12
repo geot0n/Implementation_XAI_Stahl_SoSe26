@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 580,
+  "explanation": "Das EBM-Modell sagt für diese Stunde rund 10 Fahrradausleihen voraus; tatsächlich wurden 5 gezählt. Das Modell überschätzt die Nachfrage damit um etwa den Faktor zwei — das ist eine mäßige Treffsicherheit, wobei die absolute Abweichung bei diesen sehr kleinen Zahlen nachts vergleichsweise gering bleibt.\n\nDer mit Abstand stärkste Bremseffekt in dieser Stunde ist die Tageszeit selbst: Mitternacht ist schlicht die ruhigste Phase im gesamten Tagesverlauf — kaum jemand leiht um 0 Uhr ein Fahrrad aus, weder Pendler noch Freizeitfahrende. Der zweite große Dämpfer ist die Temperatur: Mit knapp 9 °C ist es deutlich zu kalt für spontane Fahrradfahrten; die Kälte halbiert die erwartete Nachfrage gegenüber einer milden Nacht noch einmal spürbar. Verstärkt wird das durch den Monat Januar — der saisonale Tiefpunkt des Jahres — sowie die Tatsache, dass das Jahr 2011 das erste Betriebsjahr war, als der Verleih insgesamt noch deutlich weniger Stammkunden hatte. Das klare Wetter wirkt zwar leicht positiv, kann die übrigen Faktoren aber kaum aufwiegen.\n\nFür den Betrieb bedeutet das: In Winternächten genügen an den meisten Stationen zwei bis fünf Räder — mehr Verfügbarkeit bindet Kapital unnötig. Gleichzeitig bieten sich die späten Nachtstunden im Januar ideal für Wartungsarbeiten und Umverteilungsfahrten an, da der laufende Betrieb so gut wie nicht gestört wird.",
+  "elapsed_s": 11.73,
+  "usage": {
+    "input_tokens": 1836,
+    "output_tokens": 480,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 9.7278,
+  "y_true": 5.0
+}

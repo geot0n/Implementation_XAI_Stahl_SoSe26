@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 3847,
+  "explanation": "Das Modell sagt für diese Stunde 141 Ausleihungen vorher; tatsächlich wurden 122 Fahrräder ausgeliehen. Die Abweichung beträgt knapp 16 %, was als mäßig getroffen einzustufen ist — das Modell überschätzt hier leicht, liegt aber in einem für den Betrieb noch gut handhabbaren Bereich.\n\nDer mit Abstand stärkste Bremseffekt in dieser Stunde kommt von der frühen Uhrzeit: Um 6:00 Uhr morgens ist der reguläre Pendelverkehr noch kaum angelaufen, was die Nachfrage erheblich nach unten drückt. Trotzdem ist es kein ruhiger Nachtslot — zwei Faktoren wirken deutlich gegensätzlich. Erstens läuft das Verleihjahr 2012: Gegenüber 2011 hat das System insgesamt deutlich mehr Nutzerinnen und Nutzer gewonnen, was die erwartete Ausleihmenge spürbar anhebt. Zweitens ist es ein Freitag, und Freitage zeigen im Vergleich zu anderen Wochentagen eine früh einsetzende Morgenspitze — viele Pendler starten schon vor 7 Uhr. Die angenehme Temperatur von rund 30 °C verstärkt die Bereitschaft zusätzlich, das Fahrrad zu nehmen, während Feuchtigkeit und Windstille kaum eine Rolle spielen.\n\nFür den Betrieb bedeutet das: An Freitagmorgen im Sommer sollten die Stationen bereits vor 6 Uhr vollständig bestückt sein, da die Nachfrage früher anzieht als an anderen Werktagen. Da Wind und Hitzeextreme fehlen, bietet das nächtliche Fenster von 2:00 bis 5:00 Uhr eine gute Gelegenheit für Wartungsarbeiten und Umverteilungen, bevor der Betrieb wieder hochfährt.",
+  "elapsed_s": 16.91,
+  "usage": {
+    "input_tokens": 1836,
+    "output_tokens": 529,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 141.3505,
+  "y_true": 122.0
+}

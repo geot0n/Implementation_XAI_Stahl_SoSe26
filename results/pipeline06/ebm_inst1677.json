@@ -1,0 +1,55 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 1677,
+  "explanation": "Alle Daten sind vorhanden. Ich formuliere nun die vollständige Erklärung.\n\n---\n\nDas Modell sagt für diese Stunde **179 Fahrräder** voraus, während tatsächlich **145 Fahrräder** ausgeliehen wurden — eine Überschätzung von rund 23 %. Für ein stündliches Zählmodell ist das eine akzeptable, aber leicht erhöhte Abweichung. Die Situation (Mittagsstunde im April, warmes Wetter, klarer Himmel) ist gut im Trainingsbestand vertreten, weshalb das Modell grundsätzlich fundiert urteilen kann.\n\nDer mit Abstand stärkste Einflussfaktor ist die **Uhrzeit 12 Uhr Mittag**, die auch global das wichtigste Merkmal im gesamten Modell ist. Die Mittagsstunde ist im Trainingsdatensatz gut repräsentiert (4,4 % aller Stunden) und gilt als ausleihstarke Tageszeit — das Modell wertet sie deutlich positiv. Interessanterweise zeigt ein Gegenbeispiel, wie dramatisch die Uhrzeit wirkt: Hätte dieselbe Situation statt um 12 Uhr um **8 Uhr morgens** stattgefunden, würde das Modell **427 Fahrräder** voraussagen — also mehr als doppelt so viele. Das erklärt sich durch den morgendlichen Berufsverkehr-Peak, den das Modell als noch ausleihstärker einschätzt.\n\nDer **zweitwichtigste Treiber ist die Temperatur** von ~28,7 °C (normierter Wert 0,70). Sie liegt im **84. Perzentil** des Trainingssets — also deutlich über dem Durchschnitt (ca. 19 °C) und gehört zu den wärmsten Bedingungen, die das Modell kennt. Diese hohe Temperatur erhöht die Vorhersage spürbar positiv. Leicht dämpfend wirkt hingegen das **Jahr 2011** (gegenüber 2012): Da der Verleih im zweiten Jahr insgesamt stärker genutzt wurde, stuft das Modell 2011er-Stunden systematisch etwas niedriger ein.\n\nFür den Betrieb bedeutet das: **Mittagsstunden an warmen Frühlingstagen** sind zuverlässig nachfragestarke Zeitfenster — die Flotte sollte dort gut aufgestellt sein. Gleichzeitig sollte das leichte Überschätzen des Modells in solchen Situationen im Kopf behalten werden; eine Reserve-Puffer-Planung bleibt sinnvoll, da die tatsächliche Nachfrage hier um rund 20 % unter der Prognose lag.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 1677
+      },
+      "result_preview": "{'instance_id': 1677, 'y_true': 145.0, 'prediction': 178.55, 'base_value': 4.6078, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': 0.66323}, {'feature': 'temp', 'contributio…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.90676}, {'rank': 2, 'feature': 'temp', 'importance': 0.23636}, {'rank': 3, 'feature': 'yr', 'importance': 0.22828}, {'rank': 4, 'feature': 'mnth', 'importance': 0.0967}, {'rank': 5, 'feature': 'hum', 'importance': 0.0731}, {'rank': 6, 'feature': 'weather…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 1677,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 12, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': …"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 1677,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.7, 'type': 'numerical', 'percentile_in_train': 84.3, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 1677,
+        "changes": {
+          "hr": 8
+        }
+      },
+      "result_preview": "{'instance_id': 1677, 'base_prediction': 178.55, 'counterfactual_prediction': 427.39, 'delta': 248.84, 'applied_changes': {'hr': 8}, 'unit': 'Fahrräder pro Stunde'}"
+    }
+  ],
+  "n_tool_calls": 5,
+  "elapsed_s": 24.32,
+  "usage": {
+    "input_tokens": 2866,
+    "output_tokens": 1104
+  },
+  "y_true": 145.0
+}

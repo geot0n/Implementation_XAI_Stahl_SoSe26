@@ -1,0 +1,55 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 580,
+  "explanation": "Alle Daten sind vorhanden. Ich verfasse nun die vollständige Erklärung.\n\n---\n\nDas Modell sagt für diese Stunde **9,73 Fahrräder** voraus, während tatsächlich **5 Fahrräder** ausgeliehen wurden. Die Schätzung liegt damit etwa doppelt so hoch wie der Realwert – ein bescheidener absoluter Fehler von knapp 5 Rädern, der bei so geringen Ausleih-Zahlen durchaus typisch ist. In der Nacht sind schlicht wenige Daten und geringe Schwankungen wichtiger als Modellpräzision.\n\nDer mit Abstand stärkste dämpfende Einfluss auf die Vorhersage ist die **Uhrzeit 00:00 Uhr** – sie zieht die Prognose kräftig nach unten. Mitternacht ist gleichmäßig über das Trainingsdatensatz verteilt (ca. 4,1 % aller Stunden), also weder selten noch außergewöhnlich, aber das Modell weiß sehr gut: Nachts leiht kaum jemand ein Fahrrad aus. Das zeigt der globale Vergleich deutlich – die Uhrzeit ist mit Abstand der wichtigste Einflussfaktor im Modell (Wichtigkeit: 0,91, weit vor allen anderen Merkmalen). Wäre es stattdessen **8 Uhr morgens** – also Hauptverkehrszeit –, würde das Modell stolze **186 Fahrräder** vorhersagen: ein Sprung um +176 Räder allein durch die veränderte Tageszeit. Das verdeutlicht eindrücklich, wie dominant dieser Faktor ist.\n\nDer zweitstärkste bremsende Faktor ist die **niedrige Temperatur von ~9 °C**. Mit einem Percentile-Wert von nur 8,7 % liegt diese Temperatur im untersten Zehntel aller Trainingsstunden – deutlich kälter als der Durchschnitt (~19,5 °C). Kaltes Wetter schreckt Radfahrer spürbar ab und zieht die Vorhersage zusätzlich nach unten. Ähnlich, aber schwächer wirkt der **Monat Januar** als saisonaler Dämpfer sowie das frühe **Betriebsjahr 2011**, als das Verleihsystem noch weniger Nutzer hatte.\n\nFür den Betrieb lassen sich zwei Schlüsse ziehen: **In Winternächten** (Januar, um Mitternacht, unter 10 °C) ist die Nachfrage strukturell minimal – hier lohnt sich eine reduzierte Bereitstellung von Rädern und Personal. Gleichzeitig zeigt der Mitternachts-vs.-8-Uhr-Vergleich, dass **Tageszeit-gesteuerte Flottenplanung** der wichtigste Hebel für effiziente Ressourcensteuerung ist: Die stündliche Nachfragekurve sollte als primäres Steuerungsinstrument genutzt werden.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 580
+      },
+      "result_preview": "{'instance_id': 580, 'y_true': 5.0, 'prediction': 9.73, 'base_value': 4.6078, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': -0.77945}, {'feature': 'temp', 'contribution': …"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.90676}, {'rank': 2, 'feature': 'temp', 'importance': 0.23636}, {'rank': 3, 'feature': 'yr', 'importance': 0.22828}, {'rank': 4, 'feature': 'mnth', 'importance': 0.0967}, {'rank': 5, 'feature': 'hum', 'importance': 0.0731}, {'rank': 6, 'feature': 'weather…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 580,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 0, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': 4…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 580,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.22, 'type': 'numerical', 'percentile_in_train': 8.7, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 580,
+        "changes": {
+          "hr": 8
+        }
+      },
+      "result_preview": "{'instance_id': 580, 'base_prediction': 9.73, 'counterfactual_prediction': 186.26, 'delta': 176.53, 'applied_changes': {'hr': 8}, 'unit': 'Fahrräder pro Stunde'}"
+    }
+  ],
+  "n_tool_calls": 5,
+  "elapsed_s": 23.8,
+  "usage": {
+    "input_tokens": 2874,
+    "output_tokens": 1185
+  },
+  "y_true": 5.0
+}

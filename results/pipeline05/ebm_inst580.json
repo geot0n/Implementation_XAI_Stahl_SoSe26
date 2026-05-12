@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 580,
+  "explanation": "Das Modell sagt für diese Stunde rund 10 Fahrradausleihen vorher, während tatsächlich nur 5 Fahrräder ausgeliehen wurden. Die Vorhersage ist damit deutlich zu hoch — das Modell überschätzt die Nachfrage um etwa das Doppelte, was als schlecht getroffen zu bewerten ist.\n\nTrotz dieser Überschätzung zeigt der Plot klar, warum das Modell überhaupt so niedrig landet wie es tut: Der mit Abstand stärkste Bremser ist die Uhrzeit. Mitternacht (0 Uhr) ist die ruhigste Phase des Tages, und das Modell erkennt das deutlich — der hr-Balken zieht die Vorhersage massiv nach unten. Verstärkt wird dieser Effekt durch die Kombination aus Uhrzeit und Wochentag (Montag um Mitternacht = kein Freizeitverkehr, kein Pendlerverkehr), die ebenfalls stark bremsend wirkt. Zusätzlich drückt die niedrige Temperatur von etwa 9 °C die Nachfrage spürbar: Kaltes Januarwetter hält viele potenzielle Radfahrer zuhause. Der Monat Januar sowie der frühe Wachstumsstand des Systems im Jahr 2011 verstärken diesen negativen Trend weiter. Auf der anderen Seite wirkt die vergleichsweise niedrige Luftfeuchtigkeit von 44 % leicht nachfragefördernd, kann aber die vielen dämpfenden Faktoren kaum ausgleichen.\n\nFür den Betrieb bedeutet das: In Winternächten — besonders in den ersten Stunden nach Mitternacht — ist die reale Nachfrage extrem gering. Wartungsarbeiten, Umverteilungen oder Inventarchecks lassen sich ideal in dieses Fenster legen, ohne den laufenden Verleihbetrieb zu stören. Eine Überversorgung von Stationen zu dieser Zeit ist wirtschaftlich nicht sinnvoll.",
+  "plot_file": "waterfall_ebm_poisson_log_inst580.png",
+  "elapsed_s": 12.25,
+  "usage": {
+    "input_tokens": 2068,
+    "output_tokens": 533,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 9.7278,
+  "y_true": 5.0
+}

@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 2058,
+  "explanation": "Das Modell sagt für diese Stunde 179 Ausleihungen vorher; tatsächlich wurden 238 Fahrräder verliehen. Die Abweichung beträgt rund 25 %, was als mäßig getroffen zu bewerten ist — das Modell unterschätzt die Nachfrage in diesem Fall spürbar.\n\nDen größten bremsenden Einfluss hat das Jahr 2011. Das System steckte damals noch in der Wachstumsphase, und das Modell hat gelernt, dass in diesem Jahr die Gesamtnachfrage systemweit deutlich niedriger lag als 2012. Dieser Effekt zieht die Vorhersage am stärksten nach unten. Hinzu kommt die hohe Luftfeuchtigkeit von 82 %, die erfahrungsgemäß viele Nutzerinnen und Nutzer davon abhält, das Fahrrad zu nehmen — feuchte Luft und die Neigung zu Nieselregen wirken abschreckend. Positiv wirkt dagegen die Abendstunde um 20 Uhr: Auch nach der klassischen Pendlerspitze (17–19 Uhr) ist noch merkliche Nachfrage vorhanden, da Abendausflüge und späte Heimfahrten die Buchungen hochhalten. Der Dienstag als regulärer Werktag verstärkt diesen Effekt moderat.\n\nFür den Betrieb bedeutet das: An Novemberabenden mit hoher Luftfeuchtigkeit sollte die Verfügbarkeit trotz der ungünstigen Witterung nicht zu knapp geplant werden, da die Abendnachfrage robuster ist als erwartet. Ein mögliches Wartungsfenster liegt besser in den frühen Morgenstunden (1–5 Uhr), wenn die Nachfrage im November zuverlässig niedrig bleibt — Abendstunden hingegen sollten stets gut bestückt sein.",
+  "elapsed_s": 13.13,
+  "usage": {
+    "input_tokens": 1839,
+    "output_tokens": 505,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 179.473,
+  "y_true": 238.0
+}

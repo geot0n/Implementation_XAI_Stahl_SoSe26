@@ -1,0 +1,55 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 3847,
+  "explanation": "Alle relevanten Daten sind gesammelt. Hier ist die vollständige Analyse:\n\n---\n\n**[VORHERSAGE]** Das Modell sagt für diese Freitagsstunde um 6:00 Uhr im Juni 2012 eine Ausleihe von **137 Fahrrädern** voraus, während tatsächlich **122 Fahrräder** ausgeliehen wurden. Das entspricht einer Abweichung von rund 15 Rädern bzw. etwa 12 % — eine für diesen Stundentyp solide Schätzung, die die Realität leicht übertrifft, aber in einer akzeptablen Bandbreite liegt.\n\n**[TREIBER]** Der mit Abstand wichtigste Faktor — auch global über alle Stunden hinweg der stärkste Einfluss im Modell — ist die **Uhrzeit**. Um 6:00 Uhr morgens drückt die frühe Stunde die erwartete Ausleihe merklich nach unten. Das verdeutlicht ein Gedankenexperiment besonders eindrücklich: Wäre dieselbe Situation nicht um 6, sondern um **8:00 Uhr** eingetreten (Hauptpendlerzeit), würde das Modell statt 137 ganze **606 Fahrräder** vorhersagen — mehr als viermal so viele. Die 6:00-Uhr-Stunde ist eine reguläre Stunde im Trainingsdatensatz (ca. 4,1 % aller Beobachtungen), also keine Ausnahme — das Modell kennt sie gut. Was die Vorhersage trotz früher Stunde nach oben treibt, ist vor allem die **Temperatur**: Mit einem normierten Wert von 0,74 (~30,3 °C) liegt sie im **90. Perzentil** des Trainingssets — deutlich wärmer als der Durchschnitt von rund 0,50 (~18 °C). Diese ungewöhnlich hohe Temperatur erhöht die Nachfrage spürbar positiv. Auch das **Jahr 2012** (gegenüber 2011) wirkt sich förderlich aus und spiegelt das allgemein gewachsene Interesse am Fahrradverleih wider.\n\n**[EMPFEHLUNG]** Die Frühstunden zwischen 6 und 7 Uhr sind strukturell nachfrageschwach — selbst bei idealen Wetterbedingungen wie hier. Der Betrieb sollte daher an solchen Stunden keine Vollbesetzung einplanen, sondern Ressourcen gezielt in die Stoßzeiten (8 Uhr, 17–18 Uhr) verlagern. Gleichzeitig zeigt die hohe Temperatur, dass Hitzetage die Nachfrage früh am Morgen spürbar ankurbeln können: An sehr warmen Sommertagen lohnt es sich, die Frühschicht-Kapazitäten leicht anzuheben und sicherzustellen, dass ausreichend Räder verfügbar sind.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 3847
+      },
+      "result_preview": "{'instance_id': 3847, 'y_true': 122.0, 'prediction': 137.08, 'base_value': 4.6078, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': -0.36428}, {'feature': 'temp', 'contributi…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.90676}, {'rank': 2, 'feature': 'temp', 'importance': 0.23636}, {'rank': 3, 'feature': 'yr', 'importance': 0.22828}, {'rank': 4, 'feature': 'mnth', 'importance': 0.0967}, {'rank': 5, 'feature': 'hum', 'importance': 0.0731}, {'rank': 6, 'feature': 'weather…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3847,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 6, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': 4…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3847,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.74, 'type': 'numerical', 'percentile_in_train': 90.6, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 3847,
+        "changes": {
+          "hr": 8
+        }
+      },
+      "result_preview": "{'instance_id': 3847, 'base_prediction': 137.08, 'counterfactual_prediction': 606.2, 'delta': 469.12, 'applied_changes': {'hr': 8}, 'unit': 'Fahrräder pro Stunde'}"
+    }
+  ],
+  "n_tool_calls": 5,
+  "elapsed_s": 25.11,
+  "usage": {
+    "input_tokens": 2863,
+    "output_tokens": 1179
+  },
+  "y_true": 122.0
+}

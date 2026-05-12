@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 4454,
+  "explanation": "Das Modell sagt für diese Stunde rund 340 ausgeliehene Fahrräder vorher, während tatsächlich 311 gezählt wurden. Die Abweichung beträgt knapp 10 %, was angesichts der schwankenden Nachfrage im Stadtverkehr als gut getroffen gilt — das Modell überschätzt leicht, liegt aber nah am realen Wert.\n\nDer mit Abstand stärkste Treiber ist die Uhrzeit: Es ist 9 Uhr morgens an einem Donnerstag, also mitten in der Morgen-Pendlerspitze. Das erklärt allein schon einen Großteil der hohen Nachfrage. Verstärkt wird dies durch die angenehme Temperatur von etwa 27 °C — das liegt im optimalen Bereich für Radfahren, weder zu kalt noch zu heiß, was deutlich mehr Menschen auf die Räder bringt. Dazu kommt der Jahreseffekt: Die Daten stammen aus 2012, dem zweiten Betriebsjahr, in dem das System insgesamt deutlich stärker genutzt wurde als beim Start 2011. Kleinere Zusatzfaktoren wie die geringe Luftfeuchtigkeit von 47 % und der klare Himmel unterstützen die hohe Nachfrage ebenfalls, spielen aber eine eher untergeordnete Rolle.\n\nFür den Betrieb bedeutet das: An Donnerstagmorgen im Mai sollte die Fahrradflotte an zentralen Pendler-Stationen bereits ab etwa 7:30 Uhr vollständig aufgefüllt sein, da die Spitze schnell einsetzt. Wartungsarbeiten sollten keinesfalls in den Zeitraum zwischen 7 und 10 Uhr fallen — besser geeignet sind die frühen Morgenstunden vor 6 Uhr, wenn die Nachfrage minimal ist.",
+  "elapsed_s": 10.71,
+  "usage": {
+    "input_tokens": 1838,
+    "output_tokens": 495,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 340.2691,
+  "y_true": 311.0
+}

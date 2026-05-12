@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 3543,
+  "explanation": "Das Modell sagt für diese Stunde 653,9 ausgeliehene Fahrräder vorher, während tatsächlich 691 Räder ausgeliehen wurden. Die Abweichung beträgt knapp 5,4 Prozent — das ist eine gute, wenn auch leicht zu niedrige Schätzung, die für den Betrieb gut verwertbar ist.\n\nDer mit Abstand stärkste Treiber ist die Uhrzeit: 16 Uhr liegt kurz vor der Abendspitze, was die Nachfrage massiv nach oben treibt. Zusätzlich verstärkt die Kombination aus Uhrzeit und Wochentag (Sonntag, 16 Uhr) die Vorhersage weiter — an Sonntagnachmittagen sind viele Freizeitfahrer unterwegs, was zu einer besonders hohen Nachfrage führt. Ebenfalls bedeutsam ist das Jahr 2012: Das Bikeshare-System befand sich damals auf Wachstumskurs, was generell mehr Ausleihen bedeutet. Die angenehme Temperatur von rund 24,6 °C schiebt die Nachfrage ebenfalls deutlich nach oben. Lediglich der Wochentag Sonntag wirkt als eigenständiges Merkmal leicht dämpfend — vermutlich weil Pendlerverkehr an diesem Tag ausbleibt — doch dieser Effekt ist im Vergleich zu den anderen Faktoren gering.\n\nFür den Betrieb bedeutet das: An sonnigen Sonntagnachmittagen im Spätsommer sollten ausreichend Fahrräder an gut frequentierten Freizeitstationen bereitstehen, da Freizeitfahrer die Hauptnachfragegruppe sind. Wartungsarbeiten sollten keinesfalls in den Nachmittagsbereich gelegt werden, sondern besser in die frühen Morgenstunden, wenn die Nachfrage deutlich geringer ist.",
+  "plot_file": "waterfall_ebm_poisson_log_inst3543.png",
+  "elapsed_s": 12.95,
+  "usage": {
+    "input_tokens": 2070,
+    "output_tokens": 509,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 653.8852,
+  "y_true": 691.0
+}

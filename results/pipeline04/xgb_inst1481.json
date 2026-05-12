@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 1481,
+  "explanation": "Das Modell sagt für diese Stunde rund 108 ausgeliehene Fahrräder vorher; tatsächlich waren es 113. Die Abweichung beträgt weniger als 5 Fahrräder, was einem sehr guten Treffer entspricht — das Modell erfasst die Situation hier nahezu perfekt.\n\nDer bei weitem stärkste Einfluss geht von der Uhrzeit aus: 23 Uhr ist späte Nacht, der Betrieb läuft deutlich ruhiger als tagsüber, und dieser Faktor drückt die erwartete Nachfrage erheblich nach unten. Trotzdem liegt die Vorhersage mit über 100 Rädern vergleichsweise hoch — das liegt vor allem am Wochentag: Es ist Freitag, und Freitagabende zeigen erfahrungsgemäß eine ausgeprägte Ausgehkultur, sodass auch spät in der Nacht noch viele Räder unterwegs sind. Dieser Wochentag-Effekt wirkt spürbar steigernd. Hinzu kommt, dass die Daten aus dem Jahr 2012 stammen, als das System bereits deutlich stärker genutzt wurde als im Vorjahr — auch das hebt die Grundnachfrage an. Die Temperatur von etwa 17 °C und der mäßige Wind von 19 km/h bremsen die Nachfrage leicht, spielen aber bei Nacht eine untergeordnete Rolle.\n\nFür den Betrieb bedeutet das: An Freitagabenden sollten auch nach 22 Uhr ausreichend Räder an innenstadtnahen Stationen verfügbar sein, da die Heimfahrten der Ausgehenden für anhaltende Nachfrage sorgen. Gleichzeitig bietet sich das frühe Samstagmorgen zwischen etwa 3 und 6 Uhr als günstiges Wartungs- und Umverteilungsfenster an, da die Nachfrage dann auf ein tägliches Minimum fällt.",
+  "elapsed_s": 11.55,
+  "usage": {
+    "input_tokens": 1839,
+    "output_tokens": 529,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 108.3289,
+  "y_true": 113.0
+}

@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 3543,
+  "explanation": "Das Modell sagt für diese Stunde 660 ausgeliehene Fahrräder vorher; tatsächlich wurden 691 gezählt. Die Abweichung von rund 31 Rädern entspricht weniger als 5 Prozent — das ist eine sehr gute Vorhersage, die das Gesamtmodell mit einem R²-Wert von über 0,95 eindrucksvoll bestätigt.\n\nDen größten Anteil an der hohen Nachfrage trägt die Uhrzeit: 16 Uhr liegt am Übergang zwischen dem ruhigen Nachmittagsbetrieb und der einsetzenden Abendspitze, was generell viele Nutzer auf die Räder bringt. Dazu kommt das angenehme Wetter: Knapp 25 Grad Celsius liegen genau im optimalen Temperaturbereich für Radfahren, und mit nur 33 Prozent Luftfeuchtigkeit fühlt es sich trocken und komfortabel an — beides zusammen erhöht die Ausleihbereitschaft spürbar. Verstärkt wird dieser Effekt noch durch den September, der zu den nachfragestarken Sommermonaten zählt, sowie durch das Jahr 2012, in dem das Gesamtsystem deutlich gewachsen war und die Stammkundschaft größer war als im Vorjahr. Dass es ein Sonntag ist, dämpft die Nachfrage im Vergleich zu einem Werktag leicht, hält sie aber immer noch auf hohem Niveau.\n\nFür den Betrieb bedeutet das: An sonnigen Septembersonntagen gegen 16 Uhr sollten alle Stationen gut bestückt sein — insbesondere Freizeitstrecken und Parks, die am Wochenende stärker frequentiert werden als Pendlerrouten. Wartungsarbeiten sollten keinesfalls in diesen Nachmittagsblock fallen, sondern besser in die frühen Morgenstunden zwischen 1 und 5 Uhr gelegt werden, wenn die Auslastung erfahrungsgemäß minimal ist.",
+  "elapsed_s": 12.52,
+  "usage": {
+    "input_tokens": 1838,
+    "output_tokens": 536,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 660.0004,
+  "y_true": 691.0
+}

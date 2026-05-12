@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 224,
+  "explanation": "Das Modell sagt für diese Stunde 286,9 ausgeliehene Fahrräder vorher, während tatsächlich 270 Räder ausgeliehen wurden. Die Abweichung beträgt knapp 17 Fahrräder, was einer Genauigkeit von etwa 94 % entspricht — das ist eine gute Vorhersage, die den realen Wert sehr nah trifft.\n\nDen größten Auftrieb gibt die Uhrzeit 20:00 Uhr: Der Abend nach Feierabend ist noch eine aktive Phase, in der viele Menschen Fahrräder für den Heimweg oder Freizeitausflüge nutzen. Dieser Faktor erhöht die Vorhersage am stärksten. Deutlich gegenwirkend ist das Jahr 2011 (yr = 0): Da das Bikeshare-System damals noch relativ neu und weniger bekannt war, liegt die erwartete Nachfrage strukturell niedriger als in späteren Jahren — dieser Balken zieht die Vorhersage merklich nach unten. Als dritter wichtiger Treiber wirkt die angenehm warme Temperatur von rund 33 °C positiv: Solche Sommerwärme lädt zum Radfahren ein und erhöht die Nachfrage spürbar. Ergänzend dazu steigert der Monat Juli (Hochsommer) die Vorhersage zusätzlich leicht.\n\nFür den Betrieb empfiehlt es sich, an Sommerabenden in 2011 vergleichbaren Wachstumsphasen eines Systems ausreichend Fahrräder an gut frequentierten Stationen bereitzustellen, da trotz des noch geringeren Systemreifegrads bereits hohe Nachfrage herrscht. Wartungsarbeiten sollten gezielt in die Nachtstunden nach 22:00 Uhr gelegt werden, wenn die Nutzung stark zurückgeht.",
+  "plot_file": "waterfall_xgb_poisson_log_inst224.png",
+  "elapsed_s": 12.83,
+  "usage": {
+    "input_tokens": 2309,
+    "output_tokens": 499,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 286.8653,
+  "y_true": 270.0
+}

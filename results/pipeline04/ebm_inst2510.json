@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 2510,
+  "explanation": "Das EBM-Modell sagt für diese Stunde 373 ausgeliehene Fahrräder vorher, während tatsächlich 337 Fahrräder verliehen wurden. Die Abweichung beträgt rund 36 Räder, was einem Fehler von etwa 11 % entspricht — das Modell trifft die Realität damit mäßig gut, überschätzt die Nachfrage jedoch etwas.\n\nDer mit Abstand wichtigste Faktor in dieser Stunde ist die Uhrzeit: 19:00 Uhr liegt mitten in der Abendspitze, wenn viele Pendler nach Hause fahren. Das treibt die Nachfrage sehr stark nach oben und ist der dominierende Effekt in dieser Vorhersage. Deutlich bremsend wirkt hingegen die Jahresangabe: Die Daten stammen aus dem Jahr 2011, dem ersten Betriebsjahr des Systems, als das Bikesharing-Angebot noch deutlich weniger bekannt und genutzt war als später. Dieser Faktor dämpft die Vorhersage spürbar. Die Temperatur von rund 34 °C verstärkt die Nachfrage zwar noch etwas — sommerliche Wärme motiviert zur Nutzung —, liegt allerdings bereits am oberen Rand des angenehmen Bereichs, sodass der Effekt moderater ausfällt als bei milderen Temperaturen.\n\nFür den Betrieb bedeutet das: An warmen Dienstagabenden im Juli sollten an zentralen Pendlerstationen — vor allem in der Innenstadt und in der Nähe von Bürovierteln — ausreichend Fahrräder bereitgestellt werden, da die Abendspitze verlässlich hohe Nachfrage erzeugt. Gleichzeitig eignen sich die ruhigen Nachtstunden nach 22:00 Uhr ideal für Wartungsarbeiten und Umverteilungsfahrten, ohne den laufenden Betrieb zu stören.",
+  "elapsed_s": 11.35,
+  "usage": {
+    "input_tokens": 1838,
+    "output_tokens": 518,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 373.4179,
+  "y_true": 337.0
+}

@@ -1,0 +1,71 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 3847,
+  "explanation": "Alle Daten sind gesammelt — hier folgt die vollständige, verständliche Erklärung:\n\n---\n\n**[VORHERSAGE]** Das Modell sagt für diesen Freitagmorgen um 6:00 Uhr im Juni 2012 eine Ausleihe von **141 Fahrrädern** voraus, während tatsächlich **122 Fahrräder** ausgeliehen wurden. Die Abweichung von rund 19 Fahrrädern (~16 %) ist moderat — das Modell überschätzt hier leicht, liegt aber in einer plausiblen Größenordnung für eine frühmorgendliche Stunde mit ungewöhnlich guten Wetterbedingungen.\n\n**[TREIBER]** Der mit Abstand stärkste Einflussfaktor ist die **Uhrzeit 6:00 Uhr**, die die Vorhersage deutlich nach unten zieht. Dies ist der global wichtigste Faktor im gesamten Modell, und 6 Uhr ist eine Randstunde mit typischerweise wenig Betrieb — die Trainingsdaten sind über alle 24 Stunden gleichmäßig verteilt, der Effekt kommt also wirklich aus dem gelernten Tagesrhythmus. Wie dramatisch dieser Einfluss ist, zeigt ein Gedankenexperiment: Wäre es stattdessen **8:00 Uhr** (Hauptpendlerzeit), würde das Modell nicht 141, sondern sage und schreibe **589 Fahrräder** vorhersagen — also gut viermal so viele. Der zweite positive Treiber ist das **Jahr 2012** (zweites Betriebsjahr): Es liegt auf dem absoluten Maximum der Trainingsdaten (100. Perzentile) und reflektiert das starke Wachstum des Verleihs von 2011 auf 2012. Auch die **Temperatur von ~30 °C** wirkt leicht erhöhend; sie liegt im 91. Perzentile — also ausgesprochen warm und damit überdurchschnittlich fahrradförderlich. Die ähnlichsten Trainingsbeispiele bestätigen die Plausibilität: Eine fast identische Stunde (Fr., Juni, 6:00 Uhr, gleiche Bedingungen) lieferte im Training eine Vorhersage von 155 Fahrrädern — gut vergleichbar mit den 141 des Modells.\n\n**[EMPFEHLUNG]** Die extrem starke Abhängigkeit vom Tagesrhythmus sollte der Betrieb für die **Flottenplanung** nutzen: Zwischen 6 und 8 Uhr morgens liegt ein steiler Nachfrageanstieg, weshalb Fahrräder und Wartungspersonal spätestens um 7:30 Uhr verfügbar sein sollten, um die Pendlerwelle um 8 Uhr voll bedienen zu können. Darüber hinaus zeigt der Jahreseffekt, dass die **Gesamtnachfrage von Jahr zu Jahr wächst** — Kapazitätserweiterungen und Stationsausbau sollten daher proaktiv und nicht reaktiv geplant werden.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 3847
+      },
+      "result_preview": "{'instance_id': 3847, 'y_true': 122.0, 'prediction': 141.35, 'base_value': 5.25252, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': -0.76387}, {'feature': 'yr', 'contributio…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.84237}, {'rank': 2, 'feature': 'yr', 'importance': 0.20709}, {'rank': 3, 'feature': 'temp', 'importance': 0.18996}, {'rank': 4, 'feature': 'weekday', 'importance': 0.16116}, {'rank': 5, 'feature': 'mnth', 'importance': 0.12616}, {'rank': 6, 'feature': 'h…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3847,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 6, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': 4…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3847,
+        "feature": "yr"
+      },
+      "result_preview": "{'feature': 'yr', 'instance_value': 1.0, 'type': 'numerical', 'percentile_in_train': 100.0, 'train_min': 0.0, 'train_max': 1.0, 'train_mean': 0.5018, 'train_std': 0.5}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 3847,
+        "changes": {
+          "hr": 8
+        }
+      },
+      "result_preview": "{'instance_id': 3847, 'base_prediction': 141.35, 'counterfactual_prediction': 589.35, 'delta': 448.0, 'applied_changes': {'hr': 8}, 'unit': 'Fahrräder pro Stunde'}"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3847,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.74, 'type': 'numerical', 'percentile_in_train': 90.6, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    },
+    {
+      "tool": "get_similar_instances",
+      "arguments": {
+        "instance_id": 3847,
+        "k": 5
+      },
+      "result_preview": "{'instance_id': 3847, 'k': 5, 'similar_instances': [{'train_index': 1861, 'distance': 0.0893, 'feature_values': {'weathersit': 2.0, 'mnth': 6.0, 'hr': 4.0, 'weekday': 5.0, 'yr': 1.0, 'holiday': 0.0, 'temp': 0.76, 'hum': 0.66, 'windspeed': 0.0}, 'prediction': 8.42}, {'train_index': 8793, 'distance': …"
+    }
+  ],
+  "n_tool_calls": 7,
+  "elapsed_s": 34.93,
+  "usage": {
+    "input_tokens": 4663,
+    "output_tokens": 1386
+  },
+  "y_true": 122.0
+}

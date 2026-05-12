@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 1041,
+  "explanation": "Das Modell sagt für diese Stunde rund 208 ausgeliehene Fahrräder vorher, während tatsächlich 229 gezählt wurden. Die Abweichung von etwa 21 Rädern entspricht knapp 9 Prozent — das ist ein gut getroffenes Ergebnis, das typische Schwankungen im Alltagsbetrieb widerspiegelt.\n\nDer stärkste Einzelfaktor wirkt in dieser Stunde bremsend: Es ist Dienstag, ein normaler Werktag. Dienstags um 11 Uhr liegt der Berufsverkehr bereits hinter den Pendlern, und die Mittagsspitze ist noch nicht erreicht — das Modell erkennt diese ruhigere Zwischenphase und korrigiert die Vorhersage nach unten. Gleichzeitig wirken zwei Faktoren deutlich steigernd: Die Temperatur von etwa 27 °C liegt im idealen Wohlfühlbereich fürs Radfahren und zieht spürbar mehr Nutzer an. Hinzu kommt, dass die Daten aus dem Jahr 2012 stammen, als das Verleihsystem bereits deutlich gewachsen war — allein dieser Wachstumseffekt hebt die erwartete Nachfrage merklich an. Das leicht bewölkte und neblige Wetter sowie die moderate Luftfeuchtigkeit von 65 % spielen in dieser Stunde nur eine untergeordnete Rolle.\n\nFür den Betrieb bedeutet das: An warmen Dienstagvormittagen im Mai lohnt es sich, die Stationen rund um Büroviertel und Parkanlagen gut bestückt zu halten, da zwischen 10 und 12 Uhr eine solide Nachfrage außerhalb der klassischen Pendlerspitzen entsteht. Wartungsarbeiten oder Umverteilungsfahrten sollten besser in die frühen Morgenstunden vor 7 Uhr gelegt werden, wenn die Nachfrage erfahrungsgemäß sehr gering ist.",
+  "elapsed_s": 12.8,
+  "usage": {
+    "input_tokens": 1836,
+    "output_tokens": 524,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 208.226,
+  "y_true": 229.0
+}

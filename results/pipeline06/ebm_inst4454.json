@@ -1,0 +1,55 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 4454,
+  "explanation": "Alle Daten sind vorhanden. Ich verfasse nun die strukturierte Erklärung.\n\n---\n\nDas Modell sagt für diese Stunde **340 Fahrräder** vorher, während tatsächlich **311 Fahrräder** ausgeliehen wurden. Das ist eine Überschätzung von rund 9 % – für ein stündliches Prognosemodell mit dieser Komplexität ein solides Ergebnis, das die reale Nachfrage gut widerspiegelt.\n\nDie mit Abstand wichtigste Einflussgröße ist die **Uhrzeit 9:00 Uhr**. Sie ist global das bedeutendste Merkmal im gesamten Modell (Wichtigkeit 0,91 – mehr als dreimal so stark wie jedes andere Feature) und hebt die Vorhersage für diese Stunde deutlich an. Der Morgen zwischen 8 und 10 Uhr ist ein klassisches Pendler-Fenster, weshalb das Modell hier erhöhte Nachfrage erwartet. Besonders aufschlussreich ist der Vergleich: Wäre es statt 9:00 Uhr **8:00 Uhr** gewesen, würde das Modell sogar **693 Fahrräder** vorhersagen – also mehr als doppelt so viele. Der absolute Hochpunkt der Morgennachfrage liegt demnach eine Stunde früher, und der Rückgang von 8 auf 9 Uhr schlägt mit über 350 Fahrrädern zu Buche. Der zweite große Treiber ist die **Temperatur (~27 °C, normiert 0,66)**. Sie liegt im 78. Perzentil des Trainingsdatensatzes – also deutlich wärmer als an einem durchschnittlichen Trainingstag (Mittelwert ~17 °C). Diese überdurchschnittliche Wärme erhöht die Vorhersage spürbar positiv. Unterstützend wirkt das **Jahr 2012** (zweites Betriebsjahr), das ebenfalls positiv beiträgt und das generell gewachsene Nutzerniveau des Verleihs abbildet. Alle anderen Faktoren – Wochentag (Donnerstag), Wetter (klar), Luftfeuchtigkeit (47 %), Windgeschwindigkeit – spielen eine untergeordnete Rolle; die Windgeschwindigkeit senkt die Prognose minimal (–0,002).\n\nFür den Betrieb lassen sich zwei Schlussfolgerungen ziehen: Erstens sollte die **Fahrradverfügbarkeit um 8:00 Uhr** priorisiert werden – das ist die nachfrageintensivste Morgenstunde und übersteigt die 9-Uhr-Nachfrage um das Doppelte. Zweitens lohnt es sich, bei Kombination aus **warmem Wetter und Morgenzeit** frühzeitig zusätzliche Kapazitäten bereitzustellen, da Temperatur und Uhrzeit gemeinsam die stärksten Hebel für hohe Ausleihzahlen darstellen.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 4454
+      },
+      "result_preview": "{'instance_id': 4454, 'y_true': 311.0, 'prediction': 340.27, 'base_value': 4.6078, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': 0.6106}, {'feature': 'temp', 'contribution…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.90676}, {'rank': 2, 'feature': 'temp', 'importance': 0.23636}, {'rank': 3, 'feature': 'yr', 'importance': 0.22828}, {'rank': 4, 'feature': 'mnth', 'importance': 0.0967}, {'rank': 5, 'feature': 'hum', 'importance': 0.0731}, {'rank': 6, 'feature': 'weather…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 4454,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 9, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': 4…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 4454,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.66, 'type': 'numerical', 'percentile_in_train': 78.4, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 4454,
+        "changes": {
+          "hr": 8
+        }
+      },
+      "result_preview": "{'instance_id': 4454, 'base_prediction': 340.27, 'counterfactual_prediction': 692.94, 'delta': 352.67, 'applied_changes': {'hr': 8}, 'unit': 'Fahrräder pro Stunde'}"
+    }
+  ],
+  "n_tool_calls": 5,
+  "elapsed_s": 24.4,
+  "usage": {
+    "input_tokens": 2897,
+    "output_tokens": 1206
+  },
+  "y_true": 311.0
+}

@@ -1,0 +1,81 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 3543,
+  "explanation": "Alle Daten sind zusammengeführt — hier ist die vollständige, verständliche Erklärung:\n\n---\n\nDas Modell sagt für diese Stunde **654 Fahrräder** voraus, während tatsächlich **691 Fahrräder** ausgeliehen wurden. Die Abweichung beträgt lediglich rund 37 Räder (≈ 5 %), was einer sehr guten Modellleistung entspricht. Das Modell erfasst die Situation also nahezu präzise.\n\nDer mit Abstand wichtigste Einflussfaktor ist die **Uhrzeit 16:00 Uhr**, die sowohl lokal (stärkster Einzelbeitrag) als auch global (Rang 1 unter allen Features) die dominierende Rolle spielt. Nachmittags um 16 Uhr befindet sich der Fahrradverleiher in einem klassischen Nachfrage-Peak: Freizeit- und Erholungsverkehr zum Wochenende laufen auf Hochtouren. Das zeigt sich eindrücklich im Was-wäre-wenn-Vergleich: Wäre es statt 16 Uhr bereits 10 Uhr morgens, würde das Modell nur noch **482 Fahrräder** vorhersagen – ein Rückgang um 172 Räder (−26 %). Selbst eine Stunde später, um 17 Uhr, würden bereits 45 Räder weniger geliehen, was zeigt, dass der Peak gerade jetzt seinen Höhepunkt erreicht. Der zweite wichtige Treiber ist das **Jahr 2012** (yr = 1), das im Trainingsdatensatz das Maximum darstellt (100. Perzentile). Das Modell berücksichtigt damit das generelle Wachstum des Fahrradverleihs über die Zeit, was die Vorhersage spürbar nach oben hebt. Die **Temperatur von ~24,6 °C** leistet als dritter Faktor ebenfalls einen positiven Beitrag: Mit einem Wert im 66. Perzentile ist es wärmer als an zwei Dritteln aller Trainingstage – angenehm, aber nicht außergewöhnlich heiß. Ähnliche Trainingsinstanzen (z. B. ein vergleichbarer Sonntag im September 2012 um 16 Uhr bei etwas höherer Temperatur) liefern Vorhersagen zwischen 636 und 705 Rädern, was unsere Vorhersage von 654 als plausibel und stabil einordnet.\n\nFür den Betrieb lassen sich zwei klare Schlüsse ziehen: **Erstens** sollten Sonntagnachmittage zwischen 15 und 17 Uhr im September grundsätzlich als Hochlastzeiten eingeplant werden – die Kombination aus Wochenende, warmem Wetter und Tageszeit erzeugt verlässlich sehr hohe Nachfrage. **Zweitens** lohnt es sich, die Flotte und Stationskapazitäten langfristig an das Nachfragewachstum (Jahr-über-Jahr-Effekt) anzupassen, da das Modell zeigt, dass allein dieser Wachstumstrend einen erheblichen Teil der höheren Ausleihen in 2012 gegenüber 2011 erklärt.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 3543
+      },
+      "result_preview": "{'instance_id': 3543, 'y_true': 691.0, 'prediction': 653.89, 'base_value': 4.6078, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': 0.83991}, {'feature': 'yr', 'contribution'…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.90676}, {'rank': 2, 'feature': 'temp', 'importance': 0.23636}, {'rank': 3, 'feature': 'yr', 'importance': 0.22828}, {'rank': 4, 'feature': 'mnth', 'importance': 0.0967}, {'rank': 5, 'feature': 'hum', 'importance': 0.0731}, {'rank': 6, 'feature': 'weather…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3543,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 16, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': …"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3543,
+        "feature": "yr"
+      },
+      "result_preview": "{'feature': 'yr', 'instance_value': 1.0, 'type': 'numerical', 'percentile_in_train': 100.0, 'train_min': 0.0, 'train_max': 1.0, 'train_mean': 0.5018, 'train_std': 0.5}"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 3543,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.6, 'type': 'numerical', 'percentile_in_train': 65.9, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 3543,
+        "changes": {
+          "hr": 17
+        }
+      },
+      "result_preview": "{'instance_id': 3543, 'base_prediction': 653.89, 'counterfactual_prediction': 608.96, 'delta': -44.92, 'applied_changes': {'hr': 17}, 'unit': 'Fahrräder pro Stunde'}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 3543,
+        "changes": {
+          "hr": 10
+        }
+      },
+      "result_preview": "{'instance_id': 3543, 'base_prediction': 653.89, 'counterfactual_prediction': 481.86, 'delta': -172.02, 'applied_changes': {'hr': 10}, 'unit': 'Fahrräder pro Stunde'}"
+    },
+    {
+      "tool": "get_similar_instances",
+      "arguments": {
+        "instance_id": 3543,
+        "k": 5
+      },
+      "result_preview": "{'instance_id': 3543, 'k': 5, 'similar_instances': [{'train_index': 7054, 'distance': 0.0721, 'feature_values': {'weathersit': 1.0, 'mnth': 9.0, 'hr': 17.0, 'weekday': 0.0, 'yr': 1.0, 'holiday': 0.0, 'temp': 0.56, 'hum': 0.35, 'windspeed': 0.2985}, 'prediction': 601.79}, {'train_index': 7705, 'dista…"
+    }
+  ],
+  "n_tool_calls": 8,
+  "elapsed_s": 31.79,
+  "usage": {
+    "input_tokens": 4864,
+    "output_tokens": 1519
+  },
+  "y_true": 691.0
+}

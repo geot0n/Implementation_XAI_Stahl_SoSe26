@@ -1,0 +1,63 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 2510,
+  "explanation": "Alle Daten sind gesammelt. Hier die vollständige Erklärung:\n\n---\n\n**[VORHERSAGE]**\nDas Modell sagt für diese Stunde **373 Fahrräder** voraus — der tatsächliche Wert liegt bei **337 Fahrrädern**. Die Abweichung beträgt damit rund 11 %, was für eine Abendstunde mit mehreren begünstigenden Faktoren gleichzeitig eine solide, leicht überschätzende Prognose ist. Das Modell erkennt die Situation grundsätzlich korrekt als eine Stunde mit sehr hoher Nachfrage.\n\n**[TREIBER]**\nDen bei weitem stärksten Einfluss hat die **Uhrzeit 19 Uhr**: Sie ist der mit Abstand wichtigste Faktor im gesamten Modell (globaler Rangplatz 1) und treibt die Vorhersage für diese Stunde kräftig nach oben. 19 Uhr ist klassische Feierabendzeit und führt zu einer deutlichen Erhöhung der erwarteten Ausleihen — ein klares, verlässliches Muster. Hätte dieselbe Stunde mittags um 12 Uhr stattgefunden, würde das Modell nur **177 Fahrräder** vorhersagen — also gut 200 Räder weniger. Das unterstreicht, wie dominant der Tageszeit-Effekt ist.\n\nDie **Temperatur von ~34,4 °C** wirkt ebenfalls nachfrageerhöhend. Mit einem normierten Wert von 0,84 liegt sie im **97,9. Perzentil** des Trainingsdatensatzes — das ist also eine außergewöhnlich heiße Stunde, nur rund 2 % aller beobachteten Stunden waren wärmer. Das Modell wertet diese hohe Temperatur positiv, was an einem Sommerabend plausibel ist. Gegenläufig wirkt das **Jahr 2011** (Jahr-Kodierung = 0): Da das Modell im zweiten Betriebsjahr (2012) generell mehr Ausleihen beobachtet hat, zieht dieser Faktor die Vorhersage etwas nach unten — ein Hinweis auf das allgemeine Wachstum des Verleihs über die Zeit.\n\n**[EMPFEHLUNG]**\nDer Betrieb sollte an Feierabendstunden zwischen 17 und 19 Uhr bei Hitzetagen besonders viele Räder bereitstellen — die Kombination aus Feierabendverkehr und hohen Temperaturen ist ein zuverlässiger Nachfragepeak. Da 19 Uhr bereits der stärkste Einzeltreiber ist, empfiehlt es sich außerdem, die Rückverfügbarkeit von Rädern in Wohngebieten früh einzuplanen, damit Pendlerinnen und Pendler nicht leer ausgehen.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 2510
+      },
+      "result_preview": "{'instance_id': 2510, 'y_true': 337.0, 'prediction': 373.42, 'base_value': 4.6078, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': 0.86589}, {'feature': 'yr', 'contribution'…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.90676}, {'rank': 2, 'feature': 'temp', 'importance': 0.23636}, {'rank': 3, 'feature': 'yr', 'importance': 0.22828}, {'rank': 4, 'feature': 'mnth', 'importance': 0.0967}, {'rank': 5, 'feature': 'hum', 'importance': 0.0731}, {'rank': 6, 'feature': 'weather…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 2510,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 19, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': …"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 2510,
+        "feature": "yr"
+      },
+      "result_preview": "{'feature': 'yr', 'instance_value': 0.0, 'type': 'numerical', 'percentile_in_train': 49.8, 'train_min': 0.0, 'train_max': 1.0, 'train_mean': 0.5018, 'train_std': 0.5}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 2510,
+        "changes": {
+          "hr": 12
+        }
+      },
+      "result_preview": "{'instance_id': 2510, 'base_prediction': 373.42, 'counterfactual_prediction': 177.14, 'delta': -196.27, 'applied_changes': {'hr': 12}, 'unit': 'Fahrräder pro Stunde'}"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 2510,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.84, 'type': 'numerical', 'percentile_in_train': 97.9, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    }
+  ],
+  "n_tool_calls": 6,
+  "elapsed_s": 26.38,
+  "usage": {
+    "input_tokens": 3947,
+    "output_tokens": 1232
+  },
+  "y_true": 337.0
+}

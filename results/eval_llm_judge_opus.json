@@ -1,0 +1,302 @@
+[
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "xgb",
+    "instance_id": 42,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber (Temperatur, Jahr, Januar) und Richtungen korrekt; jedoch ist die Temperatur mit '~8 °C' angegeben, während GT 10.7 °C zeigt – kleiner Detailfehler, daher 4. Clarity: Sprache ist durchgehend laienverständlich, keine Fachbegriffe, sehr klar. Completeness: Alle drei Aspekte (Vergleich Vorhersage/Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) sind ausführlich abgedeckt.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber (Temperatur, Jahr, Januar) und Richtungen korrekt; jedoch ist die Temperatur mit '~8 °C' angegeben, während GT 10.7 °C zeigt – kleiner Detailfehler, daher 4. Clarity: Sprache ist durchgehend laienverständlich, keine Fachbegriffe, sehr klar. Completeness: Alle drei Aspekte (Vergleich Vorhersage/Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) sind ausführlich abgedeckt.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "xgb",
+    "instance_id": 100,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (temp, hr, yr) und Richtungen korrekt; jedoch ist die Behauptung '95 % der Schwankungen' ein nicht belegter Modellgütewert (Abzug auf 4). Clarity: Sehr verständlich, aber 'normalisiert: 0,16' bzw. der technische Wert wird übernommen, was leicht technisch wirkt. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (temp, hr, yr) und Richtungen korrekt; jedoch ist die Behauptung '95 % der Schwankungen' ein nicht belegter Modellgütewert (Abzug auf 4). Clarity: Sehr verständlich, aber 'normalisiert: 0,16' bzw. der technische Wert wird übernommen, was leicht technisch wirkt. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "xgb",
+    "instance_id": 250,
+    "faithfulness": 3,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber (yr, season, hr) korrekt mit richtigen Richtungen identifiziert, allerdings wird season=Frühling fälschlich als 'Winter/Saison 1' interpretiert (laut feature_values ist es Frühling, season=2 oder 1 je nach Kodierung – die Erklärung erfindet 'Winter'), zudem wird die Temperatur als '10–15 °C' angegeben statt der belegten 14.8 °C. Clarity: Sprache ist überwiegend laienverständlich, jedoch enthält sie leicht technische Formulierungen wie 'erklärt über 95 % aller Schwankungen' und 'Saison 1'. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete betriebliche Handlungsempfehlung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber (yr, season, hr) korrekt mit richtigen Richtungen identifiziert, allerdings wird season=Frühling fälschlich als 'Winter/Saison 1' interpretiert (laut feature_values ist es Frühling, season=2 oder 1 je nach Kodierung – die Erklärung erfindet 'Winter'), zudem wird die Temperatur als '10–15 °C' angegeben statt der belegten 14.8 °C. Clarity: Sprache ist überwiegend laienverständlich, jedoch enthält sie leicht technische Formulierungen wie 'erklärt über 95 % aller Schwankungen' und 'Saison 1'. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete betriebliche Handlungsempfehlung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "xgb",
+    "instance_id": 500,
+    "faithfulness": 2,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber (yr, season, temp) und Richtungen korrekt, jedoch werden mehrere nicht belegbare Werte erfunden – die '17 % zu hoch' sind grenzwertig, vor allem aber die Behauptung '95 % der Nachfrageschwankungen' ist frei erfunden, und die Saison wird fälschlich als 'Winter/Frühling' bezeichnet (GT: Frühling). Clarity: Sprache ist überwiegend laienverständlich, aber Begriffe wie 'Temperaturwert im unteren Drittel der Skala' und 'Saison 1' wirken leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung zu Wartung/Schulung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 2,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber (yr, season, temp) und Richtungen korrekt, jedoch werden mehrere nicht belegbare Werte erfunden – die '17 % zu hoch' sind grenzwertig, vor allem aber die Behauptung '95 % der Nachfrageschwankungen' ist frei erfunden, und die Saison wird fälschlich als 'Winter/Frühling' bezeichnet (GT: Frühling). Clarity: Sprache ist überwiegend laienverständlich, aber Begriffe wie 'Temperaturwert im unteren Drittel der Skala' und 'Saison 1' wirken leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung zu Wartung/Schulung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "xgb",
+    "instance_id": 1337,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber korrekt mit richtigen Richtungen; allerdings wird die '95%-Erklärungsleistung' ohne Beleg in den GT-Daten erwähnt, und die Temperaturangabe '26–28°C' weicht leicht vom GT-Wert 28.7°C ab. Clarity: Sprache ist überwiegend laienfreundlich, aber Begriffe wie 'normalisierter Temperaturwert 0,7' und '17% Fehler' sind leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. tatsächlich, Treiber mit Begründung, konkrete Handlungsempfehlung) ausführlich behandelt.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber korrekt mit richtigen Richtungen; allerdings wird die '95%-Erklärungsleistung' ohne Beleg in den GT-Daten erwähnt, und die Temperaturangabe '26–28°C' weicht leicht vom GT-Wert 28.7°C ab. Clarity: Sprache ist überwiegend laienfreundlich, aber Begriffe wie 'normalisierter Temperaturwert 0,7' und '17% Fehler' sind leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. tatsächlich, Treiber mit Begründung, konkrete Handlungsempfehlung) ausführlich behandelt.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "ebm",
+    "instance_id": 42,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (hr=13, temp=10.7°C, yr=2011) korrekt mit richtigen Wirkungsrichtungen identifiziert; die 94% R² ist eine Zusatzangabe, aber kein erfundener Wert in den GT-Daten – grenzwertig, jedoch keine Faktentreue verletzt. Clarity: Keine Fachbegriffe, durchgehend natürliche Sprache und gut strukturiert. Completeness: Vorhersage vs. Realität, alle drei Treiber mit Begründung und konkrete betriebliche Handlungsempfehlung sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (hr=13, temp=10.7°C, yr=2011) korrekt mit richtigen Wirkungsrichtungen identifiziert; die 94% R² ist eine Zusatzangabe, aber kein erfundener Wert in den GT-Daten – grenzwertig, jedoch keine Faktentreue verletzt. Clarity: Keine Fachbegriffe, durchgehend natürliche Sprache und gut strukturiert. Completeness: Vorhersage vs. Realität, alle drei Treiber mit Begründung und konkrete betriebliche Handlungsempfehlung sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "ebm",
+    "instance_id": 100,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber (hr, temp, yr) und Richtungen korrekt; konkrete Werte (19 Uhr, 6 °C, erstes Jahr) durch feature_values belegt. Die Angabe '94 % aller Schwankungen' ist jedoch nicht in den GT-Daten enthalten – kleiner Abzug. Clarity: Sehr natürliche Sprache, keine Fachbegriffe, sofort verständlich. Completeness: Alle drei Aspekte (Vorhersage vs. tatsächlich, Treiber mit Begründung, betriebliche Empfehlung) ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber (hr, temp, yr) und Richtungen korrekt; konkrete Werte (19 Uhr, 6 °C, erstes Jahr) durch feature_values belegt. Die Angabe '94 % aller Schwankungen' ist jedoch nicht in den GT-Daten enthalten – kleiner Abzug. Clarity: Sehr natürliche Sprache, keine Fachbegriffe, sofort verständlich. Completeness: Alle drei Aspekte (Vorhersage vs. tatsächlich, Treiber mit Begründung, betriebliche Empfehlung) ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "ebm",
+    "instance_id": 250,
+    "faithfulness": 2,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Die Saison ist laut feature_values 'Frühling' (season=1 könnte Frühling sein), aber die Erklärung behauptet 'Winter' – das ist ein klarer Fehler. Zudem wird 'mnth=2' (Februar) zwar nicht erwähnt, aber die Saison-Interpretation als Winter widerspricht den GT-Daten. Clarity: Sprache ist überwiegend klar und laienverständlich; leicht technische Hinweise wie '94 % der Nachfrageschwankungen' sind grenzwertig, aber ok. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, drei Treiber mit Begründung, konkrete Handlungsempfehlung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 2,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Die Saison ist laut feature_values 'Frühling' (season=1 könnte Frühling sein), aber die Erklärung behauptet 'Winter' – das ist ein klarer Fehler. Zudem wird 'mnth=2' (Februar) zwar nicht erwähnt, aber die Saison-Interpretation als Winter widerspricht den GT-Daten. Clarity: Sprache ist überwiegend klar und laienverständlich; leicht technische Hinweise wie '94 % der Nachfrageschwankungen' sind grenzwertig, aber ok. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, drei Treiber mit Begründung, konkrete Handlungsempfehlung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "ebm",
+    "instance_id": 500,
+    "faithfulness": 2,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Die Saison ist laut feature_values 'Frühling' (season=1 wird hier irrtümlich als Winter interpretiert) – das ist eine sachlich falsche Begründung des dritten Treibers. Außerdem ist die '94 %'-Angabe nicht durch Ground Truth belegt. Clarity: Sprachlich gut verständlich, lediglich 'Saison 1' ist leicht technisch, sonst laienfreundlich. Completeness: Alle drei Aspekte (Vorhersage vs. Ist, Treiber mit Begründung, Handlungsempfehlung) sind ausführlich enthalten.",
+    "raw_response": "{\n  \"faithfulness\": 2,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Die Saison ist laut feature_values 'Frühling' (season=1 wird hier irrtümlich als Winter interpretiert) – das ist eine sachlich falsche Begründung des dritten Treibers. Außerdem ist die '94 %'-Angabe nicht durch Ground Truth belegt. Clarity: Sprachlich gut verständlich, lediglich 'Saison 1' ist leicht technisch, sonst laienfreundlich. Completeness: Alle drei Aspekte (Vorhersage vs. Ist, Treiber mit Begründung, Handlungsempfehlung) sind ausführlich enthalten.\"\n}"
+  },
+  {
+    "pipeline_label": "JSON→Text",
+    "xai_model": "ebm",
+    "instance_id": 1337,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (hr=8, temp=28.7°C, yr=2011) korrekt mit richtigen Richtungen identifiziert; die genannten 94% Modellgüte sind nicht in GT belegt, aber kein erfundener Treiber-Wert. Clarity: Sehr verständlich, der Begriff 'Treiber' ist leicht technisch, sonst laienfreundlich. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung mit Puffer) ausführlich abgedeckt.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (hr=8, temp=28.7°C, yr=2011) korrekt mit richtigen Richtungen identifiziert; die genannten 94% Modellgüte sind nicht in GT belegt, aber kein erfundener Treiber-Wert. Clarity: Sehr verständlich, der Begriff 'Treiber' ist leicht technisch, sonst laienfreundlich. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung mit Puffer) ausführlich abgedeckt.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "xgb",
+    "instance_id": 42,
+    "faithfulness": 4,
+    "clarity": 3,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber und Richtungen korrekt, Werte stimmen mit GT überein; allerdings sind Basiswert (190) und der positive Beitrag von hr (+0.12) nicht aus den GT-Daten belegbar – daher kein 5. Clarity: Fachbegriffe wie 'normiert', 'Basiswert', 'yr = 0', 'mnth = 1' und SHAP-artige Zahlenwerte (–0.39) erfordern Vorwissen. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treibererklärung, konkrete betriebliche Empfehlung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 3,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber und Richtungen korrekt, Werte stimmen mit GT überein; allerdings sind Basiswert (190) und der positive Beitrag von hr (+0.12) nicht aus den GT-Daten belegbar – daher kein 5. Clarity: Fachbegriffe wie 'normiert', 'Basiswert', 'yr = 0', 'mnth = 1' und SHAP-artige Zahlenwerte (–0.39) erfordern Vorwissen. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treibererklärung, konkrete betriebliche Empfehlung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "xgb",
+    "instance_id": 100,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (temp-, hr+, yr-) korrekt mit richtigen Richtungen; zitierte Werte (0,16; 19:00; 2011) stimmen mit feature_values überein. Clarity: Insgesamt sehr verständlich, jedoch wird der Begriff 'normalisierter Wert' verwendet, der für Laien leicht technisch wirkt. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) ausführlich behandelt.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (temp-, hr+, yr-) korrekt mit richtigen Richtungen; zitierte Werte (0,16; 19:00; 2011) stimmen mit feature_values überein. Clarity: Insgesamt sehr verständlich, jedoch wird der Begriff 'normalisierter Wert' verwendet, der für Laien leicht technisch wirkt. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) ausführlich behandelt.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "xgb",
+    "instance_id": 250,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (yr, season, hr) korrekt mit richtigen Richtungen identifiziert; konkrete Werte (13 Uhr, Frühling, 2011, Februar) sind durch feature_values belegt. Clarity: Insgesamt gut verständlich, aber Begriffe wie 'dämpfender Faktor', 'Haupttreiber' und 'Vorhersage' sind leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung zur reduzierten Stationsbestückung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (yr, season, hr) korrekt mit richtigen Richtungen identifiziert; konkrete Werte (13 Uhr, Frühling, 2011, Februar) sind durch feature_values belegt. Clarity: Insgesamt gut verständlich, aber Begriffe wie 'dämpfender Faktor', 'Haupttreiber' und 'Vorhersage' sind leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung zur reduzierten Stationsbestückung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "xgb",
+    "instance_id": 500,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (yr, season, temp) korrekt mit richtiger negativer Richtung; genannte Werte (92 vs 79, 14 Uhr, normalisiert 0,38) sind alle in den GT-Daten belegt. Clarity: Insgesamt verständlich, aber 'normalisierter Wert 0,38' und Begriffe wie 'Erwartungswert' sind leicht technisch; ansonsten gut laientauglich. Completeness: Alle drei Aspekte explizit und ausführlich behandelt – Vorhersagevergleich, Treibererklärung mit Begründung und konkrete Dispositionsempfehlung.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (yr, season, temp) korrekt mit richtiger negativer Richtung; genannte Werte (92 vs 79, 14 Uhr, normalisiert 0,38) sind alle in den GT-Daten belegt. Clarity: Insgesamt verständlich, aber 'normalisierter Wert 0,38' und Begriffe wie 'Erwartungswert' sind leicht technisch; ansonsten gut laientauglich. Completeness: Alle drei Aspekte explizit und ausführlich behandelt – Vorhersagevergleich, Treibererklärung mit Begründung und konkrete Dispositionsempfehlung.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "xgb",
+    "instance_id": 1337,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber korrekt mit richtigen Richtungen und belegbaren Werten (Samstag, 2011, temp 0.70); allerdings ist der Durchschnittswert '190 Fahrräder' nicht in den GT-Daten belegt, daher kein 5. Clarity: Sehr verständlich, aber leichte Fachbegriffe wie 'Instanz', 'normalisiert' (implizit über 0.7) und 'Faktor' verhindern die 5. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiberbegründung, konkrete Handlungsempfehlung) ausführlich abgedeckt.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber korrekt mit richtigen Richtungen und belegbaren Werten (Samstag, 2011, temp 0.70); allerdings ist der Durchschnittswert '190 Fahrräder' nicht in den GT-Daten belegt, daher kein 5. Clarity: Sehr verständlich, aber leichte Fachbegriffe wie 'Instanz', 'normalisiert' (implizit über 0.7) und 'Faktor' verhindern die 5. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiberbegründung, konkrete Handlungsempfehlung) ausführlich abgedeckt.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "ebm",
+    "instance_id": 42,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (hr, temp, yr) korrekt mit richtigen Wirkungsrichtungen identifiziert; genannte Werte (13 Uhr, 0.26, 2011, 70.7 vs 67) stimmen mit ground_truth überein. Clarity: Sehr verständlich, jedoch der Begriff 'normalisierte Temperatur' ist leicht technisch, sonst natürliche Sprache. Completeness: Alle drei Aspekte (Vorhersage vs. Ist-Wert, Treiber mit Begründung, konkrete Handlungsempfehlung zur Flottenplanung) ausführlich behandelt.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (hr, temp, yr) korrekt mit richtigen Wirkungsrichtungen identifiziert; genannte Werte (13 Uhr, 0.26, 2011, 70.7 vs 67) stimmen mit ground_truth überein. Clarity: Sehr verständlich, jedoch der Begriff 'normalisierte Temperatur' ist leicht technisch, sonst natürliche Sprache. Completeness: Alle drei Aspekte (Vorhersage vs. Ist-Wert, Treiber mit Begründung, konkrete Handlungsempfehlung zur Flottenplanung) ausführlich behandelt.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "ebm",
+    "instance_id": 100,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle Top-3-Treiber (hr, temp, yr) korrekt mit richtigen Richtungen; genannte Werte (19 Uhr, 0,16, 2011, 86,7 vs. 92) sind alle in den GT-Daten belegt. Clarity: Sehr verständlich mit Alltagssprache; leicht technische Begriffe wie 'normierter Wert' rechtfertigen einen kleinen Abzug. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) sind explizit und ausführlich enthalten.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle Top-3-Treiber (hr, temp, yr) korrekt mit richtigen Richtungen; genannte Werte (19 Uhr, 0,16, 2011, 86,7 vs. 92) sind alle in den GT-Daten belegt. Clarity: Sehr verständlich mit Alltagssprache; leicht technische Begriffe wie 'normierter Wert' rechtfertigen einen kleinen Abzug. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung) sind explizit und ausführlich enthalten.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "ebm",
+    "instance_id": 250,
+    "faithfulness": 4,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber (hr, yr, season) korrekt mit richtigen Richtungen; allerdings ist die Aussage 'überschätzt um etwa 30%' rechnerisch ungenau (84 vs. 64 sind ~31%, knapp ok), und 'Feiertag' als Hypothese widerspricht workingday=1 leicht – kleiner Abzug. Clarity: Keine Fachbegriffe, natürliche Sprache, sehr verständlich. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, Handlungsempfehlung) ausführlich abgedeckt.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber (hr, yr, season) korrekt mit richtigen Richtungen; allerdings ist die Aussage 'überschätzt um etwa 30%' rechnerisch ungenau (84 vs. 64 sind ~31%, knapp ok), und 'Feiertag' als Hypothese widerspricht workingday=1 leicht – kleiner Abzug. Clarity: Keine Fachbegriffe, natürliche Sprache, sehr verständlich. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, Handlungsempfehlung) ausführlich abgedeckt.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "ebm",
+    "instance_id": 500,
+    "faithfulness": 5,
+    "clarity": 5,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (hr=14, yr=2011, season=Frühling) korrekt mit richtigen Wirkungsrichtungen; Vorhersage 88 und y_true 79 stimmen exakt mit GT überein. Clarity: Durchgehend laienverständliche Sprache, keine Fachbegriffe wie SHAP oder Feature, gute visuelle Strukturierung. Completeness: Alle drei Aspekte ausführlich abgedeckt – Vorhersage vs. Realität, Treiber mit Begründung, und konkrete Handlungsempfehlung zur Flottengröße und Zukunftsplanung.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 5,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (hr=14, yr=2011, season=Frühling) korrekt mit richtigen Wirkungsrichtungen; Vorhersage 88 und y_true 79 stimmen exakt mit GT überein. Clarity: Durchgehend laienverständliche Sprache, keine Fachbegriffe wie SHAP oder Feature, gute visuelle Strukturierung. Completeness: Alle drei Aspekte ausführlich abgedeckt – Vorhersage vs. Realität, Treiber mit Begründung, und konkrete Handlungsempfehlung zur Flottengröße und Zukunftsplanung.\"\n}"
+  },
+  {
+    "pipeline_label": "Vision",
+    "xai_model": "ebm",
+    "instance_id": 1337,
+    "faithfulness": 3,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-Treiber hr und temp korrekt mit richtiger Richtung, aber der dritte Top-Treiber laut GT ist 'yr' (negativ), nicht eine 'Kombination Werktag & Uhrzeit'. Diese Interaktion ist im GT nicht belegt und ersetzt fälschlich den tatsächlichen dritten Treiber. Clarity: Sprache überwiegend klar und laienverständlich; nur 'normalisiert: 0,70' ist leicht technisch. Completeness: Alle drei geforderten Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Empfehlung) ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-Treiber hr und temp korrekt mit richtiger Richtung, aber der dritte Top-Treiber laut GT ist 'yr' (negativ), nicht eine 'Kombination Werktag & Uhrzeit'. Diese Interaktion ist im GT nicht belegt und ersetzt fälschlich den tatsächlichen dritten Treiber. Clarity: Sprache überwiegend klar und laienverständlich; nur 'normalisiert: 0,70' ist leicht technisch. Completeness: Alle drei geforderten Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Empfehlung) ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "xgb",
+    "instance_id": 42,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber (temp, yr, mnth) und Richtungen korrekt mit belegten Werten (10,7°C, 2011, Januar); allerdings werden konkrete Zahlen wie '57 % mehr' und Durchschnittswerte (~200, ~155) genannt, die nicht in der Ground Truth belegt sind – daher Abzug auf 4. Clarity: Sprache ist überwiegend laienfreundlich mit guten Bildern ('Bremser'), enthält aber leicht technische Wendungen wie 'Modell hat die Nachfrage nach unten korrigiert'; insgesamt klar verständlich. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete betriebliche Empfehlung zu Flotte/Wartung) sind ausführlich abgedeckt.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber (temp, yr, mnth) und Richtungen korrekt mit belegten Werten (10,7°C, 2011, Januar); allerdings werden konkrete Zahlen wie '57 % mehr' und Durchschnittswerte (~200, ~155) genannt, die nicht in der Ground Truth belegt sind – daher Abzug auf 4. Clarity: Sprache ist überwiegend laienfreundlich mit guten Bildern ('Bremser'), enthält aber leicht technische Wendungen wie 'Modell hat die Nachfrage nach unten korrigiert'; insgesamt klar verständlich. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete betriebliche Empfehlung zu Flotte/Wartung) sind ausführlich abgedeckt.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "xgb",
+    "instance_id": 100,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (temp, hr, yr) korrekt mit richtigen Richtungen identifiziert; alle genannten Werte (6,6°C, 0,16, 19 Uhr, 2011) sind durch feature_values_readable belegt. Clarity: Sehr verständlich, aber Begriffe wie 'normiert' und 'Modell' sind leicht technisch; ansonsten anschauliche Sprache mit guten Analogien. Completeness: Alle drei Aspekte ausführlich abgedeckt – Vorhersage vs. Realität in Tabelle, Treiber mit Begründung, und konkrete Handlungsempfehlung für Kapazitätsplanung.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (temp, hr, yr) korrekt mit richtigen Richtungen identifiziert; alle genannten Werte (6,6°C, 0,16, 19 Uhr, 2011) sind durch feature_values_readable belegt. Clarity: Sehr verständlich, aber Begriffe wie 'normiert' und 'Modell' sind leicht technisch; ansonsten anschauliche Sprache mit guten Analogien. Completeness: Alle drei Aspekte ausführlich abgedeckt – Vorhersage vs. Realität in Tabelle, Treiber mit Begründung, und konkrete Handlungsempfehlung für Kapazitätsplanung.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "xgb",
+    "instance_id": 250,
+    "faithfulness": 2,
+    "clarity": 3,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber und Richtungen korrekt, aber zahlreiche erfundene Zahlen ohne Beleg in GT (Baseline 190, −29%/−16%/+16% als Prozentwerte, Durchschnittswerte 143/224/158/198/230) – das rechtfertigt einen Abzug auf 2. Clarity: Mehrere technische Formulierungen wie 'neutraler Ausgangswert', 'Faktor', Prozent-Beiträge sowie tabellarische Modell-Sprache erfordern Vorwissen. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung für Disposition) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 2,\n  \"clarity\": 3,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber und Richtungen korrekt, aber zahlreiche erfundene Zahlen ohne Beleg in GT (Baseline 190, −29%/−16%/+16% als Prozentwerte, Durchschnittswerte 143/224/158/198/230) – das rechtfertigt einen Abzug auf 2. Clarity: Mehrere technische Formulierungen wie 'neutraler Ausgangswert', 'Faktor', Prozent-Beiträge sowie tabellarische Modell-Sprache erfordern Vorwissen. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung für Disposition) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "xgb",
+    "instance_id": 500,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle Top-3-Treiber (yr=2011, Frühling, temp 15.6°C) korrekt mit richtigen Richtungen genannt; alle Zahlenwerte durch feature_values belegt. Clarity: Sehr verständlich, aber Begriffe wie 'normalisierte Temperatur 0,38' sind leicht technisch, sonst laienfreundlich. Completeness: Alle drei Aspekte ausführlich vorhanden – Vorhersage vs. Realität mit Tabelle, Treiber mit Begründung, konkrete betriebliche Empfehlung.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle Top-3-Treiber (yr=2011, Frühling, temp 15.6°C) korrekt mit richtigen Richtungen genannt; alle Zahlenwerte durch feature_values belegt. Clarity: Sehr verständlich, aber Begriffe wie 'normalisierte Temperatur 0,38' sind leicht technisch, sonst laienfreundlich. Completeness: Alle drei Aspekte ausführlich vorhanden – Vorhersage vs. Realität mit Tabelle, Treiber mit Begründung, konkrete betriebliche Empfehlung.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "xgb",
+    "instance_id": 1337,
+    "faithfulness": 3,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber und Richtungen korrekt, aber mehrere konkrete Zahlen werden ohne Beleg in den Ground-Truth-Daten erfunden (~187 vs. ~170 Arbeitstag, ~143 vs. ~224 Jahresvergleich) – das rechtfertigt einen deutlichen Abzug. Clarity: Sehr gut lesbar mit Tabelle und Emojis, leichte Begriffe wie 'Kurve' und 'Vorhersage' sind unkritisch, aber 'Berufspendelverhalten' und Modell-Metaerklärungen leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, klare betriebliche Handlungsempfehlung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber und Richtungen korrekt, aber mehrere konkrete Zahlen werden ohne Beleg in den Ground-Truth-Daten erfunden (~187 vs. ~170 Arbeitstag, ~143 vs. ~224 Jahresvergleich) – das rechtfertigt einen deutlichen Abzug. Clarity: Sehr gut lesbar mit Tabelle und Emojis, leichte Begriffe wie 'Kurve' und 'Vorhersage' sind unkritisch, aber 'Berufspendelverhalten' und Modell-Metaerklärungen leicht technisch. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, klare betriebliche Handlungsempfehlung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "ebm",
+    "instance_id": 42,
+    "faithfulness": 3,
+    "clarity": 3,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber (hr, temp, yr) und Richtungen korrekt; allerdings werden mehrere nicht belegbare Zahlen genannt (Durchschnittswert '5 Fahrräder', '~230 Fahrräder mittags', Behauptung Winter > Frühling), was Abzug rechtfertigt. Clarity: Überwiegend verständlich, aber mehrere technische Begriffe wie 'normalisierter Wert 0,26', 'Treiber', 'dämpfend', 'Modell zeigt' erfordern Vorwissen. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Empfehlung) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 3,\n  \"clarity\": 3,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber (hr, temp, yr) und Richtungen korrekt; allerdings werden mehrere nicht belegbare Zahlen genannt (Durchschnittswert '5 Fahrräder', '~230 Fahrräder mittags', Behauptung Winter > Frühling), was Abzug rechtfertigt. Clarity: Überwiegend verständlich, aber mehrere technische Begriffe wie 'normalisierter Wert 0,26', 'Treiber', 'dämpfend', 'Modell zeigt' erfordern Vorwissen. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Empfehlung) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "ebm",
+    "instance_id": 100,
+    "faithfulness": 4,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber und Richtungen korrekt (hr+, temp-, yr-), aber konkrete Zahlen wie '~290 Ausleihungen' und '~58 % höher' für 2012 sind nicht in den Ground-Truth-Daten belegt – daher Abzug auf 4. Clarity: Sprache ist überwiegend laienverständlich, aber Begriffe wie 'Treiber' und 'Disposition' sind leicht technisch; Tabellenform ist gut nachvollziehbar. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Handlungsempfehlung mit Bezug auf Freitagabend) sind ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 4,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber und Richtungen korrekt (hr+, temp-, yr-), aber konkrete Zahlen wie '~290 Ausleihungen' und '~58 % höher' für 2012 sind nicht in den Ground-Truth-Daten belegt – daher Abzug auf 4. Clarity: Sprache ist überwiegend laienverständlich, aber Begriffe wie 'Treiber' und 'Disposition' sind leicht technisch; Tabellenform ist gut nachvollziehbar. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Handlungsempfehlung mit Bezug auf Freitagabend) sind ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "ebm",
+    "instance_id": 250,
+    "faithfulness": 3,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber und Richtungen korrekt (hr+, yr-, season-), aber mehrere konkrete Zahlen wie '~234 Fahrräder bei 13 Uhr', '~143 vs. ~226 Fahrräder/h', '~142 Frühling' sind nicht durch Ground-Truth belegt und daher erfunden – Abzug auf 3. Clarity: Sprachlich sehr verständlich, kaum Fachbegriffe, aber 'Treiber' und 'positiv/negativ' leicht technisch; insgesamt klar. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiberbegründung, Handlungsempfehlung) ausführlich und strukturiert vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber und Richtungen korrekt (hr+, yr-, season-), aber mehrere konkrete Zahlen wie '~234 Fahrräder bei 13 Uhr', '~143 vs. ~226 Fahrräder/h', '~142 Frühling' sind nicht durch Ground-Truth belegt und daher erfunden – Abzug auf 3. Clarity: Sprachlich sehr verständlich, kaum Fachbegriffe, aber 'Treiber' und 'positiv/negativ' leicht technisch; insgesamt klar. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiberbegründung, Handlungsempfehlung) ausführlich und strukturiert vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "ebm",
+    "instance_id": 500,
+    "faithfulness": 5,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Alle drei Top-Treiber (hr=14, yr=2011, season=Frühling) korrekt mit richtigen Richtungen identifiziert; alle Zahlen (88, 79, 14 Uhr, 34%) durch GT belegt. Clarity: Sehr verständlich, allerdings wird einmal 'Prognosemodell' und mehrfach 'das Modell' verwendet – leicht technisch, aber gut erklärt. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Handlungsempfehlung) ausführlich vorhanden.",
+    "raw_response": "{\n  \"faithfulness\": 5,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Alle drei Top-Treiber (hr=14, yr=2011, season=Frühling) korrekt mit richtigen Richtungen identifiziert; alle Zahlen (88, 79, 14 Uhr, 34%) durch GT belegt. Clarity: Sehr verständlich, allerdings wird einmal 'Prognosemodell' und mehrfach 'das Modell' verwendet – leicht technisch, aber gut erklärt. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, betriebliche Handlungsempfehlung) ausführlich vorhanden.\"\n}"
+  },
+  {
+    "pipeline_label": "Tool-Use",
+    "xai_model": "ebm",
+    "instance_id": 1337,
+    "faithfulness": 3,
+    "clarity": 4,
+    "completeness": 5,
+    "reasoning": "Faithfulness: Top-3-Treiber und Richtungen korrekt, aber mehrere konkrete Zahlen sind nicht in den GT-Daten belegt (z.B. 'rund 375 Fahrräder' um 8 Uhr, '83 Fahrräder weniger' für 2011) – das sind erfundene Werte. Clarity: Sprache ist sehr verständlich und alltagsnah; Begriff 'normalisierter Wert' ist leicht technisch, sonst klar. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung mit Uhrzeit und Sicherheitspuffer) ausführlich abgedeckt.",
+    "raw_response": "{\n  \"faithfulness\": 3,\n  \"clarity\": 4,\n  \"completeness\": 5,\n  \"reasoning\": \"Faithfulness: Top-3-Treiber und Richtungen korrekt, aber mehrere konkrete Zahlen sind nicht in den GT-Daten belegt (z.B. 'rund 375 Fahrräder' um 8 Uhr, '83 Fahrräder weniger' für 2011) – das sind erfundene Werte. Clarity: Sprache ist sehr verständlich und alltagsnah; Begriff 'normalisierter Wert' ist leicht technisch, sonst klar. Completeness: Alle drei Aspekte (Vorhersage vs. Realität, Treiber mit Begründung, konkrete Handlungsempfehlung mit Uhrzeit und Sicherheitspuffer) ausführlich abgedeckt.\"\n}"
+  }
+]

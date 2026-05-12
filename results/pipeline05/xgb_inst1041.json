@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 1041,
+  "explanation": "Das Modell sagt für diese Stunde 208 Ausleihen voraus, während tatsächlich 229 Fahrräder ausgeliehen wurden. Die Abweichung von rund 20 Rädern entspricht etwa 9 % — das ist eine solide, aber nicht perfekte Schätzung, die als gut bis mäßig einzustufen ist.\n\nDer stärkste Einzelfaktor ist der Wochentag (Dienstag). Obwohl 11 Uhr vormittags eine aktive Zeit ist, dämpft ein regulärer Arbeitstag die Nachfrage im Vergleich zum Durchschnitt leicht — vermutlich weil viele Pendler bereits im Büro sind und keine Freizeitfahrten stattfinden. Entgegen dieser Bremse wirkt die angenehme Temperatur von rund 27 °C stark nachfragesteigernd: Warmes, aber noch nicht drückendes Wetter lockt Menschen aufs Fahrrad und ist der zweitstärkste Treiber nach oben. Fast gleich stark wirkt das Jahr 2012 positiv — das System war damals noch im Wachstum, sodass generell mehr Nutzerinnen und Nutzer registriert waren als im Vorjahr. Die leichte Bewölkung und der moderate Wind von 19 km/h bremsen die Nachfrage nur minimal.\n\nFür den Betrieb empfiehlt es sich, an warmen Dienstagen im Mai gegen 10–11 Uhr ausreichend Räder an zentralen Stationen bereitzustellen, da Temperatur und Wachstumstrend gemeinsam die Nachfrage ankurbeln. Wartungsarbeiten sollten eher auf die frühen Morgenstunden vor 7 Uhr oder auf kühle, bewölkte Tage gelegt werden, wenn die Nachfrage deutlich geringer ausfällt.",
+  "plot_file": "waterfall_xgb_poisson_log_inst1041.png",
+  "elapsed_s": 11.76,
+  "usage": {
+    "input_tokens": 2309,
+    "output_tokens": 491,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 208.226,
+  "y_true": 229.0
+}

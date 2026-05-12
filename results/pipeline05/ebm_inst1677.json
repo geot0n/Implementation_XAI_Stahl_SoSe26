@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 1677,
+  "explanation": "Das Modell sagt für diese Stunde 178,5 Fahrradausleihen voraus, während tatsächlich 145 Fahrräder ausgeliehen wurden. Die Vorhersage liegt damit rund 23 % über dem realen Wert — das ist eine mäßige Überschätzung, aber noch in einem akzeptablen Bereich für eine grobe Betriebsplanung.\n\nDer mit Abstand stärkste Treiber ist die Tageszeit: Mittagsstunde (12 Uhr) ist eine aktive Stunde mit spürbarem Ausleihbetrieb, was die Vorhersage deutlich nach oben zieht. Fast ebenso positiv wirkt die angenehme Temperatur von knapp 29 °C — an einem solchen Frühlingstag in April lockt das Wetter viele Menschen aufs Fahrrad. Diese beiden Faktoren zusammen erklären den Großteil der hohen Vorhersage. Gegenläufig wirkt das Jahr 2011: Da das System damals noch jung und weniger bekannt war, dämpft dieser Faktor die Erwartung spürbar nach unten. Auch die Kombination aus Uhrzeit und Wochentag (Mittwoch mittags, kein Wochenende) zieht die Vorhersage leicht zurück — ein Hinweis, dass mittags werktags weniger Freizeitnutzung stattfindet als etwa am Wochenende. Luftfeuchtigkeit und Wetterlage (klar, nur 48 % Feuchte) haben einen kleinen, aber positiven Effekt.\n\nFür den Betrieb bedeutet das: An warmen, klaren Mittagen im Frühjahr lohnt es sich, ausreichend Fahrräder an zentralen Stationen bereitzuhalten. Gleichzeitig eignen sich frühe Morgenstunden oder kühle Regentage gut für Wartungsarbeiten, da dort die Nachfrage naturgemäß gering ist.",
+  "plot_file": "waterfall_ebm_poisson_log_inst1677.png",
+  "elapsed_s": 12.01,
+  "usage": {
+    "input_tokens": 2070,
+    "output_tokens": 518,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 178.547,
+  "y_true": 145.0
+}

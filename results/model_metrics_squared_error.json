@@ -1,0 +1,61 @@
+{
+  "loss_option": {
+    "key": "squared_error",
+    "label": "Option 1: Squared Error",
+    "description": "Klassische quadratische Verlustfunktion. Einfach zu interpretieren, aber nicht ideal f\u00fcr rechtsschiefe Count-Daten \u2014 kann negative Vorhersagen liefern.",
+    "ebm_objective": "rmse",
+    "xgb_objective": "reg:squarederror",
+    "contribution_space": "native"
+  },
+  "training_time_seconds": {
+    "xgb": 1.9822180271148682,
+    "ebm": 13.767768859863281
+  },
+  "metrics": {
+    "xgb": {
+      "rmse": 39.12852621792248,
+      "mae": 24.307415338785404,
+      "r2": 0.95153527013306,
+      "poisson_deviance": 12.032854735556183,
+      "min_prediction": -40.849910736083984,
+      "n_negative_predictions": 108
+    },
+    "ebm": {
+      "rmse": 55.31316396719346,
+      "mae": 36.190844357681634,
+      "r2": 0.9031508489837787,
+      "poisson_deviance": 59.98730161608612,
+      "min_prediction": -202.55887200928922,
+      "n_negative_predictions": 358
+    }
+  },
+  "n_train": 12165,
+  "n_test": 5214,
+  "hyperparameters": {
+    "xgb": {
+      "n_estimators": 800,
+      "max_depth": 7,
+      "learning_rate": 0.03,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "min_child_weight": 3,
+      "reg_lambda": 1.0,
+      "enable_categorical": true,
+      "tree_method": "hist",
+      "n_jobs": -1,
+      "random_state": 42,
+      "verbosity": 0,
+      "objective": "reg:squarederror"
+    },
+    "ebm": {
+      "interactions": 15,
+      "max_bins": 512,
+      "learning_rate": 0.02,
+      "max_rounds": 10000,
+      "early_stopping_rounds": 100,
+      "n_jobs": -1,
+      "random_state": 42,
+      "objective": "rmse"
+    }
+  }
+}

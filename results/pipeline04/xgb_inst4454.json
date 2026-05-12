@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 4454,
+  "explanation": "Das Modell sagte für diese Stunde 382 Ausleihungen vorher, während tatsächlich 311 Räder ausgeliehen wurden. Das entspricht einer Überschätzung von rund 23 Prozent — die Vorhersage ist damit nur mäßig getroffen, auch wenn das Modell insgesamt sehr zuverlässig arbeitet.\n\nDen stärksten Einfluss auf die hohe Vorhersage hatte die Tageszeit: 9 Uhr morgens liegt mitten in der Morgenspitze, wenn viele Menschen mit dem Fahrrad zur Arbeit fahren. Das trieb die erwartete Nachfrage deutlich nach oben. Fast genauso stark wirkte das Jahr 2012 — das System war in diesem zweiten Betriebsjahr bereits erheblich bekannter und hatte insgesamt mehr Nutzerinnen und Nutzer als im Vorjahr, was das Modell als dauerhaft höheres Nachfrageniveau verinnerlicht hat. Hinzu kommt die angenehme Temperatur von rund 27 °C an einem klaren Maitag: Solche Bedingungen ermutigen viele Menschen, spontan das Fahrrad zu wählen. Die niedrige Luftfeuchtigkeit von 47 Prozent und der moderate Wind von 17 km/h verstärkten diesen positiven Effekt noch leicht. Dass trotzdem weniger Räder ausgeliehen wurden als erwartet, könnte an einem lokalen Ereignis oder abweichendem Pendelverhalten an diesem konkreten Donnerstag liegen.\n\nFür den Betrieb bedeutet das: An Donnerstagmorgen im Mai sollten ausreichend Räder an Pendlerstationen bereitstehen — idealerweise mehr als an vergleichbaren Wintertagen. Da das Modell die Nachfrage tendenziell etwas überschätzt, empfiehlt sich ein kleiner Sicherheitspuffer bei der Stationsplanung, um unnötige Umverteilungsfahrten zu vermeiden. Wartungsarbeiten sollten klar außerhalb der Morgenspitze, etwa zwischen 2 und 5 Uhr, geplant werden.",
+  "elapsed_s": 12.5,
+  "usage": {
+    "input_tokens": 1838,
+    "output_tokens": 561,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 382.2661,
+  "y_true": 311.0
+}

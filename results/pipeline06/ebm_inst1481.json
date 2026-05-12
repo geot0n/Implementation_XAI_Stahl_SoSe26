@@ -1,0 +1,55 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 1481,
+  "explanation": "Alle Daten sind vorhanden — jetzt folgt die vollständige Erklärung:\n\n---\n\nDas Modell sagt für diese Stunde **124,9 ausgeliehene Fahrräder** vorher, während tatsächlich **113 Fahrräder** ausgeliehen wurden. Die Abweichung beträgt knapp 11 Fahrräder (~10 %), was einer sehr guten Vorhersagegüte entspricht — das Modell trifft die reale Nachfrage in dieser späten Freitagsnacht sehr präzise.\n\nDer mit Abstand stärkste Einflussfaktor ist die **Uhrzeit (23:00 Uhr)**, die die Vorhersage kräftig nach *unten* zieht. Stunde 23 ist schlicht eine Randzeit mit deutlich geringerer Nachfrage als z. B. der Abend-Hauptverkehrszeit — ein Blick auf das kontrafaktische Szenario macht das eindrücklich klar: Wäre es 18:00 Uhr statt 23:00 Uhr, würde das Modell **531 Fahrräder** statt 125 vorhersagen — also mehr als viermal so viele. Dies zeigt, wie dominant der Tages-Rhythmus die Nachfrage steuert, was sich auch global bestätigt: Die Uhrzeit ist mit einem Wichtigkeitswert von 0,91 das mit Abstand einflussreichste Merkmal im gesamten Modell (nächstes: Temperatur mit 0,24). Die Stunde 23 ist im Trainingsdatensatz mit ~4,2 % völlig normal vertreten — es handelt sich also nicht um einen Ausreißer, sondern um eine strukturell schwache Nachfragestunde.\n\nDer zweitstärkste Treiber wirkt gegensätzlich nach *oben*: Das **Jahr 2012** (kodiert als Wert 1) erhöht die Vorhersage spürbar. Mit einem Percentile-Rang von 100 % im Trainingsdatensatz repräsentiert dieser Wert das Maximum — das bedeutet, das Modell hat gelernt, dass die Gesamtnachfrage von 2011 auf 2012 deutlich gewachsen ist, und rechnet entsprechend mehr Ausleihen ein. Die niedrige **Luftfeuchtigkeit von 30 %** wirkt ebenfalls leicht positiv, was plausibel ist: trockene Luft begünstigt Radfahren.\n\nFür den Betrieb lassen sich zwei Schlussfolgerungen ziehen: Erstens sind Ressourcen (Fahrräder, Wartungspersonal) in Spitzenzeiten wie 17–19 Uhr sehr viel stärker gefragt als spät in der Nacht — eine stundenbasierte Fahrzeugverteilung lohnt sich also erheblich. Zweitens sollte der langfristige Wachstumstrend (2011→2012) bei der Jahresplanung berücksichtigt werden: Mehr Stationen oder größere Flotten könnten nötig sein, um die steigende Basislast zu decken.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 1481
+      },
+      "result_preview": "{'instance_id': 1481, 'y_true': 113.0, 'prediction': 124.9, 'base_value': 4.6078, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': -0.30894}, {'feature': 'yr', 'contribution'…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.90676}, {'rank': 2, 'feature': 'temp', 'importance': 0.23636}, {'rank': 3, 'feature': 'yr', 'importance': 0.22828}, {'rank': 4, 'feature': 'mnth', 'importance': 0.0967}, {'rank': 5, 'feature': 'hum', 'importance': 0.0731}, {'rank': 6, 'feature': 'weather…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 1481,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 23, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': …"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 1481,
+        "feature": "yr"
+      },
+      "result_preview": "{'feature': 'yr', 'instance_value': 1.0, 'type': 'numerical', 'percentile_in_train': 100.0, 'train_min': 0.0, 'train_max': 1.0, 'train_mean': 0.5018, 'train_std': 0.5}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 1481,
+        "changes": {
+          "hr": 18
+        }
+      },
+      "result_preview": "{'instance_id': 1481, 'base_prediction': 124.9, 'counterfactual_prediction': 531.1, 'delta': 406.19, 'applied_changes': {'hr': 18}, 'unit': 'Fahrräder pro Stunde'}"
+    }
+  ],
+  "n_tool_calls": 5,
+  "elapsed_s": 23.71,
+  "usage": {
+    "input_tokens": 2869,
+    "output_tokens": 1194
+  },
+  "y_true": 113.0
+}

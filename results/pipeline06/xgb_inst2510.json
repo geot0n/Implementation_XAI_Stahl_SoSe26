@@ -1,0 +1,73 @@
+{
+  "pipeline": "06_tooluse",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 2510,
+  "explanation": "Alle Daten sind gesammelt. Hier ist die vollständige, verständliche Erklärung:\n\n---\n\nDas Modell sagt für diese Stunde **369 Fahrräder** voraus, während tatsächlich **337 Fahrräder** ausgeliehen wurden – eine Überschätzung von knapp 10 %. Für ein Nachfragemodell, das mit stündlichen Schwankungen über ein ganzes Jahr trainiert wurde, ist diese Abweichung gering und die Vorhersage insgesamt als gut zu bewerten.\n\nDer mit Abstand stärkste Hebel für diese Vorhersage ist die **Uhrzeit 19 Uhr**: Sie ist der wichtigste Faktor im gesamten Modell und treibt die Nachfrage hier kräftig nach oben – typischerweise weil der Abend-Berufsverkehr viele Pendler auf die Räder bringt. 19 Uhr ist dabei eine völlig normale Beobachtungsstunde (gut 4 % aller Trainingsstunden), also kein Ausreißer. Den zweitgrößten Einfluss – diesmal **dämpfend** – hat das Jahr: Diese Instanz stammt aus 2011, dem ersten Betriebsjahr des Verleihs. Das Modell hat gelernt, dass die Nachfrage in 2012 deutlich höher war (das Jahr liegt genau im Mittel der Trainingsdaten, d. h. beide Jahre kommen gleich häufig vor). Wäre dieselbe Situation in 2012 aufgetreten, würde das Modell statt 369 satte **549 Fahrräder** vorhersagen – ein Plus von 180 Rädern allein wegen des Jahres. Ähnlich stark wäre der Effekt, hätte die Stunde 17 Uhr statt 19 Uhr gelautet (dann 539 Fahrräder, +170). Die **Temperatur von ~34 °C** wirkt leicht positiv, liegt aber mit einem Perzentil von 97,9 % extrem hoch – nur an sehr wenigen Tagen ist es so heiß; das Modell hebt die Nachfrage dadurch ein wenig an, ohne sie zu übertreiben.\n\nFür den Betrieb bedeutet das: **Abendstunden zwischen 17 und 19 Uhr** sind die verlässlichsten Hochlastzeiten und sollten stets mit maximaler Flotte abgedeckt sein. Gleichzeitig zeigen die Daten deutlich, dass das Geschäft zwischen 2011 und 2012 stark gewachsen ist – Kapazitätsplanungen sollten daher immer den aktuellen Wachstumstrend berücksichtigen und nicht auf Vorjahreszahlen stützen.",
+  "tool_calls": [
+    {
+      "tool": "get_shap_values",
+      "arguments": {
+        "instance_id": 2510
+      },
+      "result_preview": "{'instance_id': 2510, 'y_true': 337.0, 'prediction': 368.9, 'base_value': 5.25252, 'contribution_space': 'log', 'note': 'Positive Beiträge erhöhen, negative senken die Vorhersage (multiplikativ via exp).', 'contributions': [{'feature': 'hr', 'contribution': 0.55775}, {'feature': 'yr', 'contribution'…"
+    },
+    {
+      "tool": "get_feature_importance",
+      "arguments": {},
+      "result_preview": "[{'rank': 1, 'feature': 'hr', 'importance': 0.84237}, {'rank': 2, 'feature': 'yr', 'importance': 0.20709}, {'rank': 3, 'feature': 'temp', 'importance': 0.18996}, {'rank': 4, 'feature': 'weekday', 'importance': 0.16116}, {'rank': 5, 'feature': 'mnth', 'importance': 0.12616}, {'rank': 6, 'feature': 'h…"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 2510,
+        "feature": "hr"
+      },
+      "result_preview": "{'feature': 'hr', 'instance_value': 19, 'type': 'categorical', 'training_distribution': {0: {'count': 498, 'pct': 4.1}, 1: {'count': 516, 'pct': 4.2}, 2: {'count': 515, 'pct': 4.2}, 3: {'count': 456, 'pct': 3.7}, 4: {'count': 500, 'pct': 4.1}, 5: {'count': 510, 'pct': 4.2}, 6: {'count': 499, 'pct': …"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 2510,
+        "feature": "yr"
+      },
+      "result_preview": "{'feature': 'yr', 'instance_value': 0.0, 'type': 'numerical', 'percentile_in_train': 49.8, 'train_min': 0.0, 'train_max': 1.0, 'train_mean': 0.5018, 'train_std': 0.5}"
+    },
+    {
+      "tool": "get_feature_value_context",
+      "arguments": {
+        "instance_id": 2510,
+        "feature": "temp"
+      },
+      "result_preview": "{'feature': 'temp', 'instance_value': 0.84, 'type': 'numerical', 'percentile_in_train': 97.9, 'train_min': 0.02, 'train_max': 1.0, 'train_mean': 0.4981, 'train_std': 0.1931}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 2510,
+        "changes": {
+          "yr": 1
+        }
+      },
+      "result_preview": "{'instance_id': 2510, 'base_prediction': 368.9, 'counterfactual_prediction': 549.33, 'delta': 180.43, 'applied_changes': {'yr': 1.0}, 'unit': 'Fahrräder pro Stunde'}"
+    },
+    {
+      "tool": "get_counterfactual_prediction",
+      "arguments": {
+        "instance_id": 2510,
+        "changes": {
+          "hr": 17
+        }
+      },
+      "result_preview": "{'instance_id': 2510, 'base_prediction': 368.9, 'counterfactual_prediction': 538.71, 'delta': 169.81, 'applied_changes': {'hr': 17}, 'unit': 'Fahrräder pro Stunde'}"
+    }
+  ],
+  "n_tool_calls": 7,
+  "elapsed_s": 31.95,
+  "usage": {
+    "input_tokens": 4182,
+    "output_tokens": 1285
+  },
+  "y_true": 337.0
+}

@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 2510,
+  "explanation": "Das Modell sagt für diese Stunde 373 Fahrräder vorher, tatsächlich wurden 337 ausgeliehen. Die Abweichung beträgt rund 11 Prozent — das ist eine mäßig gute Vorhersage, die die Größenordnung klar trifft, aber die Nachfrage etwas überschätzt.\n\nDer mit Abstand wichtigste Treiber ist die Uhrzeit: 19 Uhr liegt mitten in der Abendspitze, wenn Pendler nach Hause fahren. Dieser Effekt allein erhöht die erwartete Nachfrage enorm und ist der größte rote Balken im Diagramm. Verstärkt wird das durch die Kombination aus Uhrzeit und Wochentag — ein Dienstagabend ist ein typischer Pendlermoment, was die Vorhersage zusätzlich nach oben treibt. Auf der Gegenseite wirkt das Jahr 2011 dämpfend: Das System war damals noch weniger verbreitet als 2012, sodass das Modell die Gesamtnachfrage etwas zurückhält. Auch die Temperatur von rund 34 °C erhöht die Nachfrage spürbar, liegt jedoch knapp über dem optimalen Bereich, weshalb der Effekt zwar positiv, aber nicht maximal ist. Die niedrige Luftfeuchtigkeit von 44 % und das klare Wetter stützen die Nachfrage ebenfalls leicht.\n\nFür den Betrieb bedeutet das: An Dienstagabenden um 19 Uhr sollten ausreichend Fahrräder an stark frequentierten Pendlerstationen bereitstehen. Gleichzeitig bieten frühe Morgen- oder Mittagsstunden an Werktagen gute Wartungsfenster, da dort die Nachfrage deutlich geringer ist.",
+  "plot_file": "waterfall_ebm_poisson_log_inst2510.png",
+  "elapsed_s": 11.56,
+  "usage": {
+    "input_tokens": 2070,
+    "output_tokens": 486,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 373.4179,
+  "y_true": 337.0
+}

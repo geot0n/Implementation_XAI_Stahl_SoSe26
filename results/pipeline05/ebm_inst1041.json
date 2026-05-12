@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 1041,
+  "explanation": "Das Modell sagt für diese Stunde 221 Fahrradausleihen vorher; tatsächlich wurden 229 Räder ausgeliehen. Die Abweichung von knapp 8 Fahrrädern entspricht weniger als 4 Prozent — das ist eine sehr gute Vorhersage, die den realen Bedarf nahezu exakt trifft.\n\nDen mit Abstand größten Schub nach oben liefert die Tageszeit: 11 Uhr morgens ist eine aktive Stunde mit bereits hohem Pendelaufkommen und Freizeitverkehr, was die Nachfrage deutlich über den Tagesdurchschnitt hebt. Fast ebenso wichtig ist die angenehme Temperatur von rund 27 °C — das Modell erkennt, dass solch warmes, aber nicht zu heißes Wetter Radfahren attraktiv macht und schraubt die Erwartung weiter nach oben. Hinzu kommt der Jahrestrend: Da die Daten aus 2012 stammen, dem zweiten Betriebsjahr, verzeichnet das System insgesamt mehr registrierte Nutzer als 2011, was die Grundnachfrage generell anhebt. Etwas bremsend wirkt die Kombination aus Uhrzeit und Wochentag — ein Dienstagvormittag zieht weniger Freizeitradler an als ein Wochenendmorgen, weshalb dieser Wechselwirkungsterm die Vorhersage leicht dämpft.\n\nFür den Betrieb bedeutet das: An einem warmen Dienstagvormittag im Mai sollten an belebten Stationen mindestens 200 Räder verfügbar sein. Wartungsarbeiten oder Umlagerungen sollten möglichst vor 9 Uhr oder nach 14 Uhr eingeplant werden, um die Verfügbarkeit in der Kernzeit nicht zu gefährden.",
+  "plot_file": "waterfall_ebm_poisson_log_inst1041.png",
+  "elapsed_s": 12.06,
+  "usage": {
+    "input_tokens": 2069,
+    "output_tokens": 500,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 221.272,
+  "y_true": 229.0
+}

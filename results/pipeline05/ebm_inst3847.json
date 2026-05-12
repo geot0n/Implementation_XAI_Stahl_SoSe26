@@ -1,0 +1,17 @@
+{
+  "pipeline": "05_vision",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "ebm",
+  "instance_id": 3847,
+  "explanation": "Das EBM-Modell sagte für diese Freitagsstunde um 6 Uhr morgens im Juni 2012 eine Nachfrage von 137 Fahrrädern voraus, während tatsächlich 122 ausgeliehen wurden. Die Vorhersage liegt damit etwa 12 % über dem realen Wert — das ist eine mäßige Abweichung, für eine einzelne Stunde aber noch akzeptabel.\n\nDer mit Abstand stärkste Dämpfer kommt von der frühen Uhrzeit: 6 Uhr morgens liegt kurz vor der eigentlichen Morgenspitze, und das Modell erkennt, dass um diese Zeit noch deutlich weniger los ist als etwa um 8 Uhr. Dieser Effekt zieht die Vorhersage kräftig nach unten. Dem entgegen wirkt die angenehme Temperatur von rund 30 °C: Warme Sommertemperaturen gehören zu den stärksten Treibern für Fahrradausflüge, und dieser Einfluss hebt die Vorhersage deutlich an. Zusätzlich wirkt das Jahr 2012 positiv — das System wuchs gegenüber 2011 stark, sodass das Modell generell mit höherer Nachfrage rechnet. Die Kombination aus Freitag und 6 Uhr begünstigt ebenfalls etwas mehr Ausleihen, was auf frühe Pendler hindeutet.\n\nFür den Betrieb bedeutet das: An warmen Freitagsmorgen im Juni sollten spätestens ab 6 Uhr ausreichend Fahrräder an den Pendler-Stationen bereitstehen, da die Nachfrage zur Hauptverkehrszeit kurz danach rasch anzieht. Der windstille, schwüle Morgen rechtfertigt zusätzlich eine großzügige Bereitstellung — Wartungsarbeiten sollten besser in die frühen Nachtstunden gelegt werden.",
+  "plot_file": "waterfall_ebm_poisson_log_inst3847.png",
+  "elapsed_s": 11.82,
+  "usage": {
+    "input_tokens": 2069,
+    "output_tokens": 515,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 137.0833,
+  "y_true": 122.0
+}

@@ -1,0 +1,37 @@
+"""
+utils/ – Gemeinsame Module für die Belegarbeit XAI.
+
+Stellt Daten-, Modell- und Erklärungs-Loading-Logik zentral bereit,
+sodass alle Notebooks (02-07) auf konsistenter Grundlage arbeiten.
+"""
+
+from pathlib import Path
+
+# Wurzel-Verzeichnis des Projekts (Implementation/), unabhängig vom CWD.
+# utils liegt unter Implementation/utils/, also ist parent.parent die Wurzel.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+DATA_DIR = PROJECT_ROOT / "data"
+MODELS_DIR = PROJECT_ROOT / "models"
+EXPLANATIONS_DIR = PROJECT_ROOT / "explanations"
+RESULTS_DIR = PROJECT_ROOT / "results"
+PROMPTS_DIR = PROJECT_ROOT / "prompts"
+
+# Feste Test-Instanzen für lokale Erklärungen.
+# Werden in allen drei LLM-Pipelines (04, 05, 06) verwendet,
+# damit die Evaluation in 07 vergleichbar ist.
+INSTANCE_IDS = [224, 580, 1041, 1481, 1677, 2058, 2510, 3543, 3847, 4454]
+
+# Reproduzierbarkeit
+RANDOM_STATE = 42
+
+__all__ = [
+    "PROJECT_ROOT",
+    "DATA_DIR",
+    "MODELS_DIR",
+    "EXPLANATIONS_DIR",
+    "RESULTS_DIR",
+    "PROMPTS_DIR",
+    "INSTANCE_IDS",
+    "RANDOM_STATE",
+]

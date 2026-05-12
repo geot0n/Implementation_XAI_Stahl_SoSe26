@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 224,
+  "explanation": "[VORHERSAGE] Das Modell sagte für diese Stunde 287 Ausleihen vorher; tatsächlich wurden 270 Fahrräder ausgeliehen. Die Abweichung beträgt rund 17 Räder, was einem Fehler von etwa 6 Prozent entspricht. Das ist ein gutes Ergebnis — das Modell trifft die reale Nachfrage hier sehr zuverlässig.\n\n[TREIBER] Den stärksten Einfluss hat die Uhrzeit: 20 Uhr ist der Abend nach der Hauptverkehrszeit, in der viele Pendler noch heimfahren und Freizeitnutzer unterwegs sind — das treibt die Nachfrage spürbar nach oben. Die warme Temperatur von knapp 33 °C verstärkt diesen Effekt zusätzlich, da angenehme Sommerabende erfahrungsgemäß viele Menschen zum Radfahren einladen. Auch der Monat Juli trägt positiv bei: Der Hochsommer gehört zur nachfragestärksten Jahreszeit. Leicht gebremst wird die Vorhersage allerdings dadurch, dass die Daten aus dem Jahr 2011 stammen — das System war damals noch nicht so bekannt und genutzt wie im Folgejahr, was das Modell entsprechend berücksichtigt.\n\n[EMPFEHLUNG] An warmen Sommerabenden rund um 20 Uhr sollten an stark frequentierten Stationen mindestens 280 bis 300 Räder verfügbar gehalten werden, um die hohe Nachfrage zuverlässig bedienen zu können. Wartungs- und Reinigungsarbeiten sollten in die Nachtstunden nach 23 Uhr verlagert werden, da das Modell für diese Zeit deutlich geringere Ausleihzahlen erwartet und die Betriebsunterbrechung dann kaum spürbar ist.",
+  "elapsed_s": 10.73,
+  "usage": {
+    "input_tokens": 1837,
+    "output_tokens": 503,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 286.8653,
+  "y_true": 270.0
+}

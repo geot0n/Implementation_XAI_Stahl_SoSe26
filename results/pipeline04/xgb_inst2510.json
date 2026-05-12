@@ -1,0 +1,16 @@
+{
+  "pipeline": "04_json",
+  "llm_model": "claude-sonnet-4-6",
+  "loss_key": "poisson_log",
+  "xai_model": "xgb",
+  "instance_id": 2510,
+  "explanation": "Das Modell sagt für diese Stunde rund 369 ausgeliehene Fahrräder vorher, während tatsächlich 337 gezählt wurden. Das entspricht einer Abweichung von etwa 10 %, was als mäßig gut getroffen einzustufen ist — die Tendenz stimmt, die genaue Zahl wird jedoch etwas überschätzt.\n\nDer mit Abstand stärkste Treiber ist die Tageszeit: 19 Uhr ist die klassische Abendspitze, wenn Pendlerinnen und Pendler nach Hause fahren. Das Modell erkennt darin das höchste Nachfragepotenzial des Tages und zieht die Vorhersage deutlich nach oben. Einen spürbaren Dämpfer liefert das Jahr 2011: Das Verleihsystem war damals noch weniger etabliert und hatte insgesamt eine geringere Stammkundschaft als im Folgejahr — dieser Wachstumsunterschied senkt die erwartete Nachfrage merklich. Positiv wirken dagegen der Monat Juli mit seiner typisch hohen Saisonauslastung sowie die Temperatur von rund 34 °C, die zwar schon im oberen Bereich liegt, aber die Fahrradbereitschaft noch leicht begünstigt. Niedrige Luftfeuchtigkeit von 44 % und moderater Wind von 19 km/h stören den Betrieb kaum.\n\nFür den Betrieb bedeutet das: An Dienstagabenden im Juli sollten an den zentralen Stationen ausreichend Fahrräder verfügbar sein, da die Abendspitze verlässlich für hohe Nachfrage sorgt. Gleichzeitig eignen sich frühe Nachmittagsstunden zwischen 13 und 16 Uhr an solchen Tagen gut für Wartungs- und Umverteilungsarbeiten, bevor der Ansturm einsetzt.",
+  "elapsed_s": 12.56,
+  "usage": {
+    "input_tokens": 1838,
+    "output_tokens": 507,
+    "cache_read_input_tokens": 0
+  },
+  "prediction": 368.9001,
+  "y_true": 337.0
+}

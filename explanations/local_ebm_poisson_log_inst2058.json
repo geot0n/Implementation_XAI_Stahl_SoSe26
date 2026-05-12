@@ -1,0 +1,66 @@
+{
+  "model": "ebm",
+  "instance_id": 2058,
+  "feature_values": {
+    "weathersit": 2.0,
+    "mnth": 11.0,
+    "hr": 20.0,
+    "weekday": 2.0,
+    "yr": 0.0,
+    "holiday": 0.0,
+    "temp": 0.48,
+    "hum": 0.82,
+    "windspeed": 0.1343
+  },
+  "y_true": 238.0,
+  "prediction": 164.7105,
+  "base_value": 4.607797,
+  "contribution_space": "log",
+  "contributions": [
+    {
+      "feature": "hr",
+      "value": 20.0,
+      "contribution": 0.582409
+    },
+    {
+      "feature": "yr",
+      "value": 0.0,
+      "contribution": -0.229093
+    },
+    {
+      "feature": "mnth",
+      "value": 11.0,
+      "contribution": 0.104743
+    },
+    {
+      "feature": "temp",
+      "value": 0.48,
+      "contribution": 0.074529
+    },
+    {
+      "feature": "hum",
+      "value": 0.82,
+      "contribution": -0.054982
+    },
+    {
+      "feature": "windspeed",
+      "value": 0.1343,
+      "contribution": 0.011651
+    },
+    {
+      "feature": "weekday",
+      "value": 2.0,
+      "contribution": 0.008782
+    },
+    {
+      "feature": "weathersit",
+      "value": 2.0,
+      "contribution": -0.006104
+    },
+    {
+      "feature": "holiday",
+      "value": 0.0,
+      "contribution": 0.004712
+    }
+  ]
+}
