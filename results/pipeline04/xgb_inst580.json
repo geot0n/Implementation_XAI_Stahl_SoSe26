@@ -4,12 +4,12 @@
   "loss_key": "poisson_log",
   "xai_model": "xgb",
   "instance_id": 580,
-  "explanation": "Das Modell sagte für diese Stunde rund 12 Fahrräder vorher, während tatsächlich nur 5 ausgeliehen wurden. Die Vorhersage ist damit mehr als doppelt so hoch wie der reale Wert — das ist eine deutliche Überschätzung und insgesamt schlecht getroffen. Gerade bei sehr niedrigen Nachfragewerten an ruhigen Nachtstunden stoßen Vorhersagemodelle häufiger an ihre Grenzen.\n\nDie mit Abstand stärkste Bremse auf die Nachfrage ist die Uhrzeit: Mitternacht ist die ruhigste Phase des ganzen Tages, und das Modell erkennt das klar als nachfrageschwächsten Zeitraum. Hinzu kommt der Monat Januar — es ist die kälteste und verkehrsschwächste Jahreszeit, was die Erwartungen zusätzlich nach unten drückt. Die Temperatur von rund 9 °C verstärkt diesen Effekt noch weiter: Für Radfahrer ist es schlicht zu kalt, um spontan ein Fahrrad zu mieten, besonders mitten in der Nacht. Alle drei Faktoren ziehen die Vorhersage gemeinsam deutlich nach unten, können aber den tatsächlich noch niedrigeren Wert nicht vollständig abbilden.\n\nFür den Betrieb lässt sich daraus zweierlei ableiten: Mitternacht im Januar ist ein ideales Wartungs- und Umverteilungsfenster, da kaum Kundschaft zu erwarten ist und Fahrräder ohne große Einschränkungen aus dem Umlauf genommen werden können. Gleichzeitig sollte die Verfügbarkeit in dieser Kombination aus Nacht und Wintermonat bewusst niedrig gehalten werden — eine Überversorgung an Stationen bindet unnötig Personal und Ressourcen.",
-  "elapsed_s": 10.91,
+  "explanation": "Das Modell sagt für diese Stunde etwa 12 Fahrradausleihen vorher, während tatsächlich nur 5 Ausleihen stattgefunden haben. Die Vorhersage liegt damit mehr als doppelt so hoch wie der reale Wert — das ist eine mäßige bis schlechte Schätzung. Solche Abweichungen nach oben sind bei sehr geringen Nachfragewerten in der Nacht nicht ungewöhnlich, da das Modell selbst unter ungünstigen Bedingungen ein gewisses Grundniveau annimmt.\n\nDer mit Abstand stärkste Dämpfer in dieser Stunde ist die Uhrzeit: Mitternacht ist die ruhigste Phase des Tages, und das Modell berücksichtigt entsprechend, dass kaum jemand nachts ein Fahrrad ausleiht. Hinzu kommen zwei weitere bremsende Faktoren: Es ist Januar, der kälteste und fahrradschwächste Monat des Jahres, und die Temperatur liegt bei knapp 9 °C — das reicht aus, um viele potenzielle Nutzer davon abzuhalten, sich aufs Rad zu setzen. Das Wetter ist zwar klar, was grundsätzlich positiv wirkt, kann aber die Kombination aus Kälte und nächtlicher Stunde nicht aufwiegen. Da das Jahr 2011 noch das Startjahr des Verleihs war, fällt auch das allgemeine Nutzungsniveau insgesamt geringer aus als in späteren Jahren.\n\nFür den Betrieb lässt sich daraus ableiten: In Winternächten — besonders zwischen Mitternacht und 5 Uhr — reicht eine sehr geringe Fahrradverfügbarkeit aus. Diese Stunden eignen sich ideal für Wartungsarbeiten, Umverteilungen oder das Einlagern von Rädern, ohne dass relevante Nachfrage entsteht. Eine Reduzierung der aktiven Flotte in diesen Zeitfenstern spart Kosten und schont die Infrastruktur.",
+  "elapsed_s": 11.16,
   "usage": {
-    "input_tokens": 1836,
-    "output_tokens": 487,
-    "cache_read_input_tokens": 0
+    "input_tokens": 615,
+    "output_tokens": 532,
+    "cache_read_input_tokens": 1212
   },
   "prediction": 12.1144,
   "y_true": 5.0

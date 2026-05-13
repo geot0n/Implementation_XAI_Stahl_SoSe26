@@ -9,6 +9,7 @@ identische Feature-Beschreibungen verwenden.
 
 from __future__ import annotations
 
+import weakref
 from pathlib import Path
 from typing import Any
 
@@ -92,16 +93,15 @@ TARGET_DESCRIPTION: dict[str, Any] = {
 # Interne Hilfsfunktionen
 # -----------------------------------------------------------------------------
 
-# Module-level cache: model id → shap.TreeExplainer (avoid re-creating per call)
-_shap_cache: dict[int, Any] = {}
+# Module-level cache: model object → shap.TreeExplainer (avoid re-creating per call)
+_shap_cache: weakref.WeakKeyDictionary = weakref.WeakKeyDictionary()
 
 
 def _get_shap_explainer(model: Any) -> Any:
-    model_id = id(model)
-    if model_id not in _shap_cache:
+    if model not in _shap_cache:
         import shap
-        _shap_cache[model_id] = shap.TreeExplainer(model)
-    return _shap_cache[model_id]
+        _shap_cache[model] = shap.TreeExplainer(model)
+    return _shap_cache[model]
 
 
 def _feat_value(val: Any) -> Any:

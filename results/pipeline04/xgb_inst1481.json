@@ -4,12 +4,12 @@
   "loss_key": "poisson_log",
   "xai_model": "xgb",
   "instance_id": 1481,
-  "explanation": "Das Modell sagt für diese Stunde rund 108 ausgeliehene Fahrräder vorher; tatsächlich waren es 113. Die Abweichung beträgt weniger als 5 Fahrräder, was einem sehr guten Treffer entspricht — das Modell erfasst die Situation hier nahezu perfekt.\n\nDer bei weitem stärkste Einfluss geht von der Uhrzeit aus: 23 Uhr ist späte Nacht, der Betrieb läuft deutlich ruhiger als tagsüber, und dieser Faktor drückt die erwartete Nachfrage erheblich nach unten. Trotzdem liegt die Vorhersage mit über 100 Rädern vergleichsweise hoch — das liegt vor allem am Wochentag: Es ist Freitag, und Freitagabende zeigen erfahrungsgemäß eine ausgeprägte Ausgehkultur, sodass auch spät in der Nacht noch viele Räder unterwegs sind. Dieser Wochentag-Effekt wirkt spürbar steigernd. Hinzu kommt, dass die Daten aus dem Jahr 2012 stammen, als das System bereits deutlich stärker genutzt wurde als im Vorjahr — auch das hebt die Grundnachfrage an. Die Temperatur von etwa 17 °C und der mäßige Wind von 19 km/h bremsen die Nachfrage leicht, spielen aber bei Nacht eine untergeordnete Rolle.\n\nFür den Betrieb bedeutet das: An Freitagabenden sollten auch nach 22 Uhr ausreichend Räder an innenstadtnahen Stationen verfügbar sein, da die Heimfahrten der Ausgehenden für anhaltende Nachfrage sorgen. Gleichzeitig bietet sich das frühe Samstagmorgen zwischen etwa 3 und 6 Uhr als günstiges Wartungs- und Umverteilungsfenster an, da die Nachfrage dann auf ein tägliches Minimum fällt.",
-  "elapsed_s": 11.55,
+  "explanation": "Es ist 23:00 Uhr an einem Freitagabend im April 2012, bei klarem Himmel und angenehmen 17 °C.\n\nDas Modell sagt für diese Stunde rund **108 Ausleihen** vorher. Der tatsächliche Wert liegt bei 113 — die Abweichung beträgt weniger als 5 %, was einer sehr guten Vorhersage entspricht.\n\nDie bei weitem wichtigste Rolle spielt die späte Nachtstunde. 23:00 Uhr liegt deutlich außerhalb der Abend- und Pendelspitze, sodass die Nachfrage gegenüber einem Spitzenwert erheblich gebremst wird — das ist der stärkste Einzeleffekt in diesem Beispiel und wirkt klar dämpfend. Dem entgegen wirkt das Jahr 2012: Da das Verleihsystem im zweiten Betriebsjahr bereits deutlich mehr Nutzerinnen und Nutzer gewonnen hatte als im Startjahr 2011, hebt dieser Wachstumseffekt die Basisnachfrage spürbar an. Ein weiterer positiver Faktor ist der Wochentag: Freitag ist ein Werktag, an dem Abendausgänge und später Heimweg zu einer höheren Nachfrage in den Abend- und Nachtstunden führen als etwa an einem Mittwoch — das Modell erkennt hier das typische Ausgehverhalten. Temperatur und Monat wirken leicht bremsend, da 17 °C zwar angenehm, aber noch etwas unter dem Nachfragemaximum liegen und April noch nicht zur Hochsaison gehört.\n\nFür den Betrieb bedeutet das: An Freitagabenden sollte auch nach 22:00 Uhr eine ausreichende Anzahl Fahrräder an zentralen Stationen bereitgehalten werden, da die Nachfrage spürbar über dem nächtlichen Durchschnitt liegt. Wartungsarbeiten und Umverteilungsfahrten sind besser auf die frühen Morgenstunden zwischen 2:00 und 6:00 Uhr zu legen, wenn die Nutzung auf ein Minimum sinkt.",
+  "elapsed_s": 13.1,
   "usage": {
-    "input_tokens": 1839,
-    "output_tokens": 529,
-    "cache_read_input_tokens": 0
+    "input_tokens": 618,
+    "output_tokens": 573,
+    "cache_read_input_tokens": 1212
   },
   "prediction": 108.3289,
   "y_true": 113.0

@@ -4,12 +4,12 @@
   "loss_key": "poisson_log",
   "xai_model": "xgb",
   "instance_id": 1677,
-  "explanation": "Das Modell sagte für diese Stunde 180 Ausleihungen vorher, während tatsächlich 145 Fahrräder ausgeliehen wurden. Die Abweichung von rund 35 Rädern entspricht etwa 24 Prozent — das ist eine mäßige Treffgenauigkeit, obwohl das Modell insgesamt sehr zuverlässig arbeitet (R² von 0,95).\n\nDer stärkste Bremseffekt in dieser Stunde kam vom Jahr 2011: Da der Verleih damals noch im Aufbau war, lagen die Ausleihzahlen generell deutlich niedriger als in den Folgejahren. Das Modell hat diesen Wachstumsrückstand teilweise berücksichtigt, aber offenbar nicht vollständig ausgespielt. Gleichzeitig wirkte der Wochentag Mittwoch dämpfend — an einem Werktag zur Mittagsstunde fahren weniger Menschen spontan Rad als etwa am Wochenende, wo Mittagsausflüge häufiger sind. Positiv beigetragen hat die angenehme Temperatur von rund 29 °C: Das liegt im idealen Bereich für Fahrradfahrer, was die Nachfrage deutlich ankurbelt. Auch das klare Wetter und die moderate Luftfeuchtigkeit von 48 Prozent unterstützten die Nutzung zusätzlich.\n\nFür den Betrieb lässt sich ableiten, dass an warmen Apriltagen zur Mittagszeit ausreichend Räder an stark frequentierten Stationen bereitstehen sollten, auch wenn das System noch im Wachstum ist. Da das Modell an diesem Wochentag und dieser Uhrzeit zur Überschätzung neigt, empfiehlt es sich zudem, die Vorhersage für Mittwoch-Mittag konservativ zu planen und Wartungsarbeiten eher auf die ruhigen Morgenstunden zwischen 1 und 6 Uhr zu legen.",
-  "elapsed_s": 11.77,
+  "explanation": "Das Modell sagt für diese Stunde 180 ausgeliehene Fahrräder vorher, während tatsächlich 145 gezählt wurden. Die Abweichung von rund 24 % ist spürbar, aber angesichts der hohen Gesamtgenauigkeit des Modells (R² = 0,95) noch im akzeptablen Bereich — insgesamt als mäßig getroffen zu bewerten.\n\nDer stärkste Einfluss in dieser Stunde geht vom Jahr aus: Da die Daten aus 2011 stammen, also dem ersten Betriebsjahr, war der Verleih noch weniger bekannt und die Nutzerzahlen insgesamt niedriger. Dieser Faktor zieht die Vorhersage bereits deutlich nach unten. Gegenläufig wirkt die angenehme Temperatur von knapp 29 °C, die für Radfahrende sehr attraktiv ist und die Nachfrage kräftig ankurbelt. Hinzu kommt der Wochentag: Ein Mittwoch ist ein klassischer Arbeitstag, an dem die Mittagsstunde weniger für spontane Ausflüge genutzt wird als etwa am Wochenende — das dämpft die Nachfrage moderat. Die Mittagszeit selbst (12 Uhr) sorgt für eine mittlere Grundauslastung, und das klare Wetter begünstigt zusätzlich die Bereitschaft, ein Fahrrad zu nehmen.\n\nFür den Betrieb bedeutet das: An warmen Aprilmittagen unter der Woche sollte eine solide Flotte bereitstehen, auch wenn die absolute Nachfrage noch überschaubar ist. Gleichzeitig eignen sich Mittwoch-Mittage im Frühjahr gut für schnelle Wartungsarbeiten an einzelnen Stationen, da die Spitzenlast eher morgens und abends anfällt — die Mittagspause bietet also ein nützliches Wartungsfenster.",
+  "elapsed_s": 11.58,
   "usage": {
-    "input_tokens": 1839,
-    "output_tokens": 523,
-    "cache_read_input_tokens": 0
+    "input_tokens": 618,
+    "output_tokens": 516,
+    "cache_read_input_tokens": 1212
   },
   "prediction": 180.2743,
   "y_true": 145.0

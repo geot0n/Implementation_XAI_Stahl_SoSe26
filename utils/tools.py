@@ -60,8 +60,9 @@ TOOL_DEFINITIONS: list[dict[str, Any]] = [
                     "type": "object",
                     "description": (
                         "Mapping von Feature-Name zu Wert. Kategoriale Features "
-                        "(season, yr, mnth, hr, holiday, weekday, workingday, weathersit) "
-                        "als Integer, numerische (temp, hum, windspeed) als Float."
+                        "(mnth, hr, weekday, weathersit) als Integer, "
+                        "binäre Features (yr, holiday) als Integer (0 oder 1), "
+                        "numerische Features (temp, hum, windspeed) als Float."
                     ),
                 }
             },
@@ -265,11 +266,15 @@ class ToolBox:
     def _tool_get_prediction(self, features: dict[str, Any]) -> dict:
         df = self._build_input_df(features)
         pred = float(self.model.predict(df)[0])
-        return {
+        filled_by_mode = [c for c in self.X_test.columns if c not in features]
+        result = {
             "prediction": round(pred, 2),
             "unit": "Fahrräder pro Stunde",
             "features_used": features,
         }
+        if filled_by_mode:
+            result["features_filled_by_mode"] = filled_by_mode
+        return result
 
     def _tool_get_shap_values(self, instance_id: int) -> dict:
         if instance_id < 0 or instance_id >= len(self.X_test):
@@ -413,7 +418,6 @@ class ToolBox:
         dists = np.sqrt(((X_train_norm - x_test_norm) ** 2).sum(axis=1))
         top_k_idx = np.argsort(dists)[:k]
 
-        y_train = self.X_train.copy()
         results = []
         for idx in top_k_idx:
             row = self.X_train.iloc[idx]

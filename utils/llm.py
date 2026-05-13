@@ -22,32 +22,33 @@ from typing import Any, Iterable
 try:
     from dotenv import load_dotenv
     _env_file = Path(__file__).resolve().parent.parent / ".env"
-    load_dotenv(_env_file, override=True)
+    load_dotenv(_env_file)
 except ImportError:
     pass
 
 DEFAULT_MODEL = "claude-sonnet-4-6"
 DEFAULT_MAX_TOKENS = 2048
 
-_RETRYABLE = ("RateLimit", "APIStatusError", "APIConnectionError", "InternalServer", "Overloaded")
+try:
+    from anthropic import RateLimitError, APIConnectionError, InternalServerError
+    _RETRYABLE_TYPES = (RateLimitError, APIConnectionError, InternalServerError)
+except ImportError:
+    _RETRYABLE_TYPES = (Exception,)
 
 
 def _with_retry(fn: Any, *args: Any, max_retries: int = 2, **kwargs: Any) -> Any:
     """Wraps an API call with exponential backoff on transient errors."""
     delay = 5
-    last_exc: Exception | None = None
     for attempt in range(max_retries + 1):
         try:
             return fn(*args, **kwargs)
         except Exception as exc:
-            if attempt < max_retries and any(s in type(exc).__name__ for s in _RETRYABLE):
-                last_exc = exc
+            if attempt < max_retries and isinstance(exc, _RETRYABLE_TYPES):
                 print(f"[llm] {type(exc).__name__} – Retry {attempt + 1}/{max_retries} in {delay}s …")
                 _time.sleep(delay)
                 delay *= 2
             else:
                 raise
-    raise last_exc  # type: ignore[misc]
 
 
 def _get_client() -> Any:
@@ -79,15 +80,9 @@ def ask_text(
     system: str | None = None,
     model: str = DEFAULT_MODEL,
     max_tokens: int = DEFAULT_MAX_TOKENS,
-    cache_system: bool = True,
+    cache_system: bool = False,
 ) -> dict:
-    """
-    Single-turn Text-Anfrage mit optionalem Prompt-Caching des System-Prompts.
-
-    cache_system=True markiert den System-Prompt als cache_control ephemeral,
-    was bei mehreren Aufrufen mit identischem System-Prompt Kosten und Latenz
-    reduziert (Anthropic Prompt Caching).
-    """
+    
     client = _get_client()
 
     if system and cache_system:
@@ -114,6 +109,9 @@ def ask_text(
 # -----------------------------------------------------------------------------
 # Pipeline 05: Bilder + Text → Text
 # -----------------------------------------------------------------------------
+_MAX_IMAGE_BYTES = 5 * 1024 * 1024  # 5 MB
+
+
 def _encode_image(path: Path | str) -> dict:
     path = Path(path)
     suffix = path.suffix.lower().lstrip(".")
@@ -126,6 +124,14 @@ def _encode_image(path: Path | str) -> dict:
     }
     if suffix not in media_type_map:
         raise ValueError(f"Bildformat .{suffix} nicht unterstützt.")
+
+    size = path.stat().st_size
+    if size > _MAX_IMAGE_BYTES:
+        raise ValueError(
+            f"{path.name} ist {size / 1024 / 1024:.1f} MB groß "
+            f"(Limit: {_MAX_IMAGE_BYTES // 1024 // 1024} MB). "
+            "Bild vorher komprimieren oder Auflösung reduzieren."
+        )
 
     data = base64.standard_b64encode(path.read_bytes()).decode("utf-8")
     return {
